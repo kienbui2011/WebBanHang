@@ -195,7 +195,8 @@ font-size: 14px;
 	/* Khoảng cách giữa lớp và nội dung bên trong */
 	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
 	/* Đổ bóng */
-	margin-top: 150px;
+	margin-top: 140px;
+	margin-bottom: 50px;
 }
 
 /* Định dạng hình ảnh và vùng chứa slideshow */
@@ -290,6 +291,7 @@ img {
 	display: inline-block;
 	justify-content: center;
 	/* Căn ngang chữ giữa */
+	z-index: 1;
 
 }
 
@@ -334,6 +336,68 @@ img {
 	color: #ccdae0;
 }
 
+.product-contener p {
+	text-align: center;
+	color:#f72c1a;
+	font-size:30px;
+	
+
+}
+.product-list {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	justify-content: center;
+	/* Căn giữa theo chiều ngang */
+	align-items: center;
+	/* Căn giữa theo chiều dọc */
+}
+.product-item {
+	border: 1px solid #afaaaa;
+	padding: 10px 20px;
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+	/* Căn ảnh và văn bản theo chiều dọc */
+}
+
+.product-item a {
+	text-decoration: none;
+	/* Loại bỏ gạch chân từ liên kết */
+	color: #fa6f6f;
+	/* Màu chữ của liên kết */
+	font-weight: 500;
+	font-size: 18px;
+}
+.product-item a:hover {
+	color: #ff2e1b;
+}
+
+.product-item img {
+	max-width: 135px;
+	/* Điều chỉnh kích thước ảnh */
+	margin-right: 10px;
+	/* Khoảng cách giữa ảnh và văn bản */
+}
+
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.3;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.product-contener p {
+	animation: blink 3s infinite;
+	
+}
 
 /*!
 Theme Name: Razzi
@@ -3104,7 +3168,7 @@ object {
 --------------------------------------------------------------*/
 .site-content {
 	padding-top: 80px;
-	padding-bottom: 80px;
+	
 
 }
 
@@ -3113,13 +3177,6 @@ object {
 	margin: 0 auto;
 }
 
-.razzi-container {
-	max-width: 1903px;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 40px;
-	padding-right: 40px;
-}
 
 .razzi-container-wide {
 	max-width: 1903px;
@@ -9314,12 +9371,6 @@ ul.razzi-checkmark-lists li.wrong:before {
 	margin-bottom: 13px;
 }
 
-.razzi-map .mapboxgl-ctrl-geocoder .geocoder-icon-search {
-	/*rtl:raw:
-        left: 20px;
-        right: auto;
-        */
-}
 
 .razzi-map__table {
 	max-width: 370px;
@@ -15923,415 +15974,3 @@ h2.razzi-heading-title {
 		padding-left: 25px;
 		padding-right: 25px;
 	}
-
-	.blog-sidebar {
-		max-width: 540px;
-		margin-left: auto;
-		margin-right: auto;
-		margin-top: 70px;
-	}
-
-	table.large-padding thead th,
-	table.large-padding thead td,
-	table.large-padding th,
-	table.large-padding td {
-		padding: 10px;
-	}
-
-	.site-footer {
-		background-repeat: no-repeat;
-		background-position: center center;
-	}
-
-	.site-footer .footer-main .footer-items {
-		padding: 5px 0;
-	}
-
-	.site-footer .footer-newsletter {
-		--rz-footer-newsletter-top-spacing: 30px;
-		--rz-footer-newsletter-bottom-spacing: 40px;
-	}
-
-	.site-footer .footer-widgets {
-		--rz-footer-widget-top-spacing: 30px;
-		--rz-footer-widget-bottom-spacing: 40px;
-	}
-
-	.site-footer .footer-links {
-		--rz-footer-links-bottom-spacing: 40px;
-		--rz-footer-links-top-spacing: 40px;
-	}
-
-	.newsletter-popup-layout-2-columns .newsletter-popup-wrapper {
-		padding: 60px 30px 65px;
-	}
-
-	.ra-cart-modal .widget_shopping_cart_content {
-		padding-bottom: 310px;
-	}
-
-	.ra-search-form .search-results .result-title {
-		margin: 0 -20px;
-	}
-
-	.ra-account-modal .modal-content {
-		padding-left: 20px;
-		padding-right: 20px;
-	}
-
-	input[type="text"],
-	input[type="email"] {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border-radius: 0;
-	}
-
-	.page-header__title {
-		padding-top: 20px;
-	}
-
-	.razzi-catalog-page .catalog-page-header--layout-1 .page-header__title {
-		padding-top: 5px;
-	}
-
-	.razzi-products-masonry .masonry-banner-content .banner-image {
-		display: block;
-	}
-
-	.comment-respond .comment-form-author,
-	.comment-respond .comment-form-email {
-		width: 100%;
-	}
-
-	.razzi-instagram-grid-2 .instagram-text-wrapper {
-		padding-left: 30px;
-		padding-right: 30px;
-	}
-
-	.razzi-instagram-grid-2 .instagram-text-wrapper .instagram-desc br {
-		display: none;
-	}
-
-	.razzi-banner-clt__content-desc br {
-		display: none;
-	}
-
-	.swiper-pagination {
-		margin-top: 20px;
-	}
-
-	ul.products li.product .woocommerce-loop-product__title {
-		font-size: 14px;
-	}
-
-	input[type="text"] {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border-radius: 0;
-	}
-
-	.pswp .razzi-video-wrapper iframe,
-	.pswp .razzi-video-wrapper .wp-video {
-		height: auto;
-	}
-}
-
-@media (max-width: 600px) {
-	.admin-bar.header-sticky .site-header.minimized {
-		top: 0;
-	}
-
-	.admin-bar.sticky-minimized .rz-modal {
-		top: 0;
-	}
-
-	.admin-bar .rz-modal {
-		top: 0;
-		height: 100%;
-	}
-
-	.admin-bar .rz-modal.quick-view-modal {
-		top: 0;
-	}
-}
-
-@media (max-width: 480px) {
-	.modal {
-		width: 100%;
-		right: -100%;
-	}
-
-	.modal.open {
-		transform: translate3d(-100%, 0, 0);
-	}
-
-	.modal.side-left {
-		left: -100%;
-	}
-
-	.modal.side-left.open {
-		transform: translate3d(100%, 0, 0);
-	}
-
-	.rz-modal .panel-content {
-		width: 90%;
-	}
-
-	.footer-newsletter:not(.layout-v2) .mc4wp-form-fields,
-	.razzi-newsletter:not(.layout-v2) .mc4wp-form-fields {
-		display: block;
-	}
-
-	.footer-newsletter:not(.layout-v2) .mc4wp-form-fields input[type="submit"],
-	.footer-newsletter:not(.layout-v2) .mc4wp-form-fields input[type="email"],
-	.razzi-newsletter:not(.layout-v2) .mc4wp-form-fields input[type="submit"],
-	.razzi-newsletter:not(.layout-v2) .mc4wp-form-fields input[type="email"] {
-		width: 100%;
-		text-align: center;
-	}
-
-	.footer-newsletter:not(.layout-v2) .mc4wp-form-fields input[type="submit"],
-	.razzi-newsletter:not(.layout-v2) .mc4wp-form-fields input[type="submit"] {
-		margin: 10px 0 0 0;
-	}
-
-	.newsletter-popup-modal .newsletter-title {
-		font-size: 18px;
-		margin-bottom: 10px;
-	}
-
-	.newsletter-popup-modal .newsletter-popup-content {
-		font-size: 14px;
-	}
-
-	.newsletter-popup-modal .newsletter-popup-wrapper {
-		padding: 50px 15px;
-	}
-
-	.newsletter-popup-modal .newsletter-popup-form {
-		margin-bottom: 30px;
-	}
-
-	.newsletter-popup-modal .newsletter-popup-form .mc4wp-form-fields {
-		display: block;
-	}
-
-	.newsletter-popup-modal .newsletter-popup-form .mc4wp-form-fields input[type=email] {
-		width: 100%;
-		margin-right: 0;
-		margin-bottom: 10px;
-		text-align: center;
-	}
-
-	.newsletter-popup-modal .newsletter-popup-form .mc4wp-form-fields input[type="submit"] {
-		width: 100%;
-	}
-
-	.newsletter-popup-modal .button-close {
-		top: -12px;
-		right: -10px;
-		transform: none;
-		z-index: 999;
-		cursor: pointer;
-		margin: 0;
-		padding: 10px;
-		background-color: #fff;
-		border-radius: 50%;
-		font-size: 18px;
-	}
-
-	.newsletter-popup-layout-1-column .newsletter-popup-image {
-		min-height: 150px;
-	}
-
-	.newsletter-popup-layout-1-column .newsletter-popup-content {
-		width: 90%;
-	}
-
-	.newsletter-popup-layout-1-column .newsletter-popup-wrapper {
-		padding: 30px 20px;
-	}
-
-	.newsletter-popup-layout-1-column .button-close:hover .razzi-svg-icon {
-		color: #a0a0a0;
-	}
-
-	.newsletter-popup-layout-1-column .button-close .razzi-svg-icon {
-		color: #a0a0a0;
-	}
-
-	.newsletter-popup-layout-2-columns .newsletter-popup-image {
-		display: none;
-	}
-
-	.newsletter-popup-layout-2-columns .mc4wp-form-fields input[type="submit"] {
-		background-color: var(--rz-background-color-dark);
-		color: var(--rz-color-lighter);
-	}
-
-	.newsletter-popup-layout-2-columns .newsletter-popup-content {
-		padding-bottom: 25px;
-		text-align: center;
-	}
-
-	.newsletter-popup-layout-2-columns .newsletter-popup-form .razzi-svg-icon {
-		display: none;
-	}
-
-	.newsletter-popup-layout-2-columns .n-close {
-		display: flex;
-		justify-content: center;
-	}
-
-	.razzi-products-list-widget li {
-		width: 100%;
-	}
-}
-
-@media (max-width: 375px) {
-	.footer-widgets-area-diff .diff-row>* {
-		width: 100%;
-	}
-}
-
-.topbar-mobile .topbar-menu {
-	margin-left: -8px;
-	margin-right: -8px;
-}
-
-.topbar-mobile .topbar-menu li a {
-	padding: 0 8px;
-}
-
-.topbar-mobile p {
-	margin: 0;
-}
-
-.mobile-topbar-items {
-	display: flex;
-	justify-content: center;
-	width: 100%;
-}
-
-.razzi-topbar__text span:not(.razzi-svg-icon) {
-	margin-right: 0 !important;
-}
-
-.header-mobile {
-	height: 60px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 15px;
-}
-
-.header-mobile .mobile-menu a {
-	color: var(--rz-header-color-dark);
-	transition: none;
-	display: flex;
-	margin-top: 2px;
-}
-
-.header-mobile .header-cart {
-	padding-right: 5px;
-}
-
-.header-mobile .mobile-search .razzi-svg-icon {
-	font-size: 18px;
-}
-
-.header-mobile>* {
-	line-height: 1;
-}
-
-.header-mobile .site-branding {
-	flex: auto;
-	text-align: center;
-}
-
-.header-mobile.header-no-menu .site-branding {
-	text-align: left;
-}
-
-.header-mobile .razzi-history-back,
-.header-mobile .mobile-menu {
-	flex: 1;
-}
-
-.mobile-header-icons {
-	display: flex;
-	align-items: center;
-	justify-content: flex-end;
-	line-height: 1;
-	flex: 1;
-}
-
-.mobile-header-icons .search-icon {
-	color: var(--rz-header-color-dark);
-}
-
-.mobile-header-icons>* {
-	margin-left: 15px;
-}
-
-.mobile-header-icons>*:first-child {
-	margin-left: 0;
-}
-
-.ra-menu-mobile-modal .menu-mobile-panel-content {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow-y: auto;
-}
-
-.ra-menu-mobile-modal .modal-header {
-	justify-content: flex-start;
-}
-
-.ra-menu-mobile-modal .modal-content {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	align-items: flex-start;
-	padding-top: 60px;
-	padding-bottom: 0;
-}
-
-.ra-menu-mobile-modal .content-footer {
-	padding: 40px 0;
-}
-
-.ra-menu-mobile-modal ul.nav-menu ul {
-	padding-left: 5px;
-}
-
-.ra-menu-mobile-modal ul.nav-menu ul li a {
-	font-size: 20px;
-	line-height: 1.5;
-}
-
-.ra-menu-mobile-modal ul.nav-menu li.menu-item-has-children .toggle-menu-children {
-	display: block;
-}
-
-.ra-menu-mobile-modal ul.nav-menu li.menu-item-has-children>a {
-	padding-right: 25px;
-}
-
-.ra-menu-mobile-modal ul.nav-menu>li {
-	padding-left: 0;
-	width: 100%;
-	flex-direction: column;
-	align-items: flex-start;
-}
-
-.ra-menu-mobile-modal ul.nav-menu>li>a {
-	font-size: 24px;
-}
-
-.ra-menu-mobile-modal ul.nav-menu a {
-	line-height: 36px;
-}
