@@ -1,96 +1,79 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>DANH MỤC SẢN PHẨM</title>
-    <style>
-        .product-contener p {
-            text-align: center;
-            color:#f72c1a;
-            font-size:22px;
-
-        }
-        .product-list {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            justify-content: center;
-            /* Căn giữa theo chiều ngang */
-            align-items: center;
-            /* Căn giữa theo chiều dọc */
-        }
-        .product-item {
-            border: 1px solid #ccc;
-            padding: 10px 20px;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            /* Căn ảnh và văn bản theo chiều dọc */
-        }
-
-        .product-item a {
-            text-decoration: none;
-            /* Loại bỏ gạch chân từ liên kết */
-            color: #fa6f6f;
-            /* Màu chữ của liên kết */
-            font-weight: 500;
-            font-size: 18px;
-        }
-        .product-item a:hover {
-            color: #ff2e1b;
-        }
-
-        .product-item img {
-            max-width: 120px;
-            /* Điều chỉnh kích thước ảnh */
-            margin-right: 10px;
-            /* Khoảng cách giữa ảnh và văn bản */
-        }
-
-        @keyframes blink {
-            0% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.3;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        .product-contener p {
-            animation: blink 3s infinite;
-        }
-       
-    </style>
+    <title>Thanh toán</title>
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
-
 <body>
-    <div class="product-contener">
-        <p>DANH MỤC SẢN PHẨM</p>
-        <ul class="product-list">
+    <h1>Thanh toán</h1>
 
-            <li class="product-item">
-                <img src="img/imgDMSP.png" alt="Sản phẩm 1">
-                <a href="#">Đầm Body</a>
-            </li>
-            <li class="product-item">
-                <img src="img/imgDMSP2.png" alt="Sản phẩm 2">
-                <a href="#">Váy Đầm</a>
-            </li>
-            <li class="product-item">
-                <img src="img/imgDMSP3.png" alt="Sản phẩm 3">
-                <a href="#">Áo Sơ Mi</a>
-            </li>
-            <li class="product-item">
-                <img src="img/imgDMSP4.png" alt="Sản phẩm 4">
-                <a href="#">Quần Jean</a>
-            </li>
-        </ul>
-    </div>
+    <form id="payment-form">
+        <div>
+            <label for="card-element">
+                Thẻ tín dụng hoặc thẻ ghi nợ
+            </label>
+            <div id="card-element">
+                <!-- Thẻ sẽ được tạo bởi Stripe -->
+            </div>
+        </div>
+
+        <button type="submit">Thanh toán</button>
+    </form>
+
+    <script>
+        // Tạo đối tượng Stripe với khóa công khai của bạn
+        var stripe = Stripe('YOUR_PUBLISHABLE_KEY');
+
+        // Tạo đối tượng Elements
+        var elements = stripe.elements();
+
+        // Tạo một trình tạo thẻ và điều chỉnh giao diện người dùng
+        var card = elements.create('card');
+        card.mount('#card-element');
+
+        // Xử lý sự kiện gửi biểu mẫu thanh toán
+        var form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Vô hiệu hóa nút thanh toán để tránh gửi nhiều lần
+            form.querySelector('button').disabled = true;
+
+            // Tạo token cho thẻ tín dụng hoặc thẻ ghi nợ
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Xử lý lỗi nếu có
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Gửi token đến máy chủ để xử lý thanh toán
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        // Xử lý token trả về từ Stripe
+        function stripeTokenHandler(token) {
+            // Gửi token đến máy chủ để xử lý thanh toán
+            // Thay thế URL bằng đường dẫn đến máy chủ của bạn
+            fetch('YOUR_SERVER_ENDPOINT', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({token: token.id}),
+            })
+            .then(function(response) {
+                // Xử lý phản hồi từ máy chủ
+                if (response.ok) {
+                    // Thanh toán thành công, chuyển hướng hoặc hiển thị thông báo thành công
+                } else {
+                    // Xử lý lỗi nếu có
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = 'Có lỗi xảy ra trong quá trình thanh toán.';
+                }
+            });
+        }
+    </script>
 </body>
-
 </html>
