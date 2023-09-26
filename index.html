@@ -4,6 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title> NTKQ &#8211; fashion</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -140,7 +150,7 @@
                 </div>
             </div>
         </div>
-       
+
 
         <!-- Dien thoai -->
         <div class="header-mobile  header-contents logo-default hidden-md hidden-lg">
@@ -266,14 +276,87 @@
                     <a href="#">Quần Jean</a>
                 </li>
             </ul>
+
         </div>
+        <img class="imgnen" src="img/imgNen.png">
+
+        <div class="productt-contener2 ">
+            <p>SẢN PHẨM MỚI</p>
+            <div class="autoplay">
+                <div>
+                    <div class="product">
+                        <img src="img/img1.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 4</h1>
+                        <h2>Giá: $120</h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="product">
+                        <img src="img/img2.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 4</h1>
+                        <h2>Giá: $120</h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="product">
+                        <img src="img/img3.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 4</h1>
+                        <h2>Giá: $120</h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="product">
+                        <img src="img/img4.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 4</h1>
+                        <h2>Giá: $120</h2>
+                    </div>
+                </div>
+                <div>
+                    <div class="product">
+                        <img src="img/img5.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 4</h1>
+                        <h2>Giá: $120</h2>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div>
+                    <div class="product">
+                        <img src="img/img3.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 2</h1>
+                        <h2>Giá: $150</h2>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div>
+                    <div class="product">
+                        <img src="img/img6.jpg" alt="Sản phẩm 4">
+                        <h1>Tên sản phẩm 3</h1>
+                        <h2>Giá: $80</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Include the Slick Carousel script and initialize it -->
+        <script>
+            $(document).ready(function () {
+                $('.autoplay').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    prevArrow: '<button class="slick-prev "><span class="arrow">  &#171; </span></button>',
+                    nextArrow: '<button class="slick-next "><span class="arrow">  &#187; </span></button>'
+                });
+            });
+        </script>
+        <img class="imgnen2" src="img/imgNen.png">
 
 
 
 
-
-        <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br> <br><br>
-        <br><br> <br><br> <br><br><br><br> <br><br> <br><br> <br><br> <br><br>
+     <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+    
 
 
     </boder>
