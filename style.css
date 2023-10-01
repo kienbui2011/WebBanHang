@@ -696,9 +696,11 @@ textarea {
 }
 
 .login h2 {
-	font-size: 40px;
+	font-size: 39px;
 	font-weight: 900;
 	margin-bottom: 60px;
+	margin-left: 50px;
+
 
 }
 
@@ -891,13 +893,13 @@ img {
 .imgnen {
 	margin-top: 25px;
 	width: 50%;
-	height: 50px;
+	height: 60px;
 	margin-left: 24%;
 }
 .imgnen2 {
 	margin-top: -30px;
 	width: 50%;
-	height: 50px;
+	height: 60px;
 	margin-left: 24%;
 	transform: scaleY(-1);
 	
@@ -914,10 +916,13 @@ img {
 	margin-left: 85px;
 	margin-right: 40px;
 	margin-top: -250px;
+
 }
 
 .autoplay .product {
 	text-align: center;
+	
+	
 }
 
 .autoplay .product h1,
@@ -947,18 +952,20 @@ h2 {
 
 .slick-next {
 	right: 10px;
+	
 }
 
 .arrow:hover {
 
 
-	color: rgb(91, 88, 88);
+	color: rgb(149, 145, 145);
 }
 
 .arrow {
 	font-size: 40px;
 	color: #fb4848;
 	border: 50%;
+	
 }
 
 /* .slick-prev::before {
