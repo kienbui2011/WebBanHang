@@ -1026,14 +1026,14 @@ h2 {
 .productt-item a {
 	text-decoration: none;
 	/* Loại bỏ gạch chân từ liên kết */
-	color: #fa6f6f;
+	color:#f98888;
 	/* Màu chữ của liên kết */
 	font-weight: 500;
 	font-size: 18px;
 }
 
 .productt-item a:hover {
-	color: #ff2e1b;
+	color: #ff2612;
 }
 
 .productt-item img {
