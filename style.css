@@ -59,6 +59,10 @@ label {
 	background-color: #000;
 	color: white;
 }
+.payment-content-right a {
+	color: rgb(252, 138, 136);
+	margin-top: 60px;
+}
 
 
 
@@ -156,7 +160,7 @@ textarea {
 }
 
 .delivery-content-left form a {
-	color: rgb(231, 107, 107);
+	color:rgb(252, 138, 136);
 	font-size: 15px;
 	padding-left: 10px;
 }
@@ -689,6 +693,18 @@ textarea {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .box-login {
 	margin-bottom: -10px;
 	margin-top: auto;
@@ -963,7 +979,7 @@ h2 {
 
 .arrow {
 	font-size: 40px;
-	color: #fb4848;
+	color:rgb(233, 109, 109);
 	border: 50%;
 	
 }
@@ -1045,6 +1061,54 @@ h2 {
 	animation: blink 3s infinite;
 
 }
+
+/* INDEX */
+.introduce{
+	margin-top: 80px;
+	padding: 60px 130px;
+	background-color: #f7f7f7;
+}
+.introduce-content-left{
+	width: 45%;
+	background-image: url('img/img.Intro2.jpeg');
+}
+
+.introduce-content-left h2{
+	color: #ffffff;
+	font-weight: bold;
+	margin-left: 20px;
+	margin-top: 200px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.introduce-content-left svg{
+	width: 40px;
+	margin-top: -450px;
+	margin-left: 50px;
+	
+}
+
+.introduce-content-left h2 a{
+		display: inline-block;
+		padding: 10px 20px; /* Điều chỉnh kích thước của nút theo ý muốn */
+		background-color: #ffffff; /* Màu nền trắng */
+		color: #3c3b3b; /* Màu chữ đen */
+		text-decoration: none;
+		border: 0.2px solid #000000; /* Đường viền đen */
+	    font-size: small;
+		font-weight: 100;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+
+	}
+	
+	
+
+.introduce-content-right{
+	width: 55%;
+	margin-left: 100px;
+}
+
 
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
