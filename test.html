@@ -1,147 +1,65 @@
 <!DOCTYPE html>
 <html>
-
 <head>
- 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
-
-  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
-    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    .autoplay .product img {
-      max-width: 80%;
-      height: auto;
-      object-fit: cover;
-    }
-
-    .autoplay {
-    
-      margin-right: -40px;
-      padding-right: 50px;
-    }
-
-    .autoplay .product {
-      text-align: center;
-    }
-
-    .autoplay .product h1,
-    h2 {
-      margin-right: 50px;
-      font-size: 15px;
-    }
-    .slick-prev,
-    .slick-next {
-      font-size: 24px;
-      position: absolute;
-    
-    }
-
-    .slick-prev {
-      left: 10px;
-    }
-    .slick-next {
-      right: 10px;
-    }
-    .arrow:hover {
-
-
-      color: rgb(91, 88, 88);
-    }
-
-    .arrow {
-      font-size: 40px;
-      color: #fb4848;
-      border: 50%;
-    }
-
-    /* .slick-prev::before {
-     
-     content:'\f100';
-     color:  rgb(91, 88, 88);
-    }
-
-    .slick-next::before {
-      content: '\f101';
-      color:  rgb(91, 88, 88);
-    } */
-  </style>
+    <title>Quên mật khẩu</title>
+   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div class="productt-contener2 ">
-    <p>SẢN PHẨM MỚI</p>
-    <div class="autoplay">
-      <div>
-        <div class="product">
-          <img src="img/img1.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 4</h1>
-          <h2>Giá: $120</h2>
-        </div>
-      </div>
-      <div>
-        <div class="product">
-          <img src="img/img2.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 4</h1>
-          <h2>Giá: $120</h2>
-        </div>
-      </div>
-      <div>
-        <div class="product">
-          <img src="img/img3.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 4</h1>
-          <h2>Giá: $120</h2>
-        </div>
-      </div>
-      <div>
-        <div class="product">
-          <img src="img/img4.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 4</h1>
-          <h2>Giá: $120</h2>
-        </div>
-      </div>
-      <div>
-        <div class="product">
-          <img src="img/img5.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 4</h1>
-          <h2>Giá: $120</h2>
-        </div>
-      </div>
-      <!-- Slide 2 -->
-      <div>
-        <div class="product">
-          <img src="img/img3.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 2</h1>
-          <h2>Giá: $150</h2>
-        </div>
-      </div>
-      <!-- Slide 3 -->
-      <div>
-        <div class="product">
-          <img src="img/img6.jpg" alt="Sản phẩm 4">
-          <h1>Tên sản phẩm 3</h1>
-          <h2>Giá: $80</h2>
-        </div>
-      </div>
-     
-    </div>
-  </div>
-  <!-- Include the Slick Carousel script and initialize it -->
-  <script>
-    $(document).ready(function () {
-      $('.autoplay').slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 3000,
-        prevArrow: '<button class="slick-prev "><span class="arrow">  &#171; </span></button>',
-        nextArrow: '<button class="slick-next "><span class="arrow">  &#187; </span></button>'
-      });
-    });
-  </script>
-</body>
+    <h2>Quên mật khẩu</h2>
+    <p>Nhập địa chỉ email của bạn để khôi phục mật khẩu:</p>
+    
+    <form id="forgotPasswordForm" onsubmit="return validateForm()" action="process_forgot_password.php" method="post">
+      <p class="box-login">
+        <input type="email" id="email" name="email" placeholder="Email Address *" required style="width: 100px;"><br><br>
+        <input type="submit" value="Gửi liên kết khôi phục">
+      </p>
+    </form>
 
+    <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            // Kiểm tra xem địa chỉ email có hợp lệ hay không (đơn giản)
+            if (!email || !email.includes("@")) {
+                alert("Vui lòng nhập một địa chỉ email hợp lệ.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
 </html>
+
+
+<div class="site-content">
+  <div class="login">
+    <h2>Quên mật khẩu</h2>
+      <form action="process_forgot_password.php" id="forgotPasswordForm" onsubmit="return validateForm()" method="post">
+          <p class="box-login">
+              <label for="username"></label>
+              <input type="text" id="username" placeholder="Email Address *" name="username" required style="width: 100%;"><br><br>
+          </p>
+          <p>
+              <label class="checkBox">
+                  <input class="" name="rememberme" type="checkbox" id="rememberme" value="forever" />
+                  <a>Remember me</a>
+              </label>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <label>
+                  <a href="register.html"><u>Đăng ký</u></a>
+              </label>
+          </p>
+          <input type="submit" value="Khôi phục">
+      </form>
+      <script>
+        function validateForm() {
+            var email = document.getElementById("email").value;
+            // Kiểm tra xem địa chỉ email có hợp lệ hay không (đơn giản)
+            if (!email || !email.includes("@")) {
+                alert("Vui lòng nhập một địa chỉ email hợp lệ.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+  </div>
+</div>
