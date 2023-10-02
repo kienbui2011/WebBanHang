@@ -59,6 +59,7 @@ label {
 	background-color: #000;
 	color: white;
 }
+
 .payment-content-right a {
 	color: rgb(252, 138, 136);
 	margin-top: 60px;
@@ -160,7 +161,7 @@ textarea {
 }
 
 .delivery-content-left form a {
-	color:rgb(252, 138, 136);
+	color: rgb(252, 138, 136);
 	font-size: 15px;
 	padding-left: 10px;
 }
@@ -542,6 +543,55 @@ textarea {
 	margin-left: 49px;
 }
 
+.info {
+	margin-top: 20px;
+	margin-left: -120px;
+}
+.info .container0 {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.info .container0 table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 20px;
+
+}
+
+.info .container0 table th {
+	
+	padding: 7px;
+	text-align: center;
+	
+	font-weight: bold;
+
+}
+
+.info .container0 table th:hover {
+
+
+	background-color: #fcd9d9;
+	color: #fc6e6e;
+
+}
+
+.info .container0 .hidden {
+	display: none;
+}
+
+.content3 {
+	margin-top: 10px;
+}
+
+.content3 p {
+	margin-bottom: 10px;
+}
+
 
 
 
@@ -912,20 +962,21 @@ img {
 	height: 60px;
 	margin-left: 24%;
 }
+
 .imgnen2 {
 	margin-top: -30px;
 	width: 50%;
 	height: 60px;
 	margin-left: 24%;
 	transform: scaleY(-1);
-	
+
 }
 
 .autoplay .product img {
 	max-width: 80%;
 	height: auto;
 	object-fit: cover;
-	
+
 }
 
 .autoplay {
@@ -937,8 +988,8 @@ img {
 
 .autoplay .product {
 	text-align: center;
-	
-	
+
+
 }
 
 .autoplay .product h1,
@@ -968,7 +1019,7 @@ h2 {
 
 .slick-next {
 	right: 10px;
-	
+
 }
 
 .arrow:hover {
@@ -979,9 +1030,9 @@ h2 {
 
 .arrow {
 	font-size: 40px;
-	color:rgb(233, 109, 109);
+	color: rgb(233, 109, 109);
 	border: 50%;
-	
+
 }
 
 /* .slick-prev::before {
@@ -995,12 +1046,12 @@ h2 {
 	color:  rgb(91, 88, 88);
   } */
 
-  .productt-contener2 p {
+.productt-contener2 p {
 	margin-top: 9px;
 	font-size: 30px;
 	margin-left: 42%;
 	color: #000;
-  }
+}
 
 
 
@@ -1026,7 +1077,7 @@ h2 {
 .productt-item a {
 	text-decoration: none;
 	/* Loại bỏ gạch chân từ liên kết */
-	color:#f98888;
+	color: #f98888;
 	/* Màu chữ của liên kết */
 	font-weight: 500;
 	font-size: 18px;
@@ -1041,6 +1092,7 @@ h2 {
 	/* Điều chỉnh kích thước ảnh */
 	margin-right: 10px;
 	/* Khoảng cách giữa ảnh và văn bản */
+	image-rendering: pixelated;
 }
 
 @keyframes blink {
@@ -1063,17 +1115,20 @@ h2 {
 }
 
 /* INDEX */
-.introduce{
+.introduce {
 	margin-top: 80px;
 	padding: 60px 130px;
 	background-color: #f7f7f7;
 }
-.introduce-content-left{
+
+.introduce-content-left {
 	width: 45%;
 	background-image: url('img/img.Intro.jpg');
+	image-rendering: pixelated;
+	position: relative;
 }
 
-.introduce-content-left h2{
+.introduce-content-left h2 {
 	color: #ffffff;
 	font-weight: bold;
 	margin-left: 20px;
@@ -1082,31 +1137,65 @@ h2 {
 
 }
 
-.introduce-content-left svg{
+.introduce-content-left svg {
 	width: 40px;
 	margin-top: -450px;
 	margin-left: 50px;
-	
+
 }
 
-.introduce-content-left h2 a{
-		display: inline-block;
-		padding: 10px 20px; /* Điều chỉnh kích thước của nút theo ý muốn */
-		background-color: #ffffff; /* Màu nền trắng */
-		color: #3c3b3b; /* Màu chữ đen */
-		text-decoration: none;
-		border: 0.2px solid #000000; /* Đường viền đen */
-	    font-size: small;
-		font-weight: 100;
-		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
+.introduce-content-left h2 a {
+	display: inline-block;
+	padding: 10px 20px;
+	/* Điều chỉnh kích thước của nút theo ý muốn */
+	background-color: #ffffff;
+	/* Màu nền trắng */
+	color: #3c3b3b;
+	/* Màu chữ đen */
+	text-decoration: none;
+	border: 0.2px solid #000000;
+	/* Đường viền đen */
+	font-size: small;
+	font-weight: 100;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0);
 
-	}
-	
-	
+}
 
-.introduce-content-right{
+
+
+.introduce-content-left h2 a:hover {
+	display: inline-block;
+	padding: 10px 20px;
+	/* Điều chỉnh kích thước của nút theo ý muốn */
+	background-color: #080505;
+	/* Màu nền trắng */
+	color: #ffffff;
+	/* Màu chữ đen */
+	text-decoration: none;
+	border: 0.2px solid #ffffff;
+	/* Đường viền đen */
+	font-size: small;
+	font-weight: 100;
+	text-shadow: 0px 0px 20px white;
+	box-shadow: 0 0 20px #fcfcfc;
+	transform: scale(1.1);
+}
+
+
+.introduce-content-right {
 	width: 55%;
 	margin-left: 100px;
+}
+
+.introduce-content-right b {
+	font-weight: bold;
+}
+
+.introduce-content-right u {
+	font-weight: bold;
+	align-items: center;
+	margin-left: 45%;
+	font-family: Florence, cursive;
 }
 
 
