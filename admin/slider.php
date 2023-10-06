@@ -1,12 +1,13 @@
 <section class="admin-content">
     <div class="admin-content-left">
-        <a href="">- Bảng Thống Kê</a><br>
-        <a href="">- Quản Lí Khách Hàng</a><br>
-        <a href="">- Quản Lí Nhân Viên</a><br>
-        <a href="">- Quản Trị Viên</a><br>
-        <a href="">- Quản Lí Đơn Hàng</a>
 
         <ul>
+            <li><a href="">- Bảng Thống Kê</a></li>
+            <li><a href="">- Quản Lí Khách Hàng</a></li>
+            <li><a href="">- Quản Lí Nhân Viên</a></li>
+            <li><a href="">- Quản Trị Viên</a></li>
+            <li><a href="">- Quản Lí Đơn Hàng</a></li>
+            
             <li><a href="cartegoryadd.php">- Danh mục</a>
                 <ul>
                     <li> <a href="cartegoryadd.php">Thêm danh mục</a> </li>
@@ -35,9 +36,8 @@
                 </ul>
 
             </li>
-
+            <li><a href="">- Quản Lí Lương</a></li>
+            <li><a href="">- Đăng Xuất</a></li>
         </ul>
-        <a href="">- Quản Lí Lương</a><br>
-        <a href="">- Đăng Xuất</a>
 
     </div>

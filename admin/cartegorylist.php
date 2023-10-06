@@ -25,21 +25,26 @@ $show_cartegory = $cartegory->show_cartegory();
                 <th><b>Tuỳ Biến</b></th>
             </tr>
             <?php
-            if ($show_cartegory) {$i=0;
-                while ($result = $show_cartegory->fetch_assoc()) {$i++ ;
+            if ($show_cartegory) {
+                $i = 0;
+                while ($result = $show_cartegory->fetch_assoc()) {
+                    $i++;
+                    // Determine the CSS class for row color based on even or odd
+                    $row_class = ($i % 2 == 0) ? 'even' : 'odd';
             ?>
-                    <tr>
-                        <th> <?php echo $i?></th>
-                        <th><?php echo $result[ 'cartegory_id']?></th>
-                        <th><?php echo $result[ 'cartegory_name']?></th>
-                        <th><a href="cartegoryedit.php?cartegory_id=<?php echo $result['cartegory_id']?> ">Sửa</a> | 
-                        <a href="cartegorydelete.php?cartegory_id= <?php echo $result['cartegory_id']?>">Xoá</a></th>
+                    <tr class="<?php echo $row_class; ?>">
+                        <th><?php echo $i; ?></th>
+                        <th><?php echo $result['cartegory_id']; ?></th>
+                        <th><?php echo $result['cartegory_name']; ?></th>
+                        <th><a href="cartegoryedit.php?cartegory_id=<?php echo $result['cartegory_id']; ?>">Sửa</a> |
+                            <a href="cartegorydelete.php?cartegory_id=<?php echo $result['cartegory_id']; ?>">Xoá</a>
+                        </th>
                     </tr>
             <?php
-
                 }
             }
             ?>
+
         </table>
     </div>
 </div>

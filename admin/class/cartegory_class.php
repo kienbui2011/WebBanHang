@@ -15,7 +15,8 @@ class cartegory
     {
         $query = " INSERT INTO tbl_cartegory (cartegory_name)  VALUE (' $cartegory_name ') ";
         $result = $this->db->insert($query);
-        return $result;
+        header('Location:cartegorylist.php');
+       
     }
     public function show_cartegory()
     {

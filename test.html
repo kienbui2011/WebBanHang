@@ -1,197 +1,52 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bảng với nền xám cho dòng 2</title>
     <style>
-        .info .container0 {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .info .container0 table {
+        /* Định nghĩa màu nền xám cho bảng */
+        table {
+            background-color: #f2f2f2; /* Màu xám cho bảng */
             width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-
+            border-collapse: collapse; /* Loại bỏ khoảng trắng giữa các ô */
         }
 
-        .info .container0 table th {
-            border: 1px solid #ccc;
-            padding: 7px;
-            text-align: center;
-            background-color: #f2f2f2;
-            font-weight: bold;
-
-        }
-        .info .container0 table th:hover {
-            
-           
-            background-color: #ffb6b6;
-         color: #ff4c4c;
-
+        /* Định nghĩa màu nền trắng cho các ô dữ liệu */
+        table td, table th {
+            background-color: #fff; /* Màu trắng cho các ô dữ liệu */
+            padding: 8px; /* Khoảng cách giữa nội dung và biên của ô */
+            border: 1px solid #ccc; /* Đường viền cho các ô */
         }
 
-        .info .container0 .hidden {
-            display: none;
+        /* Định nghĩa màu nền xám cho dòng thứ 2 */
+        table tr:nth-child(2) {
+            background-color: #ddd; /* Màu xám nhạt cho dòng thứ 2 */
         }
-
-        .content3 {
-            margin-top: 10px;
-        }
-
-        .content3 p {
-            margin-bottom: 10px;
-        }
-
-       
     </style>
 </head>
-
 <body>
-    <div class="info">
-        <div class="container0">
-            <table>
-                <tr>
-                    <th class="clickable" data-toggle="gioithieu">GIỚI THIỆU</th>
-                    <th class="clickable" data-toggle="chitiet">CHI TIẾT SẢN PHẨM</th>
-                    <th class="clickable" data-toggle="baoquan">BẢO QUẢN</th>
-                </tr>
-            </table>
-
-            <div id="gioithieu" class="hidden" style="display: inline;">
-                <div class="content3">
-                    <table style="width:300px;">
-                        <tr>
-                            <p>- Kiểu dáng: Với thiết kế đuôi cá mềm mại, nhấn nhá eo buộc nơ rũ điệu đà </p>
-                            <p>- Chất liệu: Habutai siêu nhẹ, mềm mại, nhẹ bay, co giãn nhẹ. </p>
-
-                        </tr>
-                        <tr>
-                            <b> Thông tin mẫu:</b>
-                            <td> <b>Chiều cao:</b></td>
-                            <td> 167 cm </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><b> Cân nặng:</b> </td>
-                            <td>50 kg</td>
-                        </tr>
-
-                        <tr>
-                            <td><b> Số đo 3 vòng:</b> </td>
-                            <td>83-65-93 cm</td>
-                        </tr>
-                        <tr>
-                            <td><b> Mẫu mặc:</b> </td>
-                            <td>size M</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div id="chitiet" class="hidden">
-                <div class="content3">
-                    <table style="width:300px;">
-                        <tr>
-                            <td> <b>Dòng sản phẩm: </b></td>
-                            <td> Ladies </td>
-
-                        </tr>
-                        <tr>
-                            <td><b>Nhóm sản phẩm:</b> </td>
-                            <td>Không tay</td>
-                        </tr>
-                        <tr>
-                            <td><b> Kiểu dáng:</b> </td>
-                            <td>Đầm xoè</td>
-                        </tr>
-                        <tr>
-                            <td><b> Độ dài:</b> </td>
-                            <td>Ngang gối</td>
-                        </tr>
-
-                        <tr>
-                            <td><b> Họa tiết:</b> </td>
-                            <td>Hoa</td>
-                        </tr>
-
-                        <tr>
-                            <td><b>Chất liệu:</b> </td>
-                            <td>Vải cotton</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-
-            <div id="baoquan" class="hidden">
-                <div class="content3">
-                    * Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt
-                    đối
-                    không giặt ướt. <br><br>
-                    * Vải dệt kim: sau khi giặt sản phẩm phải được phơi ngang tránh bai giãn.<br><br>
-                    * Vải voan, lụa, chiffon nên giặt bằng tay.<br><br>
-                    * Vải thô, tuytsi, kaki không có phối hay trang trí đá cườm thì có thể giặt máy.<br><br>
-                    * Vải thô, tuytsi, kaki có phối màu tương phản hay trang trí voan, lụa, đá cườm thì cần giặt
-                    tay.<br><br>
-                    * Đồ Jeans nên hạn chế giặt bằng máy giặt vì sẽ làm phai màu jeans. Nếu giặt thì nên lộn trái sản
-                    phẩm
-                    khi giặt, đóng khuy, kéo khóa, không nên giặt chung cùng đồ sáng màu, tránh dính màu vào các sản
-                    phẩm
-                    khác.<br><br>
-                    * Các sản phẩm cần được giặt ngay không ngâm tránh bị loang màu, phân biệt màu và loại vải để tránh
-                    trường hợp vải phai. Không nên giặt sản phẩm với xà phòng có chất tẩy mạnh, nên giặt cùng xà phòng
-                    pha
-                    loãng.<br><br>
-                    * Các sản phẩm có thể giặt bằng máy thì chỉ nên để chế độ giặt nhẹ, vắt mức trung bình và nên phân
-                    các
-                    loại sản phẩm cùng màu và cùng loại vải khi giặt.<br><br>
-                    * Nên phơi sản phẩm tại chỗ thoáng mát, tránh ánh nắng trực tiếp sẽ dễ bị phai bạc màu, nên làm khô
-                    quần
-                    áo bằng cách phơi ở những điểm gió sẽ giữ màu vải tốt hơn.<br><br>
-                    * Những chất vải 100% cotton, không nên phơi sản phẩm bằng mắc áo mà nên vắt ngang sản phẩm lên dây
-                    phơi
-                    để tránh tình trạng rạn vải.<br><br>
-                    * Khi ủi sản phẩm bằng bàn là và sử dụng chế độ hơi nước sẽ làm cho sản phẩm dễ ủi phẳng, mát và
-                    không
-                    bị cháy, giữ màu sản phẩm được đẹp và bền lâu hơn. Nhiệt độ của bàn là tùy theo từng loại
-                    vải.<br><br>
-
-                </div>
-            </div>
-        </div>
-
-        <script>
-            const clickableTh = document.querySelectorAll(".clickable");
-
-            clickableTh.forEach(th => {
-                th.addEventListener("click", () => {
-                    const targetId = th.getAttribute("data-toggle");
-                    const targetDiv = document.getElementById(targetId);
-
-                    if (targetDiv) {
-                        // Hide all content divs
-                        document.querySelectorAll(".hidden").forEach(div => {
-                            div.style.display = "none";
-                        });
-
-                        // Show the target content div
-                        targetDiv.style.display = "block";
-
-                     
-                        // Change background color of the clicked header
-                        clickableTh.forEach(header => {
-                            header.style.backgroundColor = "";
-                        });
-                        th.style.backgroundColor = " #ffb6b6"; // Change to the desired color
-                    }
-                });
-            });
-        </script>
-    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+            <tr>
+                <td>Data 4</td>
+                <td>Data 5</td>
+                <td>Data 6</td>
+            </tr>
+            <!-- Thêm các hàng và cột khác tùy thích -->
+        </tbody>
+    </table>
 </body>
-
 </html>

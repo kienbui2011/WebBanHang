@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h1>Thêm danh mục</h1>
         <form action="" method="POST">
             <input required name="cartegory_name" type="text" placeholder="Nhập tên danh mục" value="<?php echo $result['cartegory_name'] ?>"></input>
-            <button type="submit">Thêm</button>
+            <button type="submit">Sửa</button>
         </form>
     </div>
 </div>

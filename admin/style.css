@@ -46,41 +46,61 @@ body {
 
 
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Battambang&display=swap");
 
 svg {
-	font-family: "Battambang", sans-serif;
-	width: 100%; height: 100%;
-}
-svg text {
-	animation: stroke 8s infinite alternate;
-	stroke-width: 2;
-	stroke: #365FA0;
-	font-size: 60px;
-}
-@keyframes stroke {
-	0%   {
-		fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1);
-		stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
-	}
-	70%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); }
-	80%  {fill: rgba(72,138,204,0); stroke: rgba(54,95,160,1); stroke-width: 3; }
-	100% {
-		fill: rgba(72,138,204,1); stroke: rgba(54,95,160,0);
-		stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
-	}
+    font-family: "Battambang", sans-serif;
+    width: 100%;
+    height: 100%;
 }
 
-.wrapper {background-color: #FFFFFF};
+svg text {
+    animation: stroke 10s infinite alternate;
+    stroke-width: 2;
+    stroke: #365FA0;
+    font-size: 90px;
+}
+
+@keyframes stroke {
+    0% {
+        fill: rgba(101, 154, 207, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-dashoffset: 25%;
+        stroke-dasharray: 0 50%;
+        stroke-width: 2;
+    }
+
+    70% {
+        fill: rgba(114, 165, 215, 0);
+        stroke: rgba(54, 95, 160, 1);
+    }
+
+    80% {
+        fill: rgba(72, 138, 204, 0);
+        stroke: rgba(54, 95, 160, 1);
+        stroke-width: 3;
+    }
+
+    100% {
+        fill: rgba(72, 138, 204, 1);
+        stroke: rgba(84, 116, 168, 0);
+        stroke-dashoffset: -25%;
+        stroke-dasharray: 50% 0;
+        stroke-width: 0;
+    }
+}
+
+.wrapper {
+    background-color: #ffdfdf;
+    height: 110px;
+}
 
 header {
-
-    height: 50px;
-    width: 100vw;
-    border-bottom: 2px solid coral;
     text-align: center;
 
 }
+
 /* 
 header h2 {
     padding-top: 10px;
@@ -93,26 +113,17 @@ header h2 {
 }
 
 .admin-content-left {
-    background-color: aliceblue;
+    background-color: rgb(213, 234, 254);
     width: 25%;
     height: 100vh;
     padding: 30px 0 0 12px;
+    margin-top: -50px;
 
 }
-
-.admin-content-left>a {
-    font-weight: bold;
-    font-size: 23px;
-    margin-top: 6px;
-}
-
-.admin-content-left>a:hover {
-    color: coral;
-}
-
 .admin-content-left>ul>li>a {
     font-weight: bold;
-    font-size: 24px;
+    font-size:25px;
+    color: rgb(71, 70, 70);
 }
 
 .admin-content-left>ul>li>a:hover {
@@ -167,21 +178,41 @@ header h2 {
 .admin-content-right-cartegory-list table {
     width: 99%;
     text-align: center;
-
     margin-top: 20px;
+}
+
+
+
+
+/* Define styles for even rows (2nd, 4th, 6th, etc.) */
+.admin-content-right-cartegory-list table tr.even {
+    background-color: #f2f2f2; /* Gray background color for even rows */
+}
+
+/* Define styles for odd rows (1st, 3rd, 5th, etc.) */
+.admin-content-right-cartegory-list table tr.odd {
+    background-color: #ffffff; /* White background color for odd rows */
+}
+.admin-content-right-cartegory-list table tr:nth-child(1){
+    background-color:rgb(170, 221, 242);
 }
 
 .admin-content-right-cartegory-list table tr th,
 td {
     border: 1px solid gray;
+    height: 25px;
+
 }
 
 .admin-content-right-cartegory-list table tr th {
     font-weight: 100;
+    height: 30px;
+
 }
 
 table {
     border-collapse: collapse;
+
 }
 
 .boild {
