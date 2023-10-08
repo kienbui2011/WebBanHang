@@ -1,52 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bảng với nền xám cho dòng 2</title>
-    <style>
-        /* Định nghĩa màu nền xám cho bảng */
-        table {
-            background-color: #f2f2f2; /* Màu xám cho bảng */
-            width: 100%;
-            border-collapse: collapse; /* Loại bỏ khoảng trắng giữa các ô */
-        }
-
-        /* Định nghĩa màu nền trắng cho các ô dữ liệu */
-        table td, table th {
-            background-color: #fff; /* Màu trắng cho các ô dữ liệu */
-            padding: 8px; /* Khoảng cách giữa nội dung và biên của ô */
-            border: 1px solid #ccc; /* Đường viền cho các ô */
-        }
-
-        /* Định nghĩa màu nền xám cho dòng thứ 2 */
-        table tr:nth-child(2) {
-            background-color: #ddd; /* Màu xám nhạt cho dòng thứ 2 */
-        }
-    </style>
+    <!-- Your other head elements go here -->
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Header 1</th>
-                <th>Header 2</th>
-                <th>Header 3</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Data 1</td>
-                <td>Data 2</td>
-                <td>Data 3</td>
-            </tr>
-            <tr>
-                <td>Data 4</td>
-                <td>Data 5</td>
-                <td>Data 6</td>
-            </tr>
-            <!-- Thêm các hàng và cột khác tùy thích -->
-        </tbody>
-    </table>
+    <section class="admin-content">
+        <div class="admin-content-left">
+    
+            <ul>
+                <li><a class="clickable" href="#">- Bảng Thống Kê</a></li>
+                <li><a class="clickable" href="#">- Quản Lí Khách Hàng</a></li>
+                <li><a class="clickable" href="#">- Quản Lí Nhân Viên</a></li>
+                <li><a class="clickable" href="#">- Quản Trị Viên</a></li>
+                <li><a class="clickable" href="#">- Quản Lí Đơn Hàng</a></li>
+                
+                <li><a href="cartegoryadd.php">- Danh mục</a>
+                    <ul>
+                        <li> <a href="cartegoryadd.php">Thêm danh mục</a> </li>
+                        <li> <a href="cartegorylist.php">Danh sách danh mục</a> </li>
+                    </ul>
+    
+                </li>
+                <li><a href="#">- Loại sản phẩm</a>
+                    <ul>
+                        <li> <a href="#">Thêm loại sản phẩm</a> </li>
+                        <li> <a href="#">Danh loại sản phẩm</a> </li>
+                    </ul>
+    
+                </li>
+                <li><a href="#">- Sản phẩm</a>
+                    <ul>
+                        <li> <a href="#">Thêm sản phẩm</a> </li>
+                        <li> <a href="#">Danh sách sản phẩm</a> </li>
+                    </ul>
+    
+                </li>
+                <li><a href="#">- Quản Lí Trang </a>
+                    <ul>
+                        <li> <a href="#">Quản Lí Slide </a> </li>
+                        <li> <a href="#">Quản Lí About Shop </a> </li>
+                    </ul>
+    
+                </li>
+                <li><a href="#">- Quản Lí Lương</a></li>
+                <li><a href="#">- Đăng Xuất</a></li>
+            </ul>
+            <script>
+                const clickableTh = document.querySelectorAll(".clickable");
+    
+                clickableTh.forEach(th => {
+                    th.addEventListener("click", () => {
+                        // Change background color of the clicked link
+                        clickableTh.forEach(header => {
+                            header.style.backgroundColor = "";
+                        });
+                        th.style.backgroundColor = "#fcd9d9"; // Change to the desired color
+                    });
+                });
+            </script>
+        </div>
+    </section>
 </body>
 </html>

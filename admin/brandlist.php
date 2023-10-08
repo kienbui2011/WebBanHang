@@ -2,14 +2,14 @@
 
 include "header.php";
 include "slider.php";
-include "class/cartegory_class.php";
+include "class/brand_class.php";
 
 ?>
 
 
 <?php
-$cartegory = new cartegory;
-$show_cartegory = $cartegory->show_cartegory();
+$brand = new brand;
+$show_brand = $brand->show_brand();
 
 ?>
 
@@ -21,23 +21,25 @@ $show_cartegory = $cartegory->show_cartegory();
             <tr class="boild">
                 <th><b>STT</b></th>
                 <th><b>ID</b></th>
+                <th><b>ID loại</b></th>
                 <th><b>Danh mục</b></th>
                 <th><b>Tuỳ Biến</b></th>
             </tr>
             <?php
-            if ($show_cartegory) {
+            if ($show_brand) {
                 $i = 0;
-                while ($result = $show_cartegory->fetch_assoc()) {
+                while ($result = $show_brand->fetch_assoc()) {
                     $i++;
                     // Determine the CSS class for row color based on even or odd
                     $row_class = ($i % 2 == 0) ? 'even' : 'odd';
             ?>
                     <tr class="<?php echo $row_class; ?>">
                         <th><?php echo $i; ?></th>
-                        <th><?php echo $result['cartegory_id']; ?></th>
+                        <th><?php echo $result['brand_id']; ?></th>
                         <th><?php echo $result['cartegory_name']; ?></th>
-                        <th><a href="cartegoryedit.php?cartegory_id=<?php echo $result['cartegory_id']; ?>">Sửa</a>&nbsp; |&nbsp;
-                            <a href="cartegorydelete.php?cartegory_id=<?php echo $result['cartegory_id']; ?>">Xoá</a>
+                        <th><?php echo $result['brand_name']; ?></th>
+                        <th><a href="brandedit.php?brand_id=<?php echo $result['brand_id']; ?>">Sửa</a>&nbsp; |&nbsp;
+                            <a href="branddelete.php?brand_id=<?php echo $result['brand_id']; ?>">Xoá</a>
                         </th>
                     </tr>
             <?php

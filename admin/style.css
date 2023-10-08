@@ -65,7 +65,7 @@ svg text {
 @keyframes stroke {
     0% {
         fill: rgba(101, 154, 207, 0);
-        stroke: rgba(54, 95, 160, 1);
+        stroke: rgb(182, 207, 246);
         stroke-dashoffset: 25%;
         stroke-dasharray: 0 50%;
         stroke-width: 2;
@@ -73,17 +73,17 @@ svg text {
 
     70% {
         fill: rgba(114, 165, 215, 0);
-        stroke: rgba(54, 95, 160, 1);
+        stroke: rgb(109, 147, 209);
     }
 
     80% {
         fill: rgba(72, 138, 204, 0);
-        stroke: rgba(54, 95, 160, 1);
+        stroke: rgb(255, 182, 182);
         stroke-width: 3;
     }
 
     100% {
-        fill: rgba(72, 138, 204, 1);
+        fill: rgb(248, 101, 101);
         stroke: rgba(84, 116, 168, 0);
         stroke-dashoffset: -25%;
         stroke-dasharray: 50% 0;
@@ -94,6 +94,7 @@ svg text {
 .wrapper {
     background-color: #ffdfdf;
     height: 110px;
+    border-bottom: 3px solid coral;
 }
 
 header {
@@ -114,10 +115,11 @@ header h2 {
 
 .admin-content-left {
     background-color: rgb(213, 234, 254);
-    width: 25%;
+    width: 22%;
     height: 100vh;
-    padding: 30px 0 0 12px;
+    padding: 30px 0 0 0px;
     margin-top: -50px;
+    border-right: 3px solid rgb(245, 167, 139);
 
 }
 .admin-content-left>ul>li>a {
@@ -131,8 +133,8 @@ header h2 {
 }
 
 .admin-content-left ul li {
-    margin: 6px 0;
-
+   margin: 6px 12px;
+  
 }
 
 .admin-content-left ul ul {
@@ -141,8 +143,21 @@ header h2 {
 
 }
 
+.admin-content-left ul ul>li>a:hover  {
+    margin-left: 10px;
+    font-size: 20px;
+    color: rgb(110, 110, 110);
+    transition: 1s;
+
+}
+
+.admin-content-left ul ul>li>a {
+    color: rgb(68, 67, 67)
+
+}
+
 .admin-content-right {
-    width: 75%;
+    width: 78%;
     padding: 30px 0 0 12px;
     display: block;
 }
