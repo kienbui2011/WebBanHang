@@ -26,10 +26,10 @@ session_start();
                 </ul>
 
             </li>
-            <li><a href="#">- Sản Phẩm</a>
+            <li><a href="productadd.php">- Sản Phẩm</a>
                 <ul>
-                    <li> <a href="">&#8226;&nbsp;Thêm sản phẩm</a> </li>
-                    <li> <a href="">&#8226;&nbsp;Danh sách sản phẩm</a> </li>
+                    <li> <a href="productadd.php">&#8226;&nbsp;Thêm sản phẩm</a> </li>
+                    <li> <a href="productlist.php">&#8226;&nbsp;Danh sách sản phẩm</a> </li>
                 </ul>
 
             </li>

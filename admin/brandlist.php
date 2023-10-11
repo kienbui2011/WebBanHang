@@ -16,7 +16,7 @@ $show_brand = $brand->show_brand();
 
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory-list">
-        <h1>Danh sách danh mục</h1>
+        <h1>Danh loại sản phẩm</h1>
         <table>
             <tr class="boild">
                 <th><b>STT</b></th>

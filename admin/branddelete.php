@@ -1,12 +1,6 @@
 <?php
-include "class/cartegory_class.php";
+include "class/brand_class.php";
 
-$cartegory = new cartegory;
-if (!isset($_GET['cartegory_id']) || $_GET['cartegory_id'] == NULL) {
-    echo "<script>window.location = 'cartegorylist.php'</script>";
-} else {
-    $cartegory_id = $_GET['cartegory_id'];
-}
-$delete_cartegory = $cartegory->delete_cartegory($cartegory_id);
-
-?>
+$brand = new brand;
+$brand_id = $_GET['brand_id'];
+$delete_brand = $brand->delete_brand($brand_id);

@@ -122,9 +122,10 @@ header h2 {
     border-right: 3px solid rgb(245, 167, 139);
 
 }
+
 .admin-content-left>ul>li>a {
     font-weight: bold;
-    font-size:25px;
+    font-size: 25px;
     color: rgb(71, 70, 70);
 }
 
@@ -133,8 +134,8 @@ header h2 {
 }
 
 .admin-content-left ul li {
-   margin: 6px 12px;
-  
+    margin: 6px 12px;
+
 }
 
 .admin-content-left ul ul {
@@ -143,7 +144,7 @@ header h2 {
 
 }
 
-.admin-content-left ul ul>li>a:hover  {
+.admin-content-left ul ul>li>a:hover {
     margin-left: 10px;
     font-size: 20px;
     color: rgb(110, 110, 110);
@@ -153,7 +154,6 @@ header h2 {
 
 .admin-content-left ul ul>li>a {
     color: rgb(68, 67, 67)
-
 }
 
 .admin-content-right {
@@ -181,6 +181,8 @@ header h2 {
     border: none;
     color: white;
     transform: all 0, 3 ease;
+       border: 1px solid rgb(253, 76, 12);
+
 }
 
 .admin-content-right-cartegory_add button:hover {
@@ -196,20 +198,20 @@ header h2 {
     margin-top: 20px;
 }
 
-
-
-
 /* Define styles for even rows (2nd, 4th, 6th, etc.) */
 .admin-content-right-cartegory-list table tr.even {
-    background-color: #f2f2f2; /* Gray background color for even rows */
+    background-color: #f2f2f2;
+    /* Gray background color for even rows */
 }
 
 /* Define styles for odd rows (1st, 3rd, 5th, etc.) */
 .admin-content-right-cartegory-list table tr.odd {
-    background-color: #ffffff; /* White background color for odd rows */
+    background-color: #ffffff;
+    /* White background color for odd rows */
 }
-.admin-content-right-cartegory-list table tr:nth-child(1){
-    background-color:rgb(170, 221, 242);
+
+.admin-content-right-cartegory-list table tr:nth-child(1) {
+    background-color: rgb(170, 221, 242);
 }
 
 .admin-content-right-cartegory-list table tr th,
@@ -233,3 +235,67 @@ table {
 .boild {
     font-weight: bold;
 }
+
+/* -----------Product---------- */
+.admin-content-right-product_add input,
+select {
+    height: 40px;
+    width: 300px;
+    padding-left: 12px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    display: block;
+}
+
+.admin-content-right-product_add textarea {
+    width: 700px;
+    padding-left: 12px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    display: block;
+}
+
+.admin-content-right-product_add button {
+    display: block;
+    height: 30px;
+    width: 100px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: coral;
+    border: none;
+    color: white;
+    transform: all 0, 3 ease;
+    border: 1px solid  rgb(253, 76, 12);
+}
+
+.row {
+    display:flex;
+}
+.row input{
+   
+    margin-top: 1em;
+  
+}
+.row input::file-selector-button {
+    font-weight: bold;
+    color: rgb(19, 27, 35);
+    padding:  11.5px;
+    border: thin solid rgb(193, 191, 191);
+    width: 120px;
+    margin-left: -12px;
+}
+
+.row label{
+    margin-top: 25px;
+    margin-left: 25px;
+    color: rgb(249, 113, 113);
+   
+}
+
+.red-placeholder::placeholder {
+    color: rgb(249, 113, 113);
+    font-size: larger;
+}
+
+
+   

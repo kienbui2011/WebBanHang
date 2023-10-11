@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
- 
+
 
 </head>
 
@@ -21,53 +21,76 @@
             <a href="">Quản Lí Nhân Viên</a><br>
             <a href="">Quản Trị Viên</a><br>
             <a href="">Quản Lí Đơn Hàng</a>
-    
+
             <ul>
                 <li><a href="#">Danh mục</a>
                     <ul>
                         <li> <a href="cartegoryadd.php">Thêm danh mục</a> </li>
                         <li> <a href="cartegorylist.php">Danh sách danh mục</a> </li>
                     </ul>
-    
+
                 </li>
                 <li><a href="#">Loại sản phẩm</a>
                     <ul>
                         <li> <a href="">Thêm loại sản phẩm</a> </li>
                         <li> <a href="">Danh loại sản phẩm</a> </li>
                     </ul>
-    
+
                 </li>
                 <li><a href="#"> Sản phẩm</a>
                     <ul>
                         <li> <a href="">Thêm sản phẩm</a> </li>
                         <li> <a href="">Danh sách sản phẩm</a> </li>
                     </ul>
-    
+
                 </li>
                 <li><a href="">Quản Lí Trang </a>
                     <ul>
                         <li> <a href="">Quản Lí Slide </a> </li>
                         <li> <a href="">Quản Lí About Shop </a> </li>
                     </ul>
-    
+
                 </li>
-    
+
             </ul>
             <a href="">Quản Lí Slide </a><br>
             <a href="">Quản Lí Lương</a><br>
             <a href="">Đăng Xuất</a>
-    
+
         </div>
         <div class="admin-content-right">
-            <div class="admin-content-right-cartegory_add">
-                <h1>Thêm danh mục</h1>
-                <form action="" method="POST">
-                    <input type="text" placeholder="Nhập tên danh mục"></input>
-                    <button type="submit">Đăng nhập</button>
+            <div class="admin-content-right-product_add">
+                <h1>Thêm Sản Phẩm</h1>
+                <form action="" method="POST" enctype="multipart/form-data">
+                    <input type="text" placeholder="Nhập tên sản phẩm" class="red-placeholder">
 
-                </form>
+                    <select name="" id=" " >
+                        <option value="#">--Chọn Danh mục--</option>
+                    </select>
+
+                    <select name="" id="">
+                        <option value="#">--Chọn Loại sản phẩm--</option>
+                    </select>
+
+                    <input type="text" placeholder="Giá sản phẩm"class="red-placeholder">
+
+                    <input type="text" placeholder="Giảm khuyến mãi"class="red-placeholder">
+
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Mô tả sản phẩm" class="red-placeholder"></textarea>
+
+                    <div class="row"> 
+                        <input multiple type="file" name="" class="red-placeholder">
+                        <label for="avatar">Ảnh sản phẩm</label><br />
+                    </div>
+                    
+                    <div class="row"> 
+                        <input multiple type="file" name="" class="red-placeholder">
+                        <label for="avatar">Ảnh mô tả</label><br />
+                    </div>
+
+                    <button type="submit">Thêm</button>
+                </form> 
             </div>
-
         </div>
     </section>
 </body>

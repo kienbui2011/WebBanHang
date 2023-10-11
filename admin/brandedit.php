@@ -16,13 +16,10 @@ if ($get_brand ) {
 
 
 
-
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cartegory_id = $_POST['cartegory_id'];
     $brand_name = $_POST['brand_name'];
-    $insert_brand = $brand->insert_brand($cartegory_id, $brand_name);
+    $update_brand = $brand->update_brand($cartegory_id, $brand_name,$brand_id);
 }
 ?>
 
