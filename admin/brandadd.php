@@ -42,7 +42,6 @@ if ($_SERVER['REQUEST_METHOD']=== 'POST') {
                 ?>
             </select>
 
-            <br>
             <input required name="brand_name" type="text" placeholder="Nhập tên loại sản phẩm">
             <button type="submit">Thêm</button>
         </form>

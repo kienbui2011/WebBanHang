@@ -5,13 +5,21 @@ session_start();
     <div class="admin-content-left">
 
         <ul>
-            <li class="clickable" ><a data-index="0">- Bảng Thống Kê</a></li>
-            <li class="clickable" ><a data-index="1">- Quản Lí Khách Hàng</a></li>
-            <li class="clickable" ><a data-index="2">- Quản Lí Nhân Viên</a></li>
-            <li class="clickable" ><a data-index="3">- Quản Trị Viên</a></li>
-            <li class="clickable" ><a data-index="4">- Quản Lí Đơn Hàng</a></li>
-
-
+            <li><a >- Bảng Thống Kê</a></li>
+            <li><a>- Quản Lí Khách Hàng</a></li>
+            <li><a>- Quản Lí Nhân Viên</a>
+                <ul>
+                    <li> <a href="useradd.php">&#8226;&nbsp;Thêm nhân viên</a> </li>
+                    <li> <a href="userlist.php">&#8226;&nbsp;Danh sách nhân viên</a> </li>
+                </ul>
+            </li>
+            <li><a>- Quản Trị Viên</a>
+                <ul>
+                    <li> <a href="">&#8226;&nbsp;Thêm quản trị viên</a> </li>
+                    <li> <a href="">&#8226;&nbsp;Danh sách quản trị viên</a> </li>
+                </ul>
+            </li>
+            <li><a>- Quản Lí Đơn Hàng</a></li>
             <li><a href="cartegoryadd.php">- Danh Mục</a>
                 <ul>
                     <li> <a href="cartegoryadd.php">&#8226;&nbsp;Thêm danh mục</a> </li>
@@ -41,7 +49,7 @@ session_start();
 
             </li>
             <li><a href="">- Quản Lí Lương</a></li>
-            <li><a href="">- Đăng Xuất</a></li>
+            <li><a href="logout.php">- Đăng Xuất</a></li>
         </ul>
         <script>
             document.addEventListener("DOMContentLoaded", function() {

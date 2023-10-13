@@ -47,12 +47,7 @@ class brand
         header('Location:brandlist.php');
         return $result;
     }
-
-
-
-
-
-
+    
     public function delete_brand($brand_id)
     {
         $query = "DELETE FROM tbl_brand WHERE brand_id = '$brand_id' ";

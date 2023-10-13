@@ -4,10 +4,10 @@ include "slider.php";
 include "class/brand_class.php";
 ?>
 
-
+ <!-- sửa -->
 <?php
 $brand = new brand;
-// <!-- sửa -->
+
 $brand_id = $_GET['brand_id'];
 $get_brand = $brand ->get_brand( $brand_id);
 if ($get_brand ) {
@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </style>
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory_add">
-        <h1>Thêm loại sản phẩm</h1>
+        <h1>Sửa loại sản phẩm</h1>
         <form action="" method="POST">
             <select name="cartegory_id" id="">
                 <option value="#">Chọn danh mục</option>
@@ -50,8 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 }
                 ?>
             </select>
-
-            <br>
+            
             <input required name="brand_name" type="text" placeholder="Nhập tên loại sản phẩm"
             value=" <?php echo $resultA ['brand_name']?>"> 
             <button type="submit">Sửa</button>

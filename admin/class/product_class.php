@@ -18,6 +18,7 @@ class product
         $result = $this->db->select($query);
         return $result;
     }
+
     public function show_brand()
     {
         // $query = "SELECT * FROM tbl_brand ORDER BY brand_id DESC";
@@ -35,10 +36,12 @@ class product
         $brand_id = $_POST['brand_id'];
         $product_price = $_POST['product_price'];
         $product_price_new = $_POST['product_price_new'];
+        $quantity = $_POST['quantity'];
         $product_desc = $_POST['product_desc'];
         $product_details = $_POST['product_details'];
         $product_img = $_FILES['product_img']['name'];
-        $upload_dir = "uploads/"; // Thư mục đích để lưu tệp tin
+       
+        $upload_dir = "uploadss/"; // Thư mục đích để lưu tệp tin
         $uploaded_file = $upload_dir . $_FILES['product_img']['name'];
 
         if (move_uploaded_file($_FILES['product_img']['tmp_name'], $uploaded_file)) {
@@ -54,63 +57,60 @@ class product
             brand_id,
             product_price,
             product_price_new,
+            quantity,
             product_desc,
             product_details,
             product_img
+            
         ) VALUES (
             '$product_name',
             '$cartegory_id',
             '$brand_id',
             '$product_price',
             '$product_price_new',
+            '$quantity',
             '$product_desc',
             '$product_details',
             '$product_img'
-           
+            
         )";
         $result = $this->db->select($query);
         return $result;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function get_brand($brand_id)
-    {
-        $query = "SELECT * FROM tbl_brand WHERE brand_id = '$brand_id'";
+    public function show_product(){
+        $query = "SELECT tbl_product.*, tbl_cartegory.cartegory_name, tbl_brand.brand_name
+                  FROM tbl_product
+                  INNER JOIN tbl_cartegory ON tbl_product.cartegory_id = tbl_cartegory.cartegory_id
+                  INNER JOIN tbl_brand ON tbl_product.brand_id = tbl_brand.brand_id
+                  ORDER BY tbl_product.product_id DESC";
+    
         $result = $this->db->select($query);
         return $result;
     }
-    public function update_brand($cartegory_id, $brand_name, $brand_id)
+    public function delete_product($product_id)
     {
-        $query = "UPDATE tbl_brand SET brand_name = '$brand_name' , cartegory_id = '$cartegory_id' WHERE brand_id = '$brand_id' ";
-        $result = $this->db->update($query);
-        header('Location:brandlist.php');
-        return $result;
-    }
-    public function delete_brand($brand_id)
-    {
-        $query = "DELETE FROM tbl_brand WHERE brand_id = '$brand_id' ";
+        $query = "DELETE FROM tbl_product WHERE product_id = '$product_id' ";
         $result = $this->db->delete($query);
-        header('Location:brandlist.php');
+        header('Location:productlist.php');
         return $result;
     }
+    
+
+
+
+    public function get_product($product_id)
+    {
+        $query = "SELECT * FROM tbl_product WHERE product_id = '$product_id'";
+        $result = $this->db->select($query);
+        return $result;
+    }
+    public function update_product($cartegory_id , $brand_id , $product_name, $product_id)
+    {
+        $query = "UPDATE tbl_product SET product_name = '$product_name' , cartegory_id = '$cartegory_id', brand_id = '$brand_id' WHERE product_id = '$product_id' ";
+        $result = $this->db->update($query);
+        header('Location:productlist.php');
+        return $result;
+    }
+   
 }
 ?>
