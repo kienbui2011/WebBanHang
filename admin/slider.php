@@ -15,8 +15,7 @@ session_start();
             </li>
             <li><a>- Quản Trị Viên</a>
                 <ul>
-                    <li> <a href="">&#8226;&nbsp;Thêm quản trị viên</a> </li>
-                    <li> <a href="">&#8226;&nbsp;Danh sách quản trị viên</a> </li>
+                    <li> <a href="adminlist">&#8226;&nbsp;Danh sách quản trị viên</a> </li>
                 </ul>
             </li>
             <li><a>- Quản Lí Đơn Hàng</a></li>
@@ -51,37 +50,5 @@ session_start();
             <li><a href="">- Quản Lí Lương</a></li>
             <li><a href="logout.php">- Đăng Xuất</a></li>
         </ul>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const clickableTh = document.querySelectorAll(".clickable");
-
-                clickableTh.forEach(th => {
-                    th.addEventListener("click", () => {
-                        // Get the index of the clicked link from data-index attribute
-                        const dataIndex = th.getAttribute("data-index");
-
-                        // Change background color of the clicked link
-                        clickableTh.forEach(header => {
-                            header.style.backgroundColor = "";
-                        });
-                        th.style.backgroundColor = "#fcd9d9"; // Change to the desired color
-
-                        // Store the clicked index in a PHP session
-                        <?php
-                        echo "session_start();";
-                        echo "\$_SESSION['clickedLinkIndex'] = ' . dataIndex . ';";
-                        ?>
-                    });
-                });
-
-                // Check if there's a clicked link index in the session and set the background color
-                <?php
-                echo "if (isset(\$_SESSION['clickedLinkIndex'])) {";
-                echo "    const clickedIndex = \$_SESSION['clickedLinkIndex'];";
-                echo "    clickableTh[clickedIndex].style.backgroundColor = '#fcd9d9';";
-                echo "}";
-                ?>
-            });
-        </script>
 
     </div>

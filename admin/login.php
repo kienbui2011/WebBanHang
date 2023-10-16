@@ -35,7 +35,7 @@ include "database.php";
             margin: 10px 0;
         }
 
-        input[type="text"],
+        input[type="email"],
         input[type="password"]
          {
             width: 100%;
@@ -97,7 +97,7 @@ include "database.php";
             }
             }
             ?>
-        <form action="login.php" method="post">
+        <form action="cartegoryadd.php" method="post">
             <div class="form-group">
                 <input type="email" id="username" name="user_name" placeholder="Tên đăng nhập" required>
             </div>
