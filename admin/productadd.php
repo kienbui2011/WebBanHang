@@ -18,49 +18,57 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="admin-content-right">
     <div class="admin-content-right-product_add">
         <h1>Thêm Sản Phẩm</h1>
+
         <form action="" method="POST" enctype="multipart/form-data">
-            <input name="product_name" required type="text" placeholder="Nhập tên sản phẩm" class="red-placeholder">
 
-            <select name="cartegory_id" id=" ">
-                <option>--Chọn danh mục--</option>
-                <?php
-                $show_cartegory = $product->show_cartegory();
-                if ($show_cartegory) {
-                    while ($result = $show_cartegory->fetch_assoc()) {
-                ?>
+            <div class="product row">
+                <div class="product_row1">
+                    <input name="product_name" required type="text" placeholder="Nhập tên sản phẩm" class="red-placeholder">
 
-                        <option value="<?php echo $result['cartegory_id'] ?>"><?php echo $result['cartegory_name'] ?></option>
-                <?php
-                    }
-                }
-                ?>
-            </select>
+                    <select name="cartegory_id" id=" ">
+                        <option>--Chọn danh mục--</option>
+                        <?php
+                        $show_cartegory = $product->show_cartegory();
+                        if ($show_cartegory) {
+                            while ($result = $show_cartegory->fetch_assoc()) {
+                        ?>
 
-            <select name="brand_id" id="">
-                <option>--Chọn loại sản phẩm--</option>
-                <?php
-                $show_brand = $product->show_brand();
-                if ($show_brand) {
-                    while ($result = $show_brand->fetch_assoc()) {
-                ?>
+                                <option value="<?php echo $result['cartegory_id'] ?>"><?php echo $result['cartegory_name'] ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </select>
 
-                        <option value="<?php echo $result['brand_id'] ?>"><?php echo $result['brand_name'] ?></option>
-                <?php
-                    }
-                }
-                ?>
-            </select>
+                    <select name="brand_id" id="">
+                        <option>--Chọn loại sản phẩm--</option>
+                        <?php
+                        $show_brand = $product->show_brand();
+                        if ($show_brand) {
+                            while ($result = $show_brand->fetch_assoc()) {
+                        ?>
 
-            <input name="product_price" required type="text" placeholder="Giá sản phẩm" class="red-placeholder">
+                                <option value="<?php echo $result['brand_id'] ?>"><?php echo $result['brand_name'] ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="product_row3">
+                    <input name="product_price" required type="text" placeholder="Giá sản phẩm" class="red-placeholder">
+                    <input name="product_price_new" required type="text" placeholder="Giảm khuyến mãi" class="red-placeholder">
+                    <input name="quantity" required type="text" placeholder="Số lượng" class="red-placeholder">
 
-            <input name="product_price_new" required type="text" placeholder="Giảm khuyến mãi" class="red-placeholder">
-            <input name="quantity" required type="text" placeholder="Số lượng" class="red-placeholder">
-
+                </div>
+            </div>
 
             <label class="product_label">Giới thiệu sản phẩm</label>
-            <textarea required name="product_desc" id="editor1" cols="30" rows="5" ></textarea>
+            <textarea required name="product_desc" id="editor1" cols="30" rows="5"></textarea>
+            <br>
             <label class="product_label">Chi tiết sản phẩm</label>
             <textarea required name="product_details" id="editor2" cols="30" rows="5"></textarea>
+            <br>
 
             <div class="product row">
                 <div class="product_row1">
@@ -85,8 +93,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
             </div>
-
+            <br>
+            <hr>
+            <br>
             <button type="submit">Thêm</button>
+            <br> <br> <br> <br>
         </form>
     </div>
 </div>
