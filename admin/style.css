@@ -297,6 +297,18 @@ select {
     color: rgb(249, 113, 113);
     font-size: larger;
 }
+.product_row2 {
+    padding-left: 70px;
+   
+}
+.product_label
+ {
+    color: rgb(249, 113, 113);
+    font-size: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+}
 
 
    

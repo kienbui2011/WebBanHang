@@ -41,6 +41,7 @@ class user
         return $result;
     }
 
+    
    public function show_user()
 {
     $query = "SELECT id_user_acccount ,fullname, user_name,  phone, email
@@ -68,25 +69,26 @@ public function delete_user($id_user_acccount)
 
 
 
+public function get_user($user_id) {
+    $query = "SELECT * FROM tbl_user_acccount WHERE id_user_acccount = '$user_id'";
+    $result = $this->db->select($query);
+    return $result;
+}
 
 
 
-
-
-
-
-    public function get_user($user_id)
-    {
-        $query = "SELECT * FROM tbl_user WHERE user_id = '$user_id'";
-        $result = $this->db->select($query);
-        return $result;
+public function update_user($user_id, $new_data) {
+    // $new_data is an associative array containing the fields to be updated and their new values
+    $query = "UPDATE tbl_user_acccount SET ";
+    foreach ($new_data as $field => $value) {
+        $query .= "$field = '$value', ";
     }
-    public function update_user($cartegory_id, $brand_id, $user_name, $user_id)
-    {
-        $query = "UPDATE tbl_user SET user_name = '$user_name' , cartegory_id = '$cartegory_id', brand_id = '$brand_id' WHERE user_id = '$user_id' ";
-        $result = $this->db->update($query);
-        header('Location:userlist.php');
-        return $result;
-    }
+    $query = rtrim($query, ', '); // Remove the trailing comma
+    $query .= " WHERE id_user_acccount = '$user_id'";
+    
+    $result = $this->db->update($query);
+    return $result;
+}
+
 }
 ?>

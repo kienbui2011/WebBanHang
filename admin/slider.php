@@ -5,9 +5,10 @@ session_start();
     <div class="admin-content-left">
 
         <ul>
-            <li><a >- Bảng Thống Kê</a></li>
+            <li><a>- Bảng Thống Kê</a></li>
             <li><a>- Quản Lí Khách Hàng</a></li>
-            <li><a>- Quản Lí Nhân Viên</a>
+            
+            <li><a href="userlist.php">- Quản Lí Nhân Viên</a>
                 <ul>
                     <li> <a href="useradd.php">&#8226;&nbsp;Thêm nhân viên</a> </li>
                     <li> <a href="userlist.php">&#8226;&nbsp;Danh sách nhân viên</a> </li>
@@ -18,7 +19,12 @@ session_start();
                     <li> <a href="adminlist">&#8226;&nbsp;Danh sách quản trị viên</a> </li>
                 </ul>
             </li>
-            <li><a>- Quản Lí Đơn Hàng</a></li>
+            <li><a>- Quản Lí Đơn Hàng</a>
+                <ul>
+                    <li> <a href="#">&#8226;&nbsp;Danh sách đơn hàng</a> </li>
+                </ul>
+            </li>
+
             <li><a href="cartegoryadd.php">- Danh Mục</a>
                 <ul>
                     <li> <a href="cartegoryadd.php">&#8226;&nbsp;Thêm danh mục</a> </li>
