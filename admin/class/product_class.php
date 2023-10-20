@@ -44,18 +44,21 @@ class product
         $product_img_desc2 = $_FILES['product_img_desc2']['name'];
         $product_img_desc3 = $_FILES['product_img_desc3']['name'];
 
-        // Define the upload directory
+        // Đường dẫn đến thư mục lưu trữ hình ảnh
         $upload_dir = "/Applications/XAMPP/xamppfiles/htdocs/NTKQ/admin/uploadss/";
 
-        // Ensure the directory exists or create it
+        // Đảm bảo thư mục tồn tại hoặc tạo nó nếu nó chưa tồn tại
         if (!file_exists($upload_dir)) {
             mkdir($upload_dir, 0777, true);
         }
 
+        // Các loại tệp được cho phép
         $allowed_extensions = array("jpg", "jpeg", "png", "gif");
-        $max_file_size = 5 * 1024 * 1024; // 5MB
 
-        // Define an array of file upload fields
+        // Kích thước tệp tối đa (ở đây là 10MB)
+        $max_file_size = 10 * 1024 * 1024; // 10MB
+
+        // Các trường tải lên hình ảnh
         $file_upload_fields = array(
             'product_img',
             'product_img_desc1',
@@ -69,21 +72,21 @@ class product
                 $file_tmp = $_FILES[$field]['tmp_name'];
                 $file_size = $_FILES[$field]['size'];
                 $file_extension = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
-
-                if (in_array($file_extension, $allowed_extensions) && $file_size <= $max_file_size) {
-                    $new_file_name = uniqid() . "." . $file_extension;
-                    $destination = $upload_dir . $new_file_name;
-
+                $destination = $upload_dir . $file_name;
+        
+                if (file_exists($destination)) {
+                    echo "Lỗi: Tệp $field đã tồn tại. Vui lòng đổi tên tệp và thử lại.<br>";
+                } elseif (in_array($file_extension, $allowed_extensions) && $file_size <= $max_file_size) {
                     if (move_uploaded_file($file_tmp, $destination)) {
                         echo "Tệp $field tải thành công.<br>";
                     } else {
                         echo "Có lỗi xảy ra khi tải lên tệp tin $field.<br>";
                     }
                 } else {
-                    echo "Kiểu tệp tin không hợp lệ hoặc kích thước tệp tin vượt quá giới hạn.";
+                    echo "Lỗi: Kiểu tệp tin không hợp lệ hoặc kích thước tệp tin vượt quá giới hạn.<br>";
                 }
             } else {
-                echo "Không có tệp tin được gửi lên hoặc có lỗi xảy ra.";
+                echo "Không có tệp tin được gửi lên hoặc có lỗi xảy ra.<br>";
             }
         }
 

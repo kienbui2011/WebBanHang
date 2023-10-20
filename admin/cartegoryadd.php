@@ -1,9 +1,7 @@
 <?php
-
 include "header.php";
 include "slider.php";
 include "class/cartegory_class.php";
-
 ?>
 
 
@@ -29,3 +27,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </body>
 
 </html>
+<?php
+// session_start();
+// if (!isset($_SESSION['user_id'])) {
+//     // Nếu chưa đăng nhập, chuyển hướng về trang đăng nhập
+//     header("Location: login.php");
+//     exit;
+// }
+// // Nội dung của trang admin
+

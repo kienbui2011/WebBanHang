@@ -463,30 +463,36 @@
                 <div class="product-right-content row ">
 
                     <?php
-                   
-                    ?>
-
-                    <?php
                     // Thực hiện kết nối đến cơ sở dữ liệu
-                    $con = mysqli_connect('localhost', 'root', '', 'NTKQ');
+                    $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
                     if (!$con) {
                         die('Lỗi kết nối: ' . mysqli_connect_error());
                     }
 
                     // Thực hiện truy vấn SQL
-                    $sql = "SELECT * FROM `product` LIMIT 4";
-
+                    $sql = "SELECT * FROM `tbl_product` LIMIT 5";
 
                     $result = mysqli_query($con, $sql);
 
                     // Kiểm tra và xử lý kết quả
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
-                            echo ' <div class="product-right-content row ">';
+                            echo '<div class="product-right-content row">';
                             echo '<div class="product-content-item">';
-                            echo '<img src="' . $row['img_product'] . '" alt="">';
-                            echo '<h1>' . $row['name'] . '</h1>';
-                            echo '<h2>' . $row['price'] . '<sup>đ</sup></h2>';
+                            $image_path = $row['product_img'];
+                            
+                            // Check if the image file exists
+                            if (file_exists('/Applications/XAMPP/xamppfiles/htdocs/NTKQ/admin/uploadss/' . $image_path)) {
+                                echo '<img src="/NTKQ/admin/uploadss/' . $image_path . '" alt="Product Image">';
+                            } else {
+                                echo 'Image file does not exist.';
+                            }
+                            
+                            // Check if the image file exists
+                            
+                            echo '<h1>' . $row['product_name'] . '</h1>';
+                            echo '<h2><del>' . $row['product_price'] . 'đ</del></h2>';
+                            echo '<h1>' . $row['product_price_new'] . 'đ</h1>';
                             echo '</div>';
                             echo '</div>';
                         }
@@ -494,10 +500,9 @@
                         echo 'Không có dữ liệu.';
                     }
 
-                    // Đóng kết nối
+                    // Đóng kết nối cơ sở dữ liệu
                     mysqli_close($con);
                     ?>
-
 
                 </div>
             </div>

@@ -22,7 +22,8 @@ $show_product = $product->show_product();
                 <th><b>Danh mục</b></th>
                 <th><b>Loại Sản Phẩm</b></th>
                 <th><b>Giá bán</b></th>
-                <th><b>Số lượng</b></th>
+                <th><b>Giá mới</b></th>
+                <th><b>SL</b></th>
                 <th><b>Tuỳ Biến</b></th>
             </tr>
             <?php
@@ -39,6 +40,7 @@ $show_product = $product->show_product();
                         <th><?php echo $result['product_name']; ?></th>
                         <th><?php echo $result['cartegory_name']; ?></th>
                         <th><?php echo $result['brand_name']; ?></th>
+                        <th><?php echo $result['product_price']; ?></th>
                         <th><?php echo $result['product_price_new']; ?></th>
                         <th><?php echo $result['quantity']; ?></th>
                         <th><a href="productedit.php?product_id=<?php echo $result['product_id']; ?>">Sửa</a>&nbsp; |&nbsp;

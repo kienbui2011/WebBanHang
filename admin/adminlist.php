@@ -12,7 +12,7 @@ $show_admin = $admin->show_admin();
 
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory-list">
-        <h1>Danh sách nhân viên</h1>
+        <h1>Danh sách quản trị viên</h1>
         <table>
             <tr class="boild">
                 <th><b>STT</b></th>

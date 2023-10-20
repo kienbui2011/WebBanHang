@@ -1,7 +1,3 @@
-<?php
-include "database.php";
-?>
-
 
 <!DOCTYPE html>
 <html>
@@ -77,32 +73,15 @@ include "database.php";
         }
     </style>
 </head>
-
 <body>
     <div class="login-container">
         <div class="Layer_1"> <img src="../client/img/IMG_6220.JPG" alt=""> </div>
-        <?php
-        if($_POST){
-
-            $user_name=$_POST['user_name'];
-            $pass_word=$_POST['pass_word'];
-            $result=mysqli_query($conn,"SELECT * from tbl_user_acccount where email='$user_name' and password='$pass_word'");
-            $row=mysqli_fetch_assoc($result);
-            // var_dump($row);
-            // die;
-            if($row){
-              header("Location:cartegoryadd.php");
-            }else{
-                echo '<p style="color:red">Tên đăng nhập hoặc mật khẩu không đúng!</p>';
-            }
-            }
-            ?>
-        <form action="cartegoryadd.php" method="post">
+        <form action="login_class.php" method="POST">
             <div class="form-group">
-                <input type="email" id="username" name="user_name" placeholder="Tên đăng nhập" required>
+            <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group">
-                <input type="password" id="password" name="pass_word" placeholder="Mật khẩu" required>
+                <input type="password"  name="pass_word" placeholder="Mật khẩu" required>
             </div>
             <input type="checkbox">
             <label class="custom-control-label" for="customCheck">Remember Me</label>
@@ -112,6 +91,14 @@ include "database.php";
 </body>
 
 </html>
+<?php
+// session_start();
+// if (isset($_SESSION['user_id'])) {
+//     // Nếu đã đăng nhập, họ đã không được phép quay lại trang đăng nhập.
+//     header("Location: admin.php");
+//     exit;
+// }
+// // Nội dung của trang đăng nhập
 
 
 

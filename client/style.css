@@ -534,13 +534,19 @@ textarea {
 .product-content-item h1 {
 	font-size: 17px;
 	text-align: center;
+	color: #ff0000; /* Màu đỏ cho giá mới */
 }
-
+del {
+    text-decoration: line-through;
+   color: #999;  /* Đổi màu của giá cũ nếu cần */
+}
 .product-content-item h2 {
 	font-size: 13px;
 	text-align: center;
 	margin-top: -7px;
 	margin-left: 49px;
+	/* text-decoration: line-through; /* Gạch ngang giá cũ */
+	/* color: #999; Màu xám cho giá cũ */ 
 }
 
 .info {

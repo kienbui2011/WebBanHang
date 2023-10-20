@@ -1,64 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- Your other head elements go here -->
+    <style>
+        .old-price {
+            text-decoration: line-through; /* Gạch ngang giá cũ */
+            color: #999; /* Màu xám cho giá cũ */
+        }
+
+        .new-price {
+            color: #ff0000; /* Màu đỏ cho giá mới */
+        }
+    </style>
 </head>
 <body>
-    <section class="admin-content">
-        <div class="admin-content-left">
-    
-            <ul>
-                <li><a class="clickable" href="#">- Bảng Thống Kê</a></li>
-                <li><a class="clickable" href="#">- Quản Lí Khách Hàng</a></li>
-                <li><a class="clickable" href="#">- Quản Lí Nhân Viên</a></li>
-                <li><a class="clickable" href="#">- Quản Trị Viên</a></li>
-                <li><a class="clickable" href="#">- Quản Lí Đơn Hàng</a></li>
-                
-                <li><a href="cartegoryadd.php">- Danh mục</a>
-                    <ul>
-                        <li> <a href="cartegoryadd.php">Thêm danh mục</a> </li>
-                        <li> <a href="cartegorylist.php">Danh sách danh mục</a> </li>
-                    </ul>
-    
-                </li>
-                <li><a href="#">- Loại sản phẩm</a>
-                    <ul>
-                        <li> <a href="#">Thêm loại sản phẩm</a> </li>
-                        <li> <a href="#">Danh loại sản phẩm</a> </li>
-                    </ul>
-    
-                </li>
-                <li><a href="#">- Sản phẩm</a>
-                    <ul>
-                        <li> <a href="#">Thêm sản phẩm</a> </li>
-                        <li> <a href="#">Danh sách sản phẩm</a> </li>
-                    </ul>
-    
-                </li>
-                <li><a href="#">- Quản Lí Trang </a>
-                    <ul>
-                        <li> <a href="#">Quản Lí Slide </a> </li>
-                        <li> <a href="#">Quản Lí About Shop </a> </li>
-                    </ul>
-    
-                </li>
-                <li><a href="#">- Quản Lí Lương</a></li>
-                <li><a href="#">- Đăng Xuất</a></li>
-            </ul>
-            <script>
-                const clickableTh = document.querySelectorAll(".clickable");
-    
-                clickableTh.forEach(th => {
-                    th.addEventListener("click", () => {
-                        // Change background color of the clicked link
-                        clickableTh.forEach(header => {
-                            header.style.backgroundColor = "";
-                        });
-                        th.style.backgroundColor = "#fcd9d9"; // Change to the desired color
-                    });
-                });
-            </script>
-        </div>
-    </section>
+    <p><span class="old-price">$100</span> <span class="new-price">$80</span></p>
 </body>
 </html>
+
