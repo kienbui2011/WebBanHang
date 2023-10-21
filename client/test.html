@@ -1,19 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        .old-price {
-            text-decoration: line-through; /* Gạch ngang giá cũ */
-            color: #999; /* Màu xám cho giá cũ */
-        }
+<style>
 
-        .new-price {
-            color: #ff0000; /* Màu đỏ cho giá mới */
-        }
-    </style>
-</head>
-<body>
-    <p><span class="old-price">$100</span> <span class="new-price">$80</span></p>
+
+.statistics-list {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	justify-content: center;
+	/* Căn giữa theo chiều ngang */
+	align-items: center;
+	/* Căn giữa theo chiều dọc */
+}
+
+.statistics-item {
+	border: 1px solid #afaaaa;
+	padding: 10px 20px;
+	margin-right: 15px;
+	display: flex;
+	align-items: center;
+	/* Căn ảnh và văn bản theo chiều dọc */
+}
+
+.statistics-item a {
+	text-decoration: none;
+	/* Loại bỏ gạch chân từ liên kết */
+	color: #f98888;
+	/* Màu chữ của liên kết */
+	font-weight: 500;
+	font-size: 18px;
+}
+
+.statistics-item a:hover {
+	color: #ff2612;
+}
+
+   
+</style>
+
+
+<div class="admin-content-right">
+    <div class="admin-content-right-statistics">
+        <h1>Bảng Thống Kê</h1>
+        <ul class="statistics-list">
+            <li class="statistics-item">
+                <img src="img/imgDMSP.png" alt="Sản phẩm 1">
+                <a href="#">Đầm Body</a>
+                <?php echo $rowUsers['num_users']; ?>
+            </li>
+            <li class="statistics-item">
+                <img src="img/imgDMSP2.png" alt="Sản phẩm 2">
+                <a href="#">Váy Đầm</a>
+                <?php echo $rowCountProducts['num_products']; ?>
+
+            </li>
+        </ul>
+
+    </div>
+
+</div>
+</section>
 </body>
-</html>
 
+</html>

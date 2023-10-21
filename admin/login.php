@@ -1,4 +1,18 @@
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Web_demo";
 
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
+if (!$conn) {
+    die("sql không kết nối: " . mysqli_connect_error());
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -92,13 +106,21 @@
 
 </html>
 <?php
-// session_start();
-// if (isset($_SESSION['user_id'])) {
-//     // Nếu đã đăng nhập, họ đã không được phép quay lại trang đăng nhập.
-//     header("Location: admin.php");
-//     exit;
-// }
-// // Nội dung của trang đăng nhập
+session_start();
 
+// Check if the user is already logged in
+if (isset($_SESSION['user_id'])) {
+    // User is already logged in, redirect to another page
+    header("Location: cartegoryadd.php");
+    exit;
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Handle the login logic here
+    $email = $_POST['email'];
+    $password = $_POST['pass_word'];
+    
+}
+?>
 
 

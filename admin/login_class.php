@@ -89,12 +89,21 @@ if (!$conn) {
         }
     </style>
 </head>
-
 <?php
+require_once('config.php'); // Include the database connection
+
+session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: cartegoryadd.php");
+    exit;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['pass_word'];
 
+   
     $queryAdmin = "SELECT * FROM tbl_admin_account WHERE email = '$email' AND pass_word = '$password'";
     $queryUser = "SELECT * FROM tbl_user_acccount WHERE email = '$email' AND pass_word = '$password'";
 
@@ -102,11 +111,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultUser = mysqli_query($conn, $queryUser);
 
     if ($resultAdmin && mysqli_num_rows($resultAdmin) == 1) {
-        // Người dùng là admin
+     
+        $_SESSION['user_role'] = 'admin';
         header('Location: cartegoryadd.php');
         exit;
     } elseif ($resultUser && mysqli_num_rows($resultUser) == 1) {
-        // Người dùng là người dùng thông thường
+
+        $_SESSION['user_role'] = 'user';
         header('Location: ../user/cartegoryadd.php');
         exit;
     } else {
@@ -116,8 +127,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 mysqli_close($conn);
 ?>
-
-
 
 <body>
     <div class="login-container">
@@ -145,17 +154,3 @@ mysqli_close($conn);
 </body>
 
 </html>
- <?php
-// session_start();
-
-// // Kiểm tra thông tin đăng nhập và xác thực
-// if ($authentication_successful) {
-//     $_SESSION['user_id'] = $user_id; // Lưu thông tin đăng nhập trong session
-//     header("Location: admin.php"); // Chuyển hướng đến trang admin
-//     exit;
-// } else {
-//     // Xử lý khi đăng nhập thất bại
-//     header("Location: login.php"); // Chuyển hướng lại trang đăng nhập
-//     exit;
-// }
- 

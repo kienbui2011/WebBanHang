@@ -5,7 +5,7 @@ session_start();
     <div class="admin-content-left">
 
         <ul>
-            <li><a>- Bảng Thống Kê</a></li>
+            <li><a href="statistics.php">- Bảng Thống Kê</a></li>
             <li><a>- Quản Lí Khách Hàng</a>
                 <ul>
                     <li><a href="#">&#8226;&nbsp;Danh sách khách hàng</a> </li>

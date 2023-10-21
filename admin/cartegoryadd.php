@@ -23,10 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </div>
-</section>
-</body>
 
-</html>
+
 <?php
 // session_start();
 // if (!isset($_SESSION['user_id'])) {
