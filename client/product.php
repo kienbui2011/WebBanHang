@@ -490,8 +490,8 @@
                             
                             // Check if the image file exists
                             
-                            echo '<h1>' . $row['product_name'] . '</h1>';
-                            echo '<h2><del>' . $row['product_price'] . 'đ</del></h2>';
+                            echo '<h2>' . $row['product_name'] . '</h2>';
+                            echo '<h3><del>' . $row['product_price'] . 'đ</del></h3>';
                             echo '<h1>' . $row['product_price_new'] . 'đ</h1>';
                             echo '</div>';
                             echo '</div>';

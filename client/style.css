@@ -520,40 +520,58 @@ textarea {
 	margin-top: -10px;
 }
 
+.product-right-content {
+	margin-top: -10px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
 .product-content-item {
 	padding: 20px;
 
 }
 
-.product-right-content {
-	margin-top: -20px;
-	margin-left: 20px;
-	margin-right: 20px;
-}
-
 .product-content-item h1 {
 	font-size: 17px;
 	text-align: center;
-	color: #ff0000; /* Màu đỏ cho giá mới */
+	color: #f85858;
+	/* Màu đỏ cho giá mới */
 }
-del {
-    text-decoration: line-through;
-   color: #999;  /* Đổi màu của giá cũ nếu cần */
-}
+
 .product-content-item h2 {
+	font-size: 20px;
+	text-align: center;
+
+}
+
+del {
+	text-decoration: line-through;
+	color: #999;
+	/* Đổi màu của giá cũ nếu cần */
+	text-align: center;
+	align-items: center;
+	margin-right: 55px;
+}
+
+.product-content-item h3 {
 	font-size: 13px;
 	text-align: center;
 	margin-top: -7px;
 	margin-left: 49px;
-	/* text-decoration: line-through; /* Gạch ngang giá cũ */
-	/* color: #999; Màu xám cho giá cũ */ 
 }
+
+.product-content-item img{
+	width: 300px;
+	height: auto;
+}
+
 
 .info {
 	margin-top: 20px;
 	margin-left: -30px;
-	
+
 }
+
 .info .container0 {
 	max-width: 90%;
 	margin: 0 auto;
@@ -571,10 +589,10 @@ del {
 }
 
 .info .container0 table th {
-	
+
 	padding: 7px;
 	text-align: center;
-	
+
 	font-weight: bold;
 
 }

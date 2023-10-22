@@ -24,9 +24,9 @@ $queryCountProducts = "SELECT COUNT(product_id) AS num_products FROM tbl_product
 $resultCountProducts = $conn->query($queryCountProducts);
 // Fetch the result
 $rowCountProducts = $resultCountProducts->fetch_assoc();
-
 // Close the result set
 $resultCountProducts->close();
+
 
 ?>
 
