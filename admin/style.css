@@ -182,7 +182,7 @@ header h2 {
     border: none;
     color: white;
     transform: all 0, 3 ease;
-       border: 1px solid rgb(253, 76, 12);
+    border: 1px solid rgb(253, 76, 12);
 
 }
 
@@ -318,9 +318,6 @@ select {
     padding-top: 100px;
     padding-bottom: 100px;
 }
-
-
-
 
 
 

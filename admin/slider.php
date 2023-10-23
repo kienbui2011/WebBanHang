@@ -55,7 +55,7 @@ session_start();
             <li><a href="">- Quản Lí Trang </a>
                 <ul>
                     <li> <a href="">&#8226;&nbsp;Quản lí slide </a> </li>
-                    <li> <a href="">&#8226;&nbsp;Quản lí about shop </a> </li>
+                    <li> <a href="">&#8226;&nbsp;Quản lí blogs </a> </li>
                 </ul>
 
             </li>

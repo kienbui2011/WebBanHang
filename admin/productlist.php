@@ -7,13 +7,80 @@ include "class/product_class.php";
 ?>
 <?php
 $product = new product;
-$show_product = $product->show_product();
 
+if (isset($_POST['search'])) {
+    $search = $_POST['search'];
+    $show_product = $product->search_product($search);
+} else {
+    $show_product = $product->show_product();
+}
 ?>
+
+
+
+
+<style>
+    .search-form form input:first-child {
+        height: 30px;
+        width: 250px;
+        margin-top: 20px;
+        border: 1px solid gray;
+
+    }
+
+    .admin-content-right-cartegory-list form input:last-child {
+        height: 30px;
+        width: 100px;
+        margin-top: 20px;
+        border: 1px solid gray;
+        background-color: #FFDFDF;
+        color: rgb(63, 63, 63);
+    }
+
+    .search-form button {
+        color: rgb(63, 63, 63);
+        height: 30px;
+        width: 100px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: #FFDFDF;
+        transform: all 0, 3 ease;
+        border: 1px solid gray;
+    }
+
+    .admin-content-right-cartegory-list>button {
+        color: white;
+        height: 30px;
+        width: 100px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: coral;
+        transform: all 0, 3 ease;
+        border: 1px solid rgb(253, 76, 12);
+    }
+    .admin-content-right-cartegory-list>button a {
+        color: white;
+    }
+</style>
+
 
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory-list">
         <h1>Danh sách sản phẩm</h1>
+
+        <div class="search-form">
+            <form method="POST" action="">
+                <input type="text" name="search">
+                <button type="submit" >Tìm kiếm</button>
+            </form>
+        </div>
+
+       
+        <button id="exitButton"><a href="productlist.php">Thoát</a></button>
+
+
+
+
         <table>
             <tr class="boild">
                 <th><b>STT</b></th>

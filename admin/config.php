@@ -5,8 +5,8 @@ define("DB_PASS","");
 define("DB_NAME","Web_demo");
 ?>
 <?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 $host = "localhost";
 $username = "root";
 $password = "";
