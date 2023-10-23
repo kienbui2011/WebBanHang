@@ -1,63 +1,110 @@
-<style>
-
-
-.statistics-list {
-	display: flex;
-	list-style: none;
-	padding: 0;
-	justify-content: center;
-	/* Căn giữa theo chiều ngang */
-	align-items: center;
-	/* Căn giữa theo chiều dọc */
-}
-
-.statistics-item {
-	border: 1px solid #afaaaa;
-	padding: 10px 20px;
-	margin-right: 15px;
-	display: flex;
-	align-items: center;
-	/* Căn ảnh và văn bản theo chiều dọc */
-}
-
-.statistics-item a {
-	text-decoration: none;
-	/* Loại bỏ gạch chân từ liên kết */
-	color: #f98888;
-	/* Màu chữ của liên kết */
-	font-weight: 500;
-	font-size: 18px;
-}
-
-.statistics-item a:hover {
-	color: #ff2612;
-}
-
-   
-</style>
-
-
-<div class="admin-content-right">
-    <div class="admin-content-right-statistics">
-        <h1>Bảng Thống Kê</h1>
-        <ul class="statistics-list">
-            <li class="statistics-item">
-                <img src="img/imgDMSP.png" alt="Sản phẩm 1">
-                <a href="#">Đầm Body</a>
-                <?php echo $rowUsers['num_users']; ?>
-            </li>
-            <li class="statistics-item">
-                <img src="img/imgDMSP2.png" alt="Sản phẩm 2">
-                <a href="#">Váy Đầm</a>
-                <?php echo $rowCountProducts['num_products']; ?>
-
-            </li>
-        </ul>
-
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .image-row {
+            display: flex;
+        }
+        
+        .image {
+            flex: 1;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-row">
+        <div class="image">
+            <img src="image1.jpg" alt="Hình 1">
+        </div>
+        <div class="image">
+            <img src="image2.jpg" alt="Hình 2">
+        </div>
+        <div class="image">
+            <img src="image3.jpg" alt="Hình 3">
+        </div>
+        <div class="image">
+            <img src="image4.jpg" alt="Hình 4">
+        </div>
     </div>
-
-</div>
-</section>
+    <div class="image-row">
+        <div class="image">
+            <img src="image5.jpg" alt="Hình 5">
+        </div>
+        <div class="image">
+            <img src="image6.jpg" alt="Hình 6">
+        </div>
+        <div class="image">
+            <img src="image7.jpg" alt="Hình 7">
+        </div>
+        <div class="image">
+            <img src="image8.jpg" alt="Hình 8">
+        </div>
+    </div>
+    <div class="image-row">
+        <div class="image">
+            <img src="image9.jpg" alt="Hình 9">
+        </div>
+        <div class "image">
+            <img src="image10.jpg" alt="Hình 10">
+        </div>
+        <div class="image">
+            <img src="image11.jpg" alt="Hình 11">
+        </div>
+        <div class="image">
+            <img src="image12.jpg" alt="Hình 12">
+        </div>
+    </div>
 </body>
-
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .image-row {
+            display: flex;
+        }
+        
+        .image {
+            flex: 1;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="image-row">
+        <?php
+        // Kết nối đến cơ sở dữ liệu (thay đổi thông tin kết nối của bạn ở đây)
+        $servername = "your_server_name";
+        $username = "your_username";
+        $password = "your_password";
+        $dbname = "your_database_name";
+        
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        
+        // Kiểm tra kết nối
+        if ($conn->connect_error) {
+            die("Kết nối không thành công: " . $conn->connect_error);
+        }
+        
+        // Truy vấn cơ sở dữ liệu để lấy danh sách các hình ảnh
+        $sql = "SELECT * FROM images";
+        $result = $conn->query($sql);
+        
+        if ($result->num_rows > 0) {
+            // Lặp qua kết quả truy vấn và hiển thị ảnh
+            while($row = $result->fetch_assoc()) {
+                echo '<div class="image">';
+                echo '<img src="' . $row["image_url"] . '" alt="' . $row["image_description"] . '">';
+                echo '</div>';
+            }
+        } else {
+            echo "Không có hình ảnh.";
+        }
+        
+        // Đóng kết nối cơ sở dữ liệu
+        $conn->close();
+        ?>
+    </div>
+</body>
 </html>

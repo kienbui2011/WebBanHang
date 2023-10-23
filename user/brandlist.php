@@ -38,7 +38,7 @@ $show_brand = $brand->show_brand();
                         <th><?php echo $result['brand_name']; ?></th>
 
                         <th><a href="brandedit.php?brand_id=<?php echo $result['brand_id']; ?>">Sửa</a>&nbsp; |&nbsp;
-                            <a href="branddelete.php?brand_id=<?php echo $result['brand_id']; ?>">Xoá</a>
+                            <a href="branddelete.ph?brand_id=<?php echo $result['brand_id']; ?>">Xoá</a>
                         </th>
                     </tr>
             <?php

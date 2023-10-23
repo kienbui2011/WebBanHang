@@ -541,7 +541,7 @@ textarea {
 .product-content-item h2 {
 	font-size: 20px;
 	text-align: center;
-
+	margin-left: 30px;
 }
 
 del {
@@ -560,7 +560,7 @@ del {
 	margin-left: 49px;
 }
 
-.product-content-item img{
+.product-content-item img {
 	width: 300px;
 	height: auto;
 }
@@ -598,8 +598,6 @@ del {
 }
 
 .info .container0 table th:hover {
-
-
 	background-color: #fcd9d9;
 	color: #fc6e6e;
 
@@ -620,12 +618,6 @@ del {
 .content3 table tr td b {
 	font-weight: bold;
 }
-
-
-
-
-
-
 
 /* product */
 
@@ -709,20 +701,47 @@ del {
 	padding-right: 10px;
 	margin-bottom: -15px;
 
+
 }
 
 .cartegory-right-content-item h1 {
-	font-size: 15px;
+	font-size: 20px;
 	margin-top: 6px;
-	margin-bottom: -15px;
+	margin-bottom: -40px;
 	color: rgb(9, 7, 7);
 
+
 }
 
-.cartegory-right-content-item img {
-	width: 100%;
-	padding: 0 13px;
+.cartegory-right-content-item del {
+	margin-top: -30px;
+	padding-left: 55px;
+	font-size: 13px;
 }
+
+.cartegory-right-content-item p {
+	margin-top: -30px;
+	font-size: 18px;
+	color: rgb(243, 88, 114);
+}
+
+
+.cartegory-right-content-item a img {
+	width: 310px;
+	padding: 0 13px;
+	height: auto; /* Giữ tỷ lệ chiều cao */
+}
+
+.cartegory-right-content-item a img.small {
+	width: 150px;
+	/* Ảnh sẽ có kích thước 150x100px */
+}
+
+.cartegory-right-content-item a img.large {
+	width: 450px;
+	/* Ảnh sẽ có kích thước 450x300px */
+}
+
 
 
 
