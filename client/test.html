@@ -1,110 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Example</title>
     <style>
-        .image-row {
-            display: flex;
-        }
-        
-        .image {
-            flex: 1;
-            padding: 5px;
+        /* Initially hide the department content */
+        .department-content {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="image-row">
-        <div class="image">
-            <img src="image1.jpg" alt="Hình 1">
+    <div class="header-department">
+        <span class="department-icon">
+            <span class="razzi-svg-icon">
+                <svg id="show-menu-button" aria-hidden="true" role="img" focusable="false" width="29" height="" viewBox="0 0 24 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 0H0V2.10674H24V0Z" />
+                    <path d="M24 7.88215H0V9.98889H24V7.88215Z" />
+                    <path d="M24 15.8925H0V18H24V15.8925Z" />
+                </svg>
+            </span>
+            <span class="department-text">TÌM KIẾM</span>
+        </span>
+        <div class="department-content" id="department-content">
+            <!-- Your menu items go here -->
+            <ul>
+                <li><a href="#">Menu Item 1</a></li>
+                <li><a href="#">Menu Item 2</a></li>
+                <li><a href="#">Menu Item 3</a></li>
+            </ul>
         </div>
-        <div class="image">
-            <img src="image2.jpg" alt="Hình 2">
-        </div>
-        <div class="image">
-            <img src="image3.jpg" alt="Hình 3">
-        </div>
-        <div class="image">
-            <img src="image4.jpg" alt="Hình 4">
-        </div>
+    
     </div>
-    <div class="image-row">
-        <div class="image">
-            <img src="image5.jpg" alt="Hình 5">
-        </div>
-        <div class="image">
-            <img src="image6.jpg" alt="Hình 6">
-        </div>
-        <div class="image">
-            <img src="image7.jpg" alt="Hình 7">
-        </div>
-        <div class="image">
-            <img src="image8.jpg" alt="Hình 8">
-        </div>
-    </div>
-    <div class="image-row">
-        <div class="image">
-            <img src="image9.jpg" alt="Hình 9">
-        </div>
-        <div class "image">
-            <img src="image10.jpg" alt="Hình 10">
-        </div>
-        <div class="image">
-            <img src="image11.jpg" alt="Hình 11">
-        </div>
-        <div class="image">
-            <img src="image12.jpg" alt="Hình 12">
-        </div>
-    </div>
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        .image-row {
-            display: flex;
-        }
-        
-        .image {
-            flex: 1;
-            padding: 5px;
-        }
-    </style>
-</head>
-<body>
-    <div class="image-row">
-        <?php
-        // Kết nối đến cơ sở dữ liệu (thay đổi thông tin kết nối của bạn ở đây)
-        $servername = "your_server_name";
-        $username = "your_username";
-        $password = "your_password";
-        $dbname = "your_database_name";
-        
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        
-        // Kiểm tra kết nối
-        if ($conn->connect_error) {
-            die("Kết nối không thành công: " . $conn->connect_error);
-        }
-        
-        // Truy vấn cơ sở dữ liệu để lấy danh sách các hình ảnh
-        $sql = "SELECT * FROM images";
-        $result = $conn->query($sql);
-        
-        if ($result->num_rows > 0) {
-            // Lặp qua kết quả truy vấn và hiển thị ảnh
-            while($row = $result->fetch_assoc()) {
-                echo '<div class="image">';
-                echo '<img src="' . $row["image_url"] . '" alt="' . $row["image_description"] . '">';
-                echo '</div>';
+
+    <script>
+        // Get a reference to the button and the menu content
+        const showMenuButton = document.getElementById("show-menu-button");
+        const departmentContent = document.getElementById("department-content");
+
+        // Initially hide the menu
+        departmentContent.style.display = "none";
+
+        // Add a click event listener to the button
+        showMenuButton.addEventListener("click", function() {
+            // Toggle the menu's visibility
+            if (departmentContent.style.display === "none") {
+                departmentContent.style.display = "block";
+            } else {
+                departmentContent.style.display = "none";
             }
-        } else {
-            echo "Không có hình ảnh.";
-        }
-        
-        // Đóng kết nối cơ sở dữ liệu
-        $conn->close();
-        ?>
-    </div>
+        });
+    </script>
 </body>
 </html>

@@ -106,21 +106,20 @@ if (!$conn) {
 
 </html>
 <?php
-session_start();
 
-// Check if the user is already logged in
-if (isset($_SESSION['user_id'])) {
-    // User is already logged in, redirect to another page
-    header("Location: cartegoryadd.php");
-    exit;
-}
+// // Check if the user is already logged in
+// if (isset($_SESSION['user_role'])) {
+//     // User is already logged in, redirect to another page
+//     header("Location: login_class.php.php");
+//     exit;
+// }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Handle the login logic here
-    $email = $_POST['email'];
-    $password = $_POST['pass_word'];
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // Handle the login logic here
+//     $email = $_POST['email'];
+//     $password = $_POST['pass_word'];
     
-}
+// }
 ?>
 
 

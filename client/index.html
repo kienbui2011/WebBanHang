@@ -43,7 +43,7 @@
                                 <a href="index.html">TRANG CHỦ</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
-                                <a href="../cartegory/cartegory_AoSoMi.php">CỬA HÀNG</a>
+                                <a href="../client/cartegory/cartegory_AoSoMi.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
                                 <a href="blogs.html">TIN TỨC</a>
@@ -88,9 +88,8 @@
                 <div class="header-center-items header-items  has-logo">
                     <div class="header-department ">
                         <span class="department-icon">
-                            <span class="razzi-svg-icon ">
-                                <svg aria-hidden="true" role="img" focusable="false" width="29" height=""
-                                    viewBox="0 0 24 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <span class="razzi-svg-icon">
+                                <svg id="show-menu-button" aria-hidden="true" role="img" focusable="false" width="29" height="" viewBox="0 0 24 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M24 0H0V2.10674H24V0Z" />
                                     <path d="M24 7.88215H0V9.98889H24V7.88215Z" />
                                     <path d="M24 15.8925H0V18H24V15.8925Z" />
@@ -98,9 +97,25 @@
                             </span>
                             <span class="department-text">TÌM KIẾM</span>
                         </span>
-                        <div class="department-content">
-                            <nav id="department-menu" class="department-menu main-navigation"></nav>
+                        <div class="department-content" id="department-content">
+                            <!-- Your menu items go here -->
+                            <ul>
+                                <li class="category-left-li"><a href="./cartegory/cartegory_DamBody.php"><u>KIỂU ĐẦM</u></a>
+                                    <ul>
+                                        <li><a href="cartegory_DamBody.php">Váy đầm</a></li>
+                                        <li><a href="cartegory_VayDamMuaHe.php">Váy đầm mùa hè</a></li>
+                                    </ul>
+                                </li>
+                                <li class="category-left-li"><a href="cartegory_AoSoMi.php"><u>QUẦN ÁO</u></a>
+                                    <ul>
+                                        <li><a href="cartegory_AoSoMi.php">Áo Sơ Mi</a></li>
+                                        <li><a href="cartegory_QuanJean.php">Quần Jean</a></li>
+                                    </ul>
+                                </li>
+        
+                            </ul>
                         </div>
+                    
                     </div>
                     <!-- .header-department -->
                     <div class="header-search ra-search-form search-type-form-cat search-form-type form-type-form-cat">
@@ -150,7 +165,7 @@
 
 
         <!-- Dien thoai -->
-        <div class="header-mobile  header-contents logo-default hidden-md hidden-lg">
+        <div class="header-mobile header-contents logo-default hidden-md hidden-lg row">
             <div class="mobile-menu">
                 <a href="#" class="mobile-menu-toggle hamburger-menu" data-toggle="modal"
                     data-target="mobile-menu-modal">
@@ -173,7 +188,7 @@
                 </p>
                 <p class="site-description">váy đầm công sở</p>
             </div>
-            <div class="mobile-header-icons">
+            <div class="mobile-header-icons row">
                 <div class="mobile-search">
                     <a href="#" class="search-icon" data-toggle="modal" data-target="search-modal">
                         <span class="razzi-svg-icon ">
@@ -258,19 +273,19 @@
 
                 <li class="productt-item">
                     <img src="img/imgDMSP.png" alt="Sản phẩm 1">
-                    <a href="#">Đầm Body</a>
+                    <a href="./cartegory/cartegory_DamBody.php">Đầm Body</a>
                 </li>
                 <li class="productt-item">
                     <img src="img/imgDMSP2.png" alt="Sản phẩm 2">
-                    <a href="#">Váy Đầm</a>
+                    <a href="./cartegory/cartegory_VayDamMuaHe.php">Váy Đầm</a>
                 </li>
                 <li class="productt-item">
                     <img src="img/imgDMSP3.png" alt="Sản phẩm 3">
-                    <a href="#">Áo Sơ Mi</a>
+                    <a href="./cartegory/cartegory_AoSoMi.php">Áo Sơ Mi</a>
                 </li>
                 <li class="productt-item">
                     <img src="img/imgDMSP$.png" alt="Sản phẩm 4">
-                    <a href="#">Quần Jean</a>
+                    <a href="./cartegory/cartegory_QuanJean.php">Quần Jean</a>
                 </li>
             </ul>
 
@@ -318,7 +333,7 @@
 
                 <div>
                     <div class="product">
-                        <img src="img/img3.jpg" alt="Sản phẩm 4">
+                        <img src="img/img7.jpg" alt="Sản phẩm 4">
                         <h1>Tên sản phẩm </h1>
                         <h2>200.000<sup>đ</sup></h2>
                     </div>

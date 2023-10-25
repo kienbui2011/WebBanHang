@@ -19,9 +19,8 @@
             <div class="razzi-header-container container">
                 <div class="header-left-items">
                     <div class="site-branding">
-                        <a href="index.html" class="logo logo-text">
+                        <a href="../index.html" class="logo logo-text">
                             <span class="logo-dark">NTKQ-fashionista</span>
-
                         </a>
                         <p class="site-title">
                             <a href="index.html" rel="home">NTKQ fashion</a>
@@ -33,13 +32,14 @@
                     <nav id="primary-menu" class="main-navigation primary-navigation">
                         <ul id="menu-keva" class="nav-menu click-icon">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1685 current_page_item menu-item-11951 active">
-                                <a href="index.html">TRANG CHỦ</a>
+                            <a href="../index.html">TRANG CHỦ</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
                                 <a href="../cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
-                                <a href="blogs.html">TIN TỨC</a>
+                                <a href="../blogs.html">TIN TỨC</a>
+                        
                             </li>
                         </ul>
                     </nav>
@@ -69,8 +69,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="header-bottom header-contents hidden-xs hidden-sm has-center no-sides">
             <div class="razzi-header-container container">

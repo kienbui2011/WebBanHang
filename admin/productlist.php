@@ -58,9 +58,32 @@ if (isset($_POST['search'])) {
         transform: all 0, 3 ease;
         border: 1px solid rgb(253, 76, 12);
     }
+
     .admin-content-right-cartegory-list>button a {
         color: white;
     }
+
+    .search-form {
+        display: flex;
+    }
+
+    .search-form button {
+        color: white;
+        height: 30px;
+        width: 100px;
+        background-color: coral;
+        border: 1px solid rgb(253, 76, 12);
+        margin-left: 55%;
+        margin-top: 20px;
+    }
+
+    .search-form button:hover {
+        background-color: rgb(253, 76, 12);
+    }
+    .search-form button a {
+        color: white;
+    }
+   
 </style>
 
 
@@ -71,15 +94,10 @@ if (isset($_POST['search'])) {
         <div class="search-form">
             <form method="POST" action="">
                 <input type="text" name="search">
-                <button type="submit" >Tìm kiếm</button>
+                <input type="submit" name="Search" value="Tìm kiếm" />
             </form>
+            <button><a href="productadd.php">Thêm</a></button>
         </div>
-
-       
-        <button id="exitButton"><a href="productlist.php">Thoát</a></button>
-
-
-
 
         <table>
             <tr class="boild">
@@ -88,6 +106,7 @@ if (isset($_POST['search'])) {
                 <th><b>Tên Sản Phẩm</b></th>
                 <th><b>Danh mục</b></th>
                 <th><b>Loại Sản Phẩm</b></th>
+                <th><b>Ảnh</b></th>
                 <th><b>Giá bán</b></th>
                 <th><b>Giá mới</b></th>
                 <th><b>SL</b></th>
@@ -100,6 +119,11 @@ if (isset($_POST['search'])) {
                     $i++;
                     // Determine the CSS class for row color based on even or odd
                     $row_class = ($i % 2 == 0) ? 'even' : 'odd';
+                    $image_path = $result['product_img'];
+
+                    // Check if the image file exists
+                    $image_file_path = '/Applications/XAMPP/xamppfiles/htdocs/NTKQ/admin/uploadss/' . $image_path;
+
             ?>
                     <tr class="<?php echo $row_class; ?>">
                         <th><?php echo $i; ?></th>
@@ -107,6 +131,14 @@ if (isset($_POST['search'])) {
                         <th><?php echo $result['product_name']; ?></th>
                         <th><?php echo $result['cartegory_name']; ?></th>
                         <th><?php echo $result['brand_name']; ?></th>
+                        <th><?php $image_path = $result['product_img'];
+
+                            if (file_exists('/Applications/XAMPP/xamppfiles/htdocs/NTKQ/admin/uploadss/' . $image_path)) {
+                                echo '<img src="/NTKQ/admin/uploadss/' . $image_path . '" alt="Product Image"  style=" width:30px; height:35px; display: block; margin: 0 auto; padding: 2px;">';
+                            } else {
+                                echo 'Image file does not exist.';
+                            } ?></th>
+
                         <th><?php echo $result['product_price']; ?></th>
                         <th><?php echo $result['product_price_new']; ?></th>
                         <th><?php echo $result['quantity']; ?></th>

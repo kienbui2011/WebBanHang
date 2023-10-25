@@ -411,7 +411,10 @@ textarea {
 	margin-top: -5px;
 
 }
+.product-content-right-product-price p b {
+	font-weight: bold;
 
+}
 .product-content-right-product-color img {
 	width: 30px;
 	height: 30px;
@@ -727,20 +730,20 @@ del {
 
 
 .cartegory-right-content-item a img {
-	width: 310px;
+	width: 240px;
 	padding: 0 13px;
-	height: auto; /* Giữ tỷ lệ chiều cao */
+	height: auto; 
 }
 
-.cartegory-right-content-item a img.small {
+/* .cartegory-right-content-item a img.small {
 	width: 150px;
-	/* Ảnh sẽ có kích thước 150x100px */
+	Ảnh sẽ có kích thước 150x100px
 }
 
 .cartegory-right-content-item a img.large {
 	width: 450px;
 	/* Ảnh sẽ có kích thước 450x300px */
-}
+/* }  */
 
 
 
@@ -1244,6 +1247,15 @@ h2 {
 	align-items: center;
 	margin-left: 45%;
 	font-family: Florence, cursive;
+}
+
+
+.header-mobile {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
 }
 
 

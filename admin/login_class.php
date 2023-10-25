@@ -92,26 +92,28 @@ if (!$conn) {
 <?php
 require_once('config.php'); // Include the database connection
 
-session_start();
-
-if (isset($_SESSION['user_id'])) {
-    header("Location: cartegoryadd.php");
-    exit;
-}
+ 
+// if (isset($_SESSION['user_role'])) {
+//     // Thực hiện hành động tương ứng
+// }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = $_POST['pass_word'];
 
-   
+
     $queryAdmin = "SELECT * FROM tbl_admin_account WHERE email = '$email' AND pass_word = '$password'";
     $queryUser = "SELECT * FROM tbl_user_acccount WHERE email = '$email' AND pass_word = '$password'";
 
     $resultAdmin = mysqli_query($conn, $queryAdmin);
     $resultUser = mysqli_query($conn, $queryUser);
 
+    // session_start();
+   
+    
+
     if ($resultAdmin && mysqli_num_rows($resultAdmin) == 1) {
-     
+
         $_SESSION['user_role'] = 'admin';
         header('Location: cartegoryadd.php');
         exit;
@@ -125,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-mysqli_close($conn);
+
 ?>
 
 <body>

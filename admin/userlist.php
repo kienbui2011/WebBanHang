@@ -8,11 +8,11 @@ include "class/user_class.php";
 $user = new user;
 $show_user = $user->show_user();
 
-$isSearch = false; // Biến để kiểm tra đã thực hiện tìm kiếm hay chưa
 
+$isSearch = false; // Biến để kiểm tra đã thực hiện tìm kiếm hay chưa
 if (isset($_GET['Search'])) {
     $tukhoa = $_GET['timkiem']; // từ khóa nhập vào ô input
-    $sql_timkiem = "SELECT * FROM tbl_user_acccount WHERE id_user_acccount LIKE '%" . $tukhoa . "%' ";
+    $sql_timkiem = "SELECT * FROM tbl_user_acccount WHERE fullname LIKE '%" . $tukhoa . "%' ";
     $query_timkiem = mysqli_query($conn, $sql_timkiem);
     $isSearch = true; // Đã thực hiện tìm kiếm
 } else {
@@ -21,11 +21,6 @@ if (isset($_GET['Search'])) {
     $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
 }
 ?>
-
-
-
-
-
 
 <style>
     .admin-content-right-cartegory-list form input:first-child {
@@ -42,10 +37,10 @@ if (isset($_GET['Search'])) {
         margin-top: 20px;
         border: 1px solid gray;
         background-color: #FFDFDF;
-        color:rgb(63, 63, 63);
+        color: rgb(63, 63, 63);
     }
 
-    .admin-content-right-cartegory-list button{
+    .admin-content-right-cartegory-list button {
         color: white;
         height: 30px;
         width: 100px;
@@ -55,27 +50,43 @@ if (isset($_GET['Search'])) {
         transform: all 0, 3 ease;
         border: 1px solid rgb(253, 76, 12);
     }
+
     .admin-content-right-cartegory-list button a {
         color: white;
     }
+
+    .additional {
+        display: flex;
+    }
+    .additional button {
+        color: white;
+        height: 30px;
+        width: 100px;
+        background-color: coral;
+        border: 1px solid rgb(253, 76, 12);
+        margin-left: 55%;
+        margin-top: 20px;
+    }
+
+    .additional button:hover {
+        background-color: rgb(253, 76, 12);
+
+    }
 </style>
-
-
-
-
-
-
 
 
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory-list">
         <h1>Danh sách nhân viên</h1>
 
-        <form action="userlist.php" method="GET" name="search">
-            <input type="text" name="timkiem" />
-            <input type="submit" name="Search" value="Tìm kiếm" />
-        </form>
+        <div class="additional">
+            <form action="userlist.php" method="GET" name="search">
+                <input type="text" name="timkiem" />
+                <input type="submit" name="Search" value="Tìm kiếm" />
+            </form>
 
+            <button><a href="useradd.php">Thêm</a></button>
+        </div>
         <?php if ($isSearch) : ?>
             <button><a href="userlist.php">Thoát</a></button>
         <?php endif; ?>

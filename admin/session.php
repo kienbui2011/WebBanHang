@@ -45,7 +45,7 @@ class Session {
     // Redirect if the user is already logged in
     public static function checkLogin() {
         if (self::get("login") == true) {
-            header("Location: index.php");
+            header("Location: cartegoryadd.php");
             exit; // Added exit to stop script execution after redirection
         }
     }

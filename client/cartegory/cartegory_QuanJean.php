@@ -19,7 +19,7 @@
             <div class="razzi-header-container container">
                 <div class="header-left-items">
                     <div class="site-branding">
-                        <a href="index.html" class="logo logo-text">
+                        <a href="../index.html" class="logo logo-text">
                             <span class="logo-dark">NTKQ-fashionista</span>
 
                         </a>
@@ -33,13 +33,14 @@
                     <nav id="primary-menu" class="main-navigation primary-navigation">
                         <ul id="menu-keva" class="nav-menu click-icon">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1685 current_page_item menu-item-11951 active">
-                                <a href="index.html">TRANG CHỦ</a>
+                                <a href="../index.html">TRANG CHỦ</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
                                 <a href="../cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
-                                <a href="blogs.html">TIN TỨC</a>
+                                <a href="../blogs.html">TIN TỨC</a>
+
                             </li>
                         </ul>
                     </nav>
@@ -125,7 +126,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Dien thoai -->
         <div class="header-mobile  header-contents logo-default hidden-md hidden-lg">
             <div class="mobile-menu">
@@ -229,11 +229,12 @@
                                 <option value="">đen</option>
                                 <option value="">trắng</option>
                             </select>
-                            <select name="" id="">
+                            <select name="product_price_new" id="product_price_new">
                                 <option value="">Sắp xếp</option>
-                                <option value="">Giá cao đến thấp </option>
-                                <option value="">Giá thấp đến cao</option>
+                                <option value="high_to_low">Giá cao đến thấp</option>
+                                <option value="low_to_high">Giá thấp đến cao</option>
                             </select>
+
                         </div>
                     </div>
 
@@ -273,7 +274,7 @@
 
                                     echo '<h1>' . $row['product_name'] . '</h1>';
                                     echo '<h3><del>' . $row['product_price'] . '<sup>đ</sup></del></h3>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<p>' . $row['product_price_new'] . '<sup>đ</sup></p>';
                                     echo '</a>';
                                 }
                             } else {
@@ -318,7 +319,7 @@
 
                                     echo '<h1>' . $row['product_name'] . '</h1>';
                                     echo '<h3><del>' . $row['product_price'] . '<sup>đ</sup></del></h3>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<p>' . $row['product_price_new'] . '<sup>đ</sup></p>';
                                     echo '</a>';
                                 }
                             } else {
@@ -362,7 +363,7 @@
 
                                     echo '<h1>' . $row['product_name'] . '</h1>';
                                     echo '<h3><del>' . $row['product_price'] . '<sup>đ</sup></del></h3>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<p>' . $row['product_price_new'] . '<sup>đ</sup></p>';
                                     echo '</a>';
                                 }
                             } else {
@@ -404,7 +405,7 @@
                                     // Check if the image file exists
                                     echo '<h1>' . $row['product_name'] . '</h1>';
                                     echo '<del>' . $row['product_price'] . '<sup>đ</sup></del>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<p>' . $row['product_price_new'] . '<sup>đ</sup></p>';
                                     echo '</a>';
                                 }
                             } else {
