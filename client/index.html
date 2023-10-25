@@ -83,13 +83,16 @@
                 </div>
             </div>
         </div>
+        
         <div class="header-bottom header-contents hidden-xs hidden-sm has-center no-sides">
             <div class="razzi-header-container container">
                 <div class="header-center-items header-items  has-logo">
                     <div class="header-department ">
                         <span class="department-icon">
                             <span class="razzi-svg-icon">
-                                <svg id="show-menu-button" aria-hidden="true" role="img" focusable="false" width="29" height="" viewBox="0 0 24 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <svg id="show-menu-button" aria-hidden="true" role="img" focusable="false" width="29"
+                                    height="" viewBox="0 0 24 18" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
                                     <path d="M24 0H0V2.10674H24V0Z" />
                                     <path d="M24 7.88215H0V9.98889H24V7.88215Z" />
                                     <path d="M24 15.8925H0V18H24V15.8925Z" />
@@ -100,22 +103,79 @@
                         <div class="department-content" id="department-content">
                             <!-- Your menu items go here -->
                             <ul>
-                                <li class="category-left-li"><a href="./cartegory/cartegory_DamBody.php"><u>KIỂU ĐẦM</u></a>
+                                <li class="category-left-li"><a href="./cartegory/cartegory_DamBody.php"><u>KIỂU
+                                            ĐẦM</u></a>
                                     <ul>
-                                        <li><a href="cartegory_DamBody.php">Váy đầm</a></li>
-                                        <li><a href="cartegory_VayDamMuaHe.php">Váy đầm mùa hè</a></li>
+                                        <li><a href="./cartegory/cartegory_DamBody.php">Váy đầm</a></li>
+                                        <li><a href="./cartegory/cartegory_VayDamMuaHe.php">Váy đầm mùa hè</a></li>
                                     </ul>
                                 </li>
-                                <li class="category-left-li"><a href="cartegory_AoSoMi.php"><u>QUẦN ÁO</u></a>
+                                <li class="category-left-li"><a href="./cartegory/cartegory_AoSoMi.php"><u>QUẦN
+                                            ÁO</u></a>
                                     <ul>
-                                        <li><a href="cartegory_AoSoMi.php">Áo Sơ Mi</a></li>
-                                        <li><a href="cartegory_QuanJean.php">Quần Jean</a></li>
+                                        <li><a href="./cartegory/cartegory_AoSoMi.php">Áo Sơ Mi</a></li>
+                                        <li><a href="./cartegory/cartegory_QuanJean.php">Quần Jean</a></li>
                                     </ul>
                                 </li>
-        
+
                             </ul>
                         </div>
-                    
+                        <style>
+                            .department-content ul {
+                                background-color: rgba(255, 255, 255, 0.7);
+                               
+                                padding: 15px;
+                                list-style-type: none; 
+                                backdrop-filter: blur(5px);
+                             
+                            }
+
+                            /* Style the list items (li) */
+                            .department-content ul li {
+                                margin: 5px 0;
+                            }
+
+                            .department-content ul li a {
+                                text-decoration: none;
+                                color: #414040;
+                               
+                            }
+
+                            .department-content ul li a u {
+                                text-decoration: none;
+                                /* Remove underline from links */
+                                color: #414040;
+                                /* Set link color */
+                                font-weight: bold;
+
+                            }
+
+                            .department-content ul li:hover {
+                                background-color: #F2C3C3
+                            }
+
+                            .department-content ul li a:hover {
+                                color: rgb(252, 86, 86);
+                                font-weight: bold;
+                            }
+                        </style>
+
+                        <script>
+                            const showMenuButton = document.getElementById("show-menu-button");
+                            const departmentContent = document.getElementById("department-content");
+
+
+                            departmentContent.style.display = "none";
+                            showMenuButton.addEventListener("click", function () {
+
+                                if (departmentContent.style.display === "none") {
+                                    departmentContent.style.display = "block";
+                                } else {
+                                    departmentContent.style.display = "none";
+                                }
+                            });
+                        </script>
+
                     </div>
                     <!-- .header-department -->
                     <div class="header-search ra-search-form search-type-form-cat search-form-type form-type-form-cat">
@@ -394,10 +454,11 @@
                 trung vào việc cung cấp cho khách hàng những sản phẩm chất lượng và thời trang, NTKQ-fashionista đã trở
                 thành điểm đến hàng đầu cho những người yêu thời trang.<br>
 
-                <b>  Sản phẩm chính:</b><br>
-                 Cửa hàng chú trọng vào việc cung cấp một loạt các sản phẩm thời trang nữ:<br>
+                <b> Sản phẩm chính:</b><br>
+                Cửa hàng chú trọng vào việc cung cấp một loạt các sản phẩm thời trang nữ:<br>
 
-                 <i>Bao gồm:</i> Đầm, váy, áo sơ mi, quần áo hàng ngày và trang phục dự tiệc với các mẫu thiết kế thời thượng và
+                <i>Bao gồm:</i> Đầm, váy, áo sơ mi, quần áo hàng ngày và trang phục dự tiệc với các mẫu thiết kế thời
+                thượng và
                 đa dạng.<br>
                 <b> Giá trị đặc biệt:</b><br>
                 <i>Chất lượng ưu việt:</i> <br>
@@ -409,13 +470,14 @@
                 <i> Phong cách đa dạng: </i><br>
                 Cửa hàng cung cấp nhiều phong cách khác nhau, từ thời trang phố đến thiết kế dự tiệc, đáp ứng nhu cầu đa
                 dạng của khách hàng.<br>
-                <b> Tư vấn thời trang:</b> <br> NTKQ-fashionista có đội ngũ nhân viên tận tâm và am hiểu về thời trang, sẵn sàng tư
+                <b> Tư vấn thời trang:</b> <br> NTKQ-fashionista có đội ngũ nhân viên tận tâm và am hiểu về thời trang,
+                sẵn sàng tư
                 vấn và hỗ trợ khách hàng trong việc lựa chọn trang phục và phụ kiện phù hợp.<br>
                 <b>Địa chỉ:</b><br>
                 NTKQ-fashionista có cửa hàng trực tuyến và cửa hàng vật lý tại địa chỉ sau:<br>
 
                 <i> Cửa hàng trực tuyến: </i> NTKQ-fashionista<br>
-                    <i> Cửa hàng vật lý: </i>Ở một nơi nào đó<br>
+                <i> Cửa hàng vật lý: </i>Ở một nơi nào đó<br>
                 <b> Liên hệ:</b><br>
 
                 Điện thoại: (+84) 365-402-637<br>
@@ -424,7 +486,8 @@
 
                 Thứ 2 - Thứ 6: 9:00 AM - 8:00 PM<br>
                 Thứ 7 - Chủ Nhật: 10:00 AM - 6:00 PM<br>
-                <b> NTKQ-fashionista </b> mong muốn mang đến cho bạn trải nghiệm mua sắm thời trang tuyệt vời và đáp ứng mọi nhu
+                <b> NTKQ-fashionista </b> mong muốn mang đến cho bạn trải nghiệm mua sắm thời trang tuyệt vời và đáp ứng
+                mọi nhu
                 cầu thời trang của bạn. Hãy ghé thăm cửa hàng để khám phá thế giới thời trang đa dạng và độc đáo của
                 chúng tôi!<br>
                 Một chặng đường dài có các bạn, đồng nghiệp, khách hàng... Mong rằng, trong mỗi hành trình phía trước,

@@ -6067,6 +6067,8 @@ object {
 	left: calc(100% - 1px);
 }
 
+
+
 .header-custom-text {
 	color: var(--rz-header-color-dark);
 }
