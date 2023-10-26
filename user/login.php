@@ -1,8 +1,18 @@
 <?php
-include "database.php";
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Web_demo";
+
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
+if (!$conn) {
+    die("sql không kết nối: " . mysqli_connect_error());
+}
+
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -77,32 +87,15 @@ include "database.php";
         }
     </style>
 </head>
-
 <body>
     <div class="login-container">
         <div class="Layer_1"> <img src="../client/img/IMG_6220.JPG" alt=""> </div>
-        <?php
-        if($_POST){
-
-            $user_name=$_POST['user_name'];
-            $pass_word=$_POST['pass_word'];
-            $result=mysqli_query($conn,"SELECT * from tbl_user_acccount where email='$user_name' and password='$pass_word'");
-            $row=mysqli_fetch_assoc($result);
-            // var_dump($row);
-            // die;
-            if($row){
-              header("Location:cartegoryadd.php");
-            }else{
-                echo '<p style="color:red">Tên đăng nhập hoặc mật khẩu không đúng!</p>';
-            }
-            }
-            ?>
-        <form action="cartegoryadd.php" method="post">
+        <form action="login_class.php" method="POST">
             <div class="form-group">
-                <input type="email" id="username" name="user_name" placeholder="Tên đăng nhập" required>
+            <input type="email" name="email" placeholder="Email" required>
             </div>
             <div class="form-group">
-                <input type="password" id="password" name="pass_word" placeholder="Mật khẩu" required>
+                <input type="password"  name="pass_word" placeholder="Mật khẩu" required>
             </div>
             <input type="checkbox">
             <label class="custom-control-label" for="customCheck">Remember Me</label>
@@ -112,6 +105,21 @@ include "database.php";
 </body>
 
 </html>
+<?php
 
+// // Check if the user is already logged in
+// if (isset($_SESSION['user_role'])) {
+//     // User is already logged in, redirect to another page
+//     header("Location: login_class.php.php");
+//     exit;
+// }
+
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//     // Handle the login logic here
+//     $email = $_POST['email'];
+//     $password = $_POST['pass_word'];
+    
+// }
+?>
 
 

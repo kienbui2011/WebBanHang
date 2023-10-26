@@ -19,7 +19,6 @@ include "class/user_class.php";
 //     $update_user = $user->update_user(
 
 ?>
-
 <?php
 $user = new user;
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

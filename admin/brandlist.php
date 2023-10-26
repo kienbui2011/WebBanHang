@@ -1,9 +1,7 @@
 <?php
-
 include "header.php";
 include "slider.php";
 include "class/brand_class.php";
-
 ?>
 <?php
 
@@ -84,7 +82,7 @@ if (isset($_GET['Search'])) {
 
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory-list">
-        <h1>Danh loại sản phẩm</h1>
+        <h1>Danh mục sản phẩm</h1>
 
 
 

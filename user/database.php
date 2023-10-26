@@ -40,7 +40,7 @@ class Database
     {
         $result = $this->link->query($query) or
             die($this->link->error . __LINE__);
-        if ($result->num_rows > 0) {
+        if ($result->num_rows >0) {
             return $result;
         } else {
             return false;
@@ -83,4 +83,17 @@ class Database
             return false;
         }
     }
+
+    // search data
+    public function search($query)
+{
+    $search_result = $this->link->query($query) or die($this->link->error . __LINE__);
+    if ($search_result) {
+        return $search_result;
+    } else {
+        return false;
+    }
+}
+
+
 }

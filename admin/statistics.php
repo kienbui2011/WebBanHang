@@ -91,7 +91,7 @@ $resultCountProducts->close();
 
             <a href="userlist.php">
                 <li class="statistics-item row">
-                    <h2>Thành Viên</h2>
+                    <h2>Nhân Viên</h2>
                     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M13.375 3.375C13.375 4.68668 12.3117 5.75 11 5.75C9.68832 5.75 8.625 4.68668 8.625 3.375C8.625 2.06332 9.68832 1 11 1C12.3117 1 13.375 2.06332 13.375 3.375Z" stroke="black" stroke-opacity="0.40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M15.75 11.775C15.75 13.575 13.623 15.042 11 15.042C8.377 15.042 6.25 13.579 6.25 11.775C6.25 9.97097 8.377 8.50897 11 8.50897C13.623 8.50897 15.75 9.97097 15.75 11.775Z" stroke="black" stroke-opacity="0.40" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />

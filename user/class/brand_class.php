@@ -55,5 +55,14 @@ class brand
         header('Location:brandlist.php');
         return $result;
     }
+
+    public function search_brand($keyword) {
+        $sql = "SELECT * FROM tbl_product 
+                INNER JOIN tbl_cartegory ON tbl_product.cartegory_id = tbl_cartegory.cartegory_id
+                WHERE product_name LIKE '%" . $keyword . "%'
+                ORDER BY tbl_product.product_id DESC";
+        $result = $this->db->search($sql);
+        return $result;
+    }
 }
 ?>

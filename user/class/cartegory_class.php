@@ -46,5 +46,9 @@ class cartegory
         header('Location:cartegorylist.php');
         return $result;
     }
+   
+
+
+
 }
 ?>

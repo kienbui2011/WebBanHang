@@ -131,11 +131,14 @@ header h2 {
 }
 
 .admin-content-left>ul>li>a:hover {
+    margin-left: 10px;
     color: coral;
+    transition: 1s;
 }
 
 .admin-content-left ul li {
-    margin: 6px 12px;
+    margin: 20px 12px;
+
 
 }
 
@@ -182,15 +185,15 @@ header h2 {
     border: none;
     color: white;
     transform: all 0, 3 ease;
-       border: 1px solid rgb(253, 76, 12);
+    border: 1px solid rgb(253, 76, 12);
 
 }
-
+/* 
 .admin-content-right-cartegory_add button:hover {
     background-color: transparent;
     border: 1px solid coral;
     color: coral;
-}
+} */
 
 /* -------------Cartgory list--------- */
 .admin-content-right-cartegory-list table {
@@ -320,4 +323,4 @@ select {
 }
 
 
-   
+

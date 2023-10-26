@@ -62,20 +62,12 @@ public function delete_user($id_user_acccount)
     
     return $result;
 }
-
-
-
-
-
-
-
-public function get_user($user_id) {
+ 
+public function get_user($user_id) { 
     $query = "SELECT * FROM tbl_user_acccount WHERE id_user_acccount = '$user_id'";
     $result = $this->db->select($query);
     return $result;
 }
-
-
 
 public function update_user($user_id, $new_data) {
     // $new_data is an associative array containing the fields to be updated and their new values
@@ -87,7 +79,8 @@ public function update_user($user_id, $new_data) {
     $query .= " WHERE id_user_acccount = '$user_id'";
     
     $result = $this->db->update($query);
-    return $result;
+    header('Location:userlist.php');
+        return $result;
 }
 
 }

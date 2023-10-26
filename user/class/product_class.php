@@ -1,6 +1,9 @@
 <?php
 include "database.php";
+// ini_set('display_errors', 1);
+// error_reporting(E_ALL);
 ?>
+
 
 <?php
 
@@ -123,8 +126,6 @@ class product
         return $result;
     }
 
-
-
     public function show_product()
     {
         $query = "SELECT tbl_product.*, tbl_cartegory.cartegory_name, tbl_brand.brand_name
@@ -146,6 +147,30 @@ class product
     }
 
 
+    public function search_product($keyword) {
+        $sql = "SELECT * FROM tbl_product 
+                INNER JOIN tbl_cartegory ON tbl_product.cartegory_id = tbl_cartegory.cartegory_id
+                INNER JOIN tbl_brand ON tbl_product.brand_id = tbl_brand.brand_id
+                WHERE product_name LIKE '%" . $keyword . "%'
+                ORDER BY tbl_product.product_id DESC";
+        $result = $this->db->search($sql);
+        return $result;
+    }
+    
+    // public function search_product($keyword) {
+    //     $sql = "SELECT * FROM tbl_product 
+    //             INNER JOIN tbl_category ON tbl_product.category_id = tbl_category.category_id
+    //             INNER JOIN tbl_brand ON tbl_product.brand_id = tbl_brand.brand_id
+    //             WHERE 
+    //                 product_name LIKE '%" . $keyword . "%' 
+    //                 OR category_name LIKE '%" . $keyword . "%' 
+    //                 OR brand_name LIKE '%" . $keyword . "%'
+    //             ORDER BY tbl_product.product_id DESC
+    //             ORDER BY tbl_category.category_id DESC
+    //             ORDER BY tbl_brand.brand_id DESC";
+    //     $result = $this->db->search($sql);
+    //     return $result;
+    // }
 
 
     public function get_product($product_id)
@@ -161,17 +186,7 @@ class product
         header('Location:productlist.php');
         return $result;
     }
+
+
 }
-
-// if ($result) {
-//     $query = "SELECT * FROM tbl_product ORDER BY product_id DESC LIMIT 1";
-//     $result = $this->db->select($query)->fetch_assoc();
-//     $product_id = $result['product_id'];
-//     $filename =  $_FILES['product_img_desc']['name'];
-
-//     foreach ($filename as $key => $value) {
-//         $query = "INSERT INTO tbl_product_img (product_id,product_img_desc) VALUES ('$product_id','$value')";
-//         $result = $this->db->insert($query);
-//     }
-// }
 ?>

@@ -90,7 +90,7 @@
                     </div>
                     <!-- .header-department -->
                     <div class="header-search ra-search-form search-type-form-cat search-form-type form-type-form-cat">
-                        <form method="get" class="form-search" action="https://kaven.vn/">
+                        <form method="get" class="form-search" action="#">
                             <div class="search-fields">
                                 <input type="text" name="s" class="search-field" value="" placeholder="Điền tên hoặc mã sản phẩm" autocomplete="off">
 
@@ -138,11 +138,11 @@
                 </a>
             </div>
             <div class="site-branding">
-                <a href="https://kaven.vn/" class="logo logo-text">
+                <a href="#" class="logo logo-text">
                     <span class="logo-dark">NTKQ</span>
                 </a>
                 <p class="site-title">
-                    <a href="https://kaven.vn/" rel="home">Kaven fashion</a>
+                    <a href="#" rel="home">Kaven fashion</a>
                 </p>
                 <p class="site-description">váy đầm công sở</p>
             </div>
@@ -255,8 +255,9 @@
                                 font-weight: bold;
                             }
                         </style>
-                        <p><b>Giá cũ: </b><?php echo $row['product_price'] . "đ</p>"; ?></p>
-                        <p><b>Giá mới: </b><?php echo  $row['product_price_new'] . "đ</p>"; ?></p>
+
+                        <p><b>Giá cũ: </b><?php echo number_format($row['product_price'], 0, ',', '.') . "đ"; ?></p>
+                        <p><b>Giá mới: </b><?php echo number_format($row['product_price_new'], 0, ',', '.') . "đ"; ?></p>
                     </div>
 
                     <!-- <div class="product-content-right-product-color">
@@ -292,14 +293,13 @@
                         }
                     </script>
 
-                    <div class="quantity">
-                        <p style="font-weight:  bold;">Số lượng:</p>
-                        <input type="number" min="0" value="1">
-                        <p><b>Hàng còn: </b><?php echo  $row['quantity'] . ""; ?></p>
+                    <div class="quantity row">
+                        <p style="font-weight:  bold;"> Còn hàng: </p> &ensp;<p><?php echo  $row['quantity'] . ""; ?></p>
                     </div>
 
                     <div class="product-content-right-product-button">
-                        <a href="cart.html">
+                        <a href="cart.php?id=<?php echo $product_id; ?>">
+
                             <button>
                                 <p>MUA HÀNG</p>
                             </button>
@@ -491,9 +491,6 @@
 
 
 
-
-
-
                 </div>
             </div>
 
@@ -622,7 +619,7 @@
 
 
                     <div class="footer-branding">
-                        <a href="https://kaven.vn/" class="logo logo-text">NTKQ </a>
+                        <a href="#" class="logo logo-text">NTKQ </a>
                     </div>
 
                     <nav class="menu-footer-extra-container">

@@ -29,7 +29,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
-
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory_add">
         <h1>Sửa danh mục</h1>

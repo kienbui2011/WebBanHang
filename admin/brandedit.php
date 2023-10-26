@@ -14,8 +14,6 @@ if ($get_brand ) {
     $resultA = $get_brand ->fetch_assoc();
 }
 
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cartegory_id = $_POST['cartegory_id'];
     $brand_name = $_POST['brand_name'];
@@ -32,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         border: 1px solid gray;
 
     }
-</style>
+</style> 
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory_add">
         <h1>Sửa loại sản phẩm</h1>

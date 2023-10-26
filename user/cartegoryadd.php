@@ -1,5 +1,6 @@
 <?php
-
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 include "header.php";
 include "slider.php";
 include "class/cartegory_class.php";
@@ -25,7 +26,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
 </div>
-</section>
-</body>
 
-</html>
+
+<?php
+?>
+
+<?php
+// Kiểm tra trạng thái đăng nhập
+// if (isset($_SESSION['user_role'])) 
+//    {
+//     // If the 'user_id' is not set, the user is not logged in, so you can keep the existing code to redirect to the login page.
+//     header("Location: login.php");
+//     exit;
+// }
+
+// Nội dung của trang admin
+// Đặt mã PHP của bạn ở đây, chỉ được truy cập nếu đã đăng nhập
+?>
