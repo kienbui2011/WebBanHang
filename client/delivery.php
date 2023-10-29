@@ -59,7 +59,7 @@
                         </a>
                     </div>
                     <div class="header-cart">
-                        <a href="cart.html" data-toggle="modal" data-target="cart-modal">
+                        <a href="cart.php" data-toggle="modal" data-target="cart-modal">
                             <span class="razzi-svg-icon icon-cart">
                                 <svg aria-hidden="true" role="img" focusable="false" width="29" height="29"
                                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -337,7 +337,7 @@
                     <input type="text" id="address" name="address" required><br>
                     <label for="introduction">Lưu ý cho Shop:</label>
                     <textarea id="introduction" name="introduction" rows="2" cols="50" required></textarea><br><br>
-                    <a href="cart.html" class="row">
+                    <a href="cart.php" class="row">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20"
                             viewBox="0 0 14 16" fill="none">
                             <path

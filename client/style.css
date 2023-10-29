@@ -239,6 +239,7 @@ textarea {
 	width: 25px;
 	height: 25px;
 	border: 1px solid rgb(196, 193, 193);
+	margin-left: 10px;
 
 }
 
@@ -248,7 +249,8 @@ textarea {
 }
 
 .cart-content-left td:first-child img {
-	width: 130px;
+	width: 110px;
+	width: 110px;
 }
 
 .cart-content-left td:nth-child(2) {
@@ -325,8 +327,6 @@ textarea {
 	color: #000;
 	font-size: 15px;
 	text-align: center;
-
-
 }
 
 .cart-content-right-button button:first-child:hover {
@@ -350,9 +350,7 @@ textarea {
 
 
 
-
-
-/* cart */
+/* ---------------------cart------------------ */
 
 .product {
 	padding-top: 230px;
@@ -451,14 +449,14 @@ textarea {
 
 .quantity input {
 	height: 5px;
-	margin-top: 15px;
+	margin-top: 17px;
 	margin-left: 10px;
 	margin-right: 10px;
 	width: 90px;
 	padding-left: 30px;
 }
 
-.product-content-right-product-button button {
+.product-content-right-product-button form button {
 	width: 180px;
 	height: 45px;
 	display: block;
@@ -467,7 +465,7 @@ textarea {
 
 }
 
-.product-content-right-product-button button:first-child {
+.product-content-right-product-button form  button:first-child {
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -479,13 +477,13 @@ textarea {
 
 }
 
-.product-content-right-product-button button:first-child:hover {
+.product-content-right-product-button form button:first-child:hover {
 	background-color: black;
 	color: #fff;
 	border: 2px solid rgb(6, 5, 5);
 }
 
-.product-content-right-product-button button:last-child {
+.product-content-right-product-button form button:last-child {
 	border: 2px solid rgb(5, 4, 4);
 	color: rgb(9, 8, 8);
 	background-color: white;
@@ -790,19 +788,7 @@ del {
 
 }
 
-/* cartegory */
-
-
-
-
-
-
-
-
-
-
-
-
+/* ----------------------cartegory --------------*/
 
 
 
@@ -1256,6 +1242,12 @@ h2 {
     align-items: center;
     justify-content: space-between;
     padding: 0 15px;
+}
+
+.delete-link {
+	padding: 5px;
+	cursor: pointer;
+	border: 1px solid #ccc;
 }
 
 

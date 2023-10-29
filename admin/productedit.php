@@ -49,6 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //     $insert_product = $product->insert_product();
 // }
 ?>
+
 <div class="admin-content-right">
     <div class="admin-content-right-product_add">
         <h1>Chỉnh Sửa Sản Phẩm</h1>
@@ -89,27 +90,77 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <br>
 
             <div class="product row">
+                <style>
+                    .thumbnail {
+                        width: 40px;
+                        height: 40px;
+                        margin-top: 13px;
+                        display: none;
+                        margin-left: 10px;
+                    }
+                </style>
                 <div class="product_row1">
                     <div class="row">
                         <input value="<?php echo $product_data['product_img']; ?>" multiple type="file" name="product_img" class="red-placeholder">
-                        <label for="avatar">Ảnh sản phẩm</label><br />
+                        <img class="thumbnail" id="product_img_thumbnail1" src="" alt="Thumbnail">
+                        <label for="avatar">Ảnh sản phẩm</label>
+                        <br />
                     </div>
 
                     <div class="row">
                         <input value="<?php echo $product_data['product_img_desc1']; ?>" multiple type="file" name="product_img_desc1" class="red-placeholder">
-                        <label for="avatar">Ảnh mô tả 1</label><br />
+                        <img class="thumbnail" id="product_img_thumbnail2" src="" alt="Thumbnail">
+                        <label for="avatar">Ảnh mô tả 1</label>
+
+                        <br />
                     </div>
                 </div>
                 <div class="product_row2">
                     <div class="row">
                         <input value="<?php echo $product_data['product_img_desc2']; ?>" multiple type="file" name="product_img_desc2" class="red-placeholder">
-                        <label for="avatar">Ảnh mô tả 2</label><br />
+                        <label for="avatar">Ảnh mô tả 2</label>
+                        <img class="thumbnail" id="product_img_thumbnail3" src="" alt="Thumbnail">
+                        <br />
                     </div>
                     <div class="row">
                         <input value="<?php echo $product_data['product_img_desc3']; ?>" multiple type="file" name="product_img_desc3" class="red-placeholder">
-                        <label for="avatar">Ảnh mô tả 3</label><br />
+                        <label for="avatar">Ảnh mô tả 3</label>
+                        <img class="thumbnail" id="product_img_thumbnail4" src="" alt="Thumbnail">
+                        <br />
                     </div>
                 </div>
+                <script>
+                    // Add an event listener to each file input to update the associated thumbnail with the selected file
+                    document.querySelector('input[name="product_img"]').addEventListener("change", function() {
+                        updateThumbnail(this, document.getElementById("product_img_thumbnail1"));
+                    });
+
+                    document.querySelector('input[name="product_img_desc1"]').addEventListener("change", function() {
+                        updateThumbnail(this, document.getElementById("product_img_thumbnail2"));
+                    });
+
+                    document.querySelector('input[name="product_img_desc2"]').addEventListener("change", function() {
+                        updateThumbnail(this, document.getElementById("product_img_thumbnail3"));
+                    });
+
+                    document.querySelector('input[name="product_img_desc3"]').addEventListener("change", function() {
+                        updateThumbnail(this, document.getElementById("product_img_thumbnail4"));
+                    });
+
+                    function updateThumbnail(input, thumbnail) {
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+                            reader.onload = function(e) {
+                                thumbnail.src = e.target.result;
+                                thumbnail.style.display = "block"; // Show the thumbnail
+                            };
+                            reader.readAsDataURL(input.files[0]);
+                        } else {
+                            thumbnail.style.display = "none"; // Hide the thumbnail if no file is selected
+                        }
+                    }
+                </script>
+
             </div>
             <button type="submit">Sửa</button>
         </form>

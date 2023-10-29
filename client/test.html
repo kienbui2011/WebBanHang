@@ -1,56 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu Example</title>
+    <title>My Web Page</title>
     <style>
-        /* Initially hide the department content */
-        .department-content {
-            display: none;
+        a {
+            display: block; /* Make the anchor element a block element */
+            justify-content: center;
+            align-items: center; 
+            text-align: center;
+            margin-top: 15px;
+            text-decoration: none;
+            background-color:#EA6D6D;
+            color: #ffffff;
+            padding: 10px 15px; 
+            border-radius: 5px;
+            border: 2px solid rgb(255, 188, 188);
+            width: 230px; 
+            margin: 10px auto;
         }
-    </style>
+    </style> 
 </head>
 <body>
-    <div class="header-department">
-        <span class="department-icon">
-            <span class="razzi-svg-icon">
-                <svg id="show-menu-button" aria-hidden="true" role="img" focusable="false" width="29" height="" viewBox="0 0 24 18" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M24 0H0V2.10674H24V0Z" />
-                    <path d="M24 7.88215H0V9.98889H24V7.88215Z" />
-                    <path d="M24 15.8925H0V18H24V15.8925Z" />
-                </svg>
-            </span>
-            <span class="department-text">TÌM KIẾM</span>
-        </span>
-        <div class="department-content" id="department-content">
-            <!-- Your menu items go here -->
-            <ul>
-                <li><a href="#">Menu Item 1</a></li>
-                <li><a href="#">Menu Item 2</a></li>
-                <li><a href="#">Menu Item 3</a></li>
-            </ul>
-        </div>
+    <h1>Welcome to My Web Page</h1>
+    <p>This is a paragraph of text.</p>
     
-    </div>
-
-    <script>
-        // Get a reference to the button and the menu content
-        const showMenuButton = document.getElementById("show-menu-button");
-        const departmentContent = document.getElementById("department-content");
-
-        // Initially hide the menu
-        departmentContent.style.display = "none";
-
-        // Add a click event listener to the button
-        showMenuButton.addEventListener("click", function() {
-            // Toggle the menu's visibility
-            if (departmentContent.style.display === "none") {
-                departmentContent.style.display = "block";
-            } else {
-                departmentContent.style.display = "none";
-            }
-        });
-    </script>
+    <a href="#">Mua Ngay</a>
 </body>
 </html>

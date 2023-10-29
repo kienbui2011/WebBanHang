@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <div class="header-cart">
-                        <a href="cart.html" data-toggle="modal" data-target="cart-modal">
+                        <a href="../cart.php" data-toggle="modal" data-target="cart-modal">
                             <span class="razzi-svg-icon icon-cart">
                                 <svg aria-hidden="true" role="img" focusable="false" width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M21.9353 20.0337L20.7493 8.51772C20.7003 8.0402 20.2981 7.67725 19.8181 7.67725H4.21338C3.73464 7.67725 3.33264 8.03898 3.28239 8.51523L2.06458 20.0368C1.96408 21.0424 2.29928 22.0529 2.98399 22.8097C3.66874 23.566 4.63999 24.0001 5.64897 24.0001H18.3827C19.387 24.0001 20.3492 23.5747 21.0214 22.8322C21.7031 22.081 22.0361 21.0623 21.9353 20.0337ZM19.6348 21.5748C19.3115 21.9312 18.8668 22.1275 18.3827 22.1275H5.6493C5.16836 22.1275 4.70303 21.9181 4.37252 21.553C4.042 21.1878 3.88005 20.7031 3.92749 20.2284L5.056 9.55014H18.9732L20.0724 20.2216C20.1223 20.7281 19.9666 21.2087 19.6348 21.5748Z" fill="currentColor"></path>
@@ -158,7 +158,7 @@
                     </a>
                 </div>
                 <div class="header-cart">
-                    <a href="cart.html" data-toggle="modal" data-target="cart-modal">
+                    <a href="../cart.php" data-toggle="modal" data-target="cart-modal">
                         <span class="razzi-svg-icon icon-cart">
                             <svg aria-hidden="true" role="img" focusable="false" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M21.9353 20.0337L20.7493 8.51772C20.7003 8.0402 20.2981 7.67725 19.8181 7.67725H4.21338C3.73464 7.67725 3.33264 8.03898 3.28239 8.51523L2.06458 20.0368C1.96408 21.0424 2.29928 22.0529 2.98399 22.8097C3.66874 23.566 4.63999 24.0001 5.64897 24.0001H18.3827C19.387 24.0001 20.3492 23.5747 21.0214 22.8322C21.7031 22.081 22.0361 21.0623 21.9353 20.0337ZM19.6348 21.5748C19.3115 21.9312 18.8668 22.1275 18.3827 22.1275H5.6493C5.16836 22.1275 4.70303 21.9181 4.37252 21.553C4.042 21.1878 3.88005 20.7031 3.92749 20.2284L5.056 9.55014H18.9732L20.0724 20.2216C20.1223 20.7281 19.9666 21.2087 19.6348 21.5748Z" fill="currentColor"></path>
@@ -216,8 +216,6 @@
                         $row = mysqli_fetch_assoc($result);
                         // Hiển thị thông tin chi tiết của sản phẩm
 
-
-
                     } else {
                         echo 'Không tìm thấy sản phẩm.';
                     }
@@ -267,48 +265,166 @@
                             <img src="img/imgColor.1.png" alt="">
                         </div> 
                     </div> -->
+                    <style>
+                        .size-option {
+                            display: inline-block;
+                            padding-top: 1px;
+                            padding-bottom: 1px;
+                            padding-left: 7px;
+                            padding-right: 7px;
+                            cursor: pointer;
+                            border: 1px solid #ccc;
+                            margin-right: 5px;
+                        }
 
+                        .size-option.active {
+                            background-color: lightgray;
+                        }
+                    </style>
                     <div class="product-content-right-product-size">
                         <p style="font-weight: bold;">Size:</p>
                         <div class="size">
-                            <span onclick="selectSize(this)">S</span>
-                            <span onclick="selectSize(this)">M</span>
-                            <span onclick="selectSize(this)">L</span>
-                            <span onclick="selectSize(this)">XL</span>
-                            <span onclick="selectSize(this)">XXL</span>
+                            <div class="size-option" onclick="selectSize('S')">S</div>
+                            <div class="size-option" onclick="selectSize('M')">M</div>
+                            <div class="size-option" onclick="selectSize('L')">L</div>
+                            <div class="size-option" onclick="selectSize('XL')">XL</div>
+                            <div class="size-option" onclick="selectSize('XXL')">XXL</div>
                         </div>
-                        <span style="color: red;">Vui lòng chọn size </span>
+                        <p style="color:red;">Vui lòng chọn size</p>
                     </div>
+
+
                     <script>
-                        function selectSize(element) {
-                            // Loại bỏ các thuộc tính style từ tất cả các kích thước
-                            var sizeElements = document.querySelectorAll('.size span');
-                            for (var i = 0; i < sizeElements.length; i++) {
-
-                                sizeElements[i].style.backgroundColor = 'transparent';
-                            }
-
-                            // Thiết lập độ dày chữ và màu nền cho kích thước được chọn
-                            element.style.backgroundColor = 'lightgray'; // Màu nền bạn muốn sử dụng
-                        }
+                        var sizeOptions = document.querySelectorAll('.size-option');
+                        sizeOptions.forEach(function(option) {
+                            option.addEventListener('click', function() {
+                                sizeOptions.forEach(function(opt) {
+                                    opt.classList.remove('active');
+                                });
+                                this.classList.add('active');
+                            });
+                        });
                     </script>
 
                     <div class="quantity row">
                         <p style="font-weight:  bold;"> Còn hàng: </p> &ensp;<p><?php echo  $row['quantity'] . ""; ?></p>
                     </div>
 
-                    <div class="product-content-right-product-button">
-                        <a href="cart.php?id=<?php echo $product_id; ?>">
 
-                            <button>
+
+                    <div class="product-content-right-product-button">
+                        <!-- <a href="cart.php?id= <?php // echo $product_id; 
+                                                    ?>"> -->
+                        <style>
+                            .custom-input {
+                                width: 100px;
+                                height: 30px;
+                            }
+                            
+                            </style>
+                        <form method="POST">
+                            <input type="hidden" name="id" value="<?php echo $product_id; ?>">
+                            <input type="hidden" id="selected_size" name="zi" value="">
+                            <label for="quantity" style="font-weight: bold; font-size: 17px;">Số lượng:&ensp;</label>
+                            <input type="number" min="1" value="1" name="quantity" class="custom-input">
+
+
+                            <button id="addToCartButton" type="submit" name="add_to_cart">
                                 <p>MUA HÀNG</p>
                             </button>
-                        </a>
-                        <button>
-                            <p>THÊM GIỎ HÀNG</p>
-                        </button>
 
+
+                            <button id="addToCartButton" type="submit" name="add_to_cart">
+                                <p>THÊM GIỎ HÀNG</p>
+                            </button>
+                        </form>
+
+                        <script>
+                            function selectSize(size) {
+                                document.getElementById('selected_size').value = size;
+                            }
+                        </script>
+                        <?php
+
+                        // Thực hiện kết nối đến cơ sở dữ liệu
+                        $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
+                        if (!$con) {
+                            die('Lỗi kết nối: ' . mysqli_connect_error());
+                        }
+
+                        if (isset($_GET['id'])) {
+                            $product_id = $_GET['id'];
+
+                            // if (isset($_POST['add_to_cart'])) {
+                            //     $selected_size = $_POST['zi'];
+
+                            //     // Get the current timestamp
+                            //     $current_time = date("Y-m-d H:i:s");
+
+                            //     // Query to get the product price from tbl_product
+                            //     $price_query = "SELECT product_price_new FROM tbl_product WHERE product_id = '$product_id'";
+                            //     $price_result = mysqli_query($con, $price_query);
+
+                            //     if ($price_row = mysqli_fetch_assoc($price_result)) {
+                            //         $product_price = $price_row['product_price_new'];
+
+                            //         // SQL query to insert data into the tbl_order_details table with product price and timestamp
+                            //         $sql = "INSERT INTO tbl_order_details (product_id, si_ze, time_added, price) VALUES ('$product_id', '$selected_size', '$current_time', '$product_price')";
+
+                            //         if (mysqli_query($con, $sql)) {
+                            //             echo '<p id="success-msg" style="color: green; font-weight: bold;">Đã thêm vào giỏ hàng.</p>';
+                            //             echo '<script>
+                            //                 setTimeout(function() {
+                            //                     document.getElementById("success-msg").style.display = "none";
+                            //                 }, 2000);
+                            //             </script>';
+                            //         } else {
+                            //             echo "Error: " . $sql . "<br>" . mysqli_error($con);
+                            //         }
+                            //     } else {
+                            //         echo "Error: Product price not found.";
+                            //     }
+                            // }
+
+
+                            if (isset($_POST['add_to_cart'])) {
+                                $selected_size = $_POST['zi'];
+                                $quantity = $_POST['quantity']; // Get the quantity from the form
+
+                                // Get the current timestamp
+                                $current_time = date("Y-m-d H:i:s");
+
+                                // Query to get the product price from tbl_product
+                                $price_query = "SELECT product_price_new FROM tbl_product WHERE product_id = '$product_id'";
+                                $price_result = mysqli_query($con, $price_query);
+
+                                if ($price_row = mysqli_fetch_assoc($price_result)) {
+                                    $product_price = $price_row['product_price_new'];
+
+                                    // SQL query to insert data into the tbl_order_details table with product price, timestamp, and quantity
+                                    $sql = "INSERT INTO tbl_order_details (product_id, si_ze, time_added, price, quantity) 
+                                            VALUES ('$product_id', '$selected_size', '$current_time', '$product_price', '$quantity')";
+
+                                    if (mysqli_query($con, $sql)) {
+                                        echo '<p id="success-msg" style="color: green; font-weight: bold;">Đã thêm vào giỏ hàng.</p>';
+                                        echo '<script>
+                                            setTimeout(function() {
+                                                document.getElementById("success-msg").style.display = "none";
+                                            }, 2000);
+                                        </script>';
+                                    } else {
+                                        echo "Error: " . $sql . "<br>" . mysqli_error($con);
+                                    }
+                                } else {
+                                    echo "Error: Product price not found.";
+                                }
+                            }
+                        }
+
+
+                        ?>
                     </div>
+
                     <br>
 
                     <div class="product-content-right-product-icon row">

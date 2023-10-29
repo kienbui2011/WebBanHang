@@ -73,7 +73,7 @@ include "header.php";
                     <th>Size</th>
                     <th>SL</th>
                     <th>Thành tiền</th>
-                    <th>Xóa</th>
+                 
                 </tr>
                 <tr>
                     <td>
@@ -83,7 +83,24 @@ include "header.php";
                         <?php echo '<p>' . $row['product_name'] . '</p>'; ?>
                     </td>
                     <td>
-                        <p>L</p>
+                        <style>
+                            .size {
+                                border: 1px solid #ccc;
+                                padding: 5px;
+                                outline: none;
+                            }
+                            .size:focus {
+                                border: 1px solid #999;
+                            }
+                        </style>
+                        <select class="size" id="sizeSelect" onchange="selectSize(this)">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+
                     </td>
                     <td>
                         <input type="number" id="quantity" min="1" value="1" oninput="calculateTotal()">
@@ -93,9 +110,7 @@ include "header.php";
                         <p><?php echo number_format($row['product_price_new'], 0, ',', '.') . "đ"; ?></p>
 
                     </td>
-                    <td>
-                        <span>x</span>
-                    </td>
+                
                 </tr>
             </table>
         </div>
@@ -114,12 +129,13 @@ include "header.php";
                     <td>TIỀN GIAO HÀNG </td>
                     <td>
                         <?php
-                        $deliveryCost = 30000; // Giá giao hàng cố định là 30.000đ
+                        $deliveryCost = 30000;
                         echo "<p id='deliveryCost' >" . number_format($deliveryCost, 0, ',', '.') . "đ</p>";
-                        // Kiểm tra nếu tổng giá trị đơn hàng lớn hơn 2.000.000đ thì miễn phí giao hàng
+        
                         ?>
                         <div id="shipping-message" style='color: green; font-weight: bold;'></div>
                     </td>
+
                 </tr>
                 <tr>
                     <td>TẠM TÍNH</td>
@@ -128,7 +144,6 @@ include "header.php";
                             <?php
                             $totalCost = $row['product_price_new'] + $deliveryCost;
                             echo number_format($totalCost, 0, ',', '.') . "đ";
-
                             ?>
                         </p>
                     </td>
@@ -153,10 +168,10 @@ include "header.php";
                         const shippingMessageElement = document.getElementById("shipping-message");
                         shippingMessageElement.textContent = "Miễn phí ship";
                     } else {
-                        ( quantity * productPrice < 2000000) 
+                        (quantity * productPrice < 2000000)
                         totalPrice -= 30000;
                         const shippingMessageElement = document.getElementById("shipping-message");
-                        shippingMessageElement.textContent = "Phí ship 30.000đ";
+                        shippingMessageElement.textContent = "Phí ship: 30.000đ";
                     }
                     // Cập nhật kết quả
                     document.getElementById("totalCost").textContent = number_format(totalPrice, 0, ',', '.') + "đ";
@@ -194,9 +209,10 @@ include "header.php";
                 <a href="../cartegory/cartegory_DamBody.php">
                     <button>TIẾP TỤC MUA SẮM</button>
                 </a>
-                <a href="../delivery.php">
+                <a href="../delivery.php?id=<?php echo $product_id; ?>">
                     <button>THANH TOÁN</button>
                 </a>
+                
             </div>
         </div>
     </div>

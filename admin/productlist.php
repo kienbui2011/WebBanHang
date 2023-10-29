@@ -17,8 +17,6 @@ if (isset($_POST['search'])) {
 ?>
 
 
-
-
 <style>
     .search-form form input:first-child {
         height: 30px;

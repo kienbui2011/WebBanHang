@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Trang Ví dụ</title>
+    <title>Đăng xuất</title>
 </head>
+
 <body>
-   
+
 
     <script>
         // Hiển thị hộp thoại xác nhận khi trang tải lên
@@ -12,9 +14,11 @@
             var confirmation = confirm("Bạn có chắc chắn muốn đăng xuất không?");
             if (confirmation) {
                 window.location.href = "login.php";
+            } else {
+                window.history.go(-1); // Quay lại trang trước đó
             }
-           
         }
     </script>
 </body>
+
 </html>
