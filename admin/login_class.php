@@ -13,7 +13,7 @@ if (!$conn) {
 }
 
 ?>
-
+ 
 
 <!DOCTYPE html>
 <html>
@@ -91,8 +91,6 @@ if (!$conn) {
 </head>
 <?php
 require_once('config.php'); // Include the database connection
-
- 
 // if (isset($_SESSION['user_role'])) {
 //     // Thực hiện hành động tương ứng
 // }
@@ -109,8 +107,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultUser = mysqli_query($conn, $queryUser);
 
     // session_start();
-   
-    
+
+
 
     if ($resultAdmin && mysqli_num_rows($resultAdmin) == 1) {
 

@@ -84,7 +84,7 @@ if (!$conn) {
             /* Đẩy lề bên phải */
             border-radius: 70px;
 
-        }
+        } 
     </style>
 </head>
 <body>

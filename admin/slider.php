@@ -6,7 +6,7 @@ session_start();
 
         <ul>
             <li><a href="statistics.php">- Bảng Thống Kê</a></li>
-            <li><a href="#">- Quản Lí Khách Hàng</a>
+            <li><a href="clientlist.php">- Quản Lí Khách Hàng</a>
             </li>
 
             <li><a href="#">- Quản Lí Đơn Hàng</a>
@@ -30,7 +30,7 @@ session_start();
             <li><a href="productlist.php">- Quản Lí Sản Phẩm</a>
 
             </li>
-            <li><a href="">- Quản Lí Blogs </a>
+            <li><a href="#">- Quản Lí Blogs </a>
 
             </li>
 
