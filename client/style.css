@@ -769,13 +769,13 @@ del {
 }
 
 .cartegory-left-li ul {
-	display: none;
+	/* display: none; */
 
 }
 
 .cartegory-left-li.block ul {
 
-	display: block;
+	/* display: block; */
 }
 
 .dartegory-right-bottom {

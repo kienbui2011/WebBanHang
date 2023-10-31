@@ -366,7 +366,6 @@
     </boder>
 
 
-<!-- 
     <section class="razzi-icon">
         <div class="razzi-icon-box">
             <div class="razzi-icon-box__icon">
@@ -502,4 +501,4 @@
     </footer>
 </body>
 
-</html> -->
+</html> 

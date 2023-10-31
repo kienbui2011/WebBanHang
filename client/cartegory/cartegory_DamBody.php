@@ -24,7 +24,7 @@ include "header.php";
                             <ul>
                                 <li><a href="cartegory_AoSoMi.php">Áo</a></li>
                                 <li><a href="cartegory_QuanJean.php">Quần </a></li>
-                            </ul>
+                            </ul> 
                         </li>
 
                     </ul>
