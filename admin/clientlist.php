@@ -95,6 +95,7 @@ if (isset($_GET['Search'])) {
                 <th><b>ID</b></th>
                 <th><b>Tên khách hàng</b></th>
                 <th><b>Email</b></th>
+                <th><b>Điện thoại</b></th>
                 <th><b>Ngày tạo</b></th>
                 <th><b>Tuỳ Biến</b></th>
             </tr>
@@ -112,6 +113,7 @@ if (isset($_GET['Search'])) {
                         <th><?php echo $result['client_id']; ?></th>
                         <th><?php echo $result['client_name']; ?></th>
                         <th><?php echo $result['email']; ?></th>
+                        <th><?php echo $result['phone']; ?></th>
                         <th><?php echo $result['time_added']; ?></th>
                         <th>
                            
@@ -131,6 +133,7 @@ if (isset($_GET['Search'])) {
                         <th><?php echo $result['client_id']; ?></th>
                         <th><?php echo $result['client_name']; ?></th>
                         <th><?php echo $result['email']; ?></th>
+                        <th><?php echo $result['phone']; ?></th>
                         <th><?php echo $result['time_added']; ?></th>
                         <th>
                         

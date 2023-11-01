@@ -148,10 +148,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 </script>
 <script>
-    // Replace the <textarea id="editor1"> with a CKEditor 4
-    // instance, using default configuration.
-    CKEDITOR.replace('editor1');
-    CKEDITOR.replace('editor2');
+    CKEDITOR.replace('editor1', {
+        toolbar: 'Basic',
+        height: 70
+    });
+
+    CKEDITOR.replace('editor2', {
+        toolbar: 'Basic',
+        height: 70
+    });
 </script>
 
 </html>

@@ -28,6 +28,35 @@ $rowCountProducts = $resultCountProducts->fetch_assoc();
 $resultCountProducts->close();
 
 
+
+
+// SQL query to count the number of product_ids in the tbl_product table
+$queryCountOrder = "SELECT COUNT(order_user_id) AS num_order FROM tbl_order";
+// Execute the query
+$queryCountOrder = $conn->query($queryCountOrder);
+// Fetch the result
+$rowCountOrder = $queryCountOrder->fetch_assoc();
+// Close the result set
+$queryCountOrder->close();
+
+
+
+
+
+// SQL query to fetch all 'total' values from the 'tbl_order' table
+$queryTotalValues = "SELECT total FROM tbl_order";
+$resultTotalValues = $conn->query($queryTotalValues);
+$totalSum = 0;
+
+while ($row = $resultTotalValues->fetch_assoc()) {
+    $total = $row['total'];
+    if ($total < 2000000) {
+        $totalSum += $total + 30000;
+    } else {
+        $totalSum += $total;
+    }
+}
+$resultTotalValues->close();
 ?>
 
 <style>
@@ -116,24 +145,25 @@ $resultCountProducts->close();
 
 
 
-            <a href="productlist.php">
+            <a href="orderlist.php">
                 <li class="statistics-item row">
                     <h2>Đơn Hàng</h2>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none">
                         <path d="M19.6707 7.79963L11.3568 2.99963L3.04297 7.79963V17.3996L11.3568 22.1996M19.6707 7.79963L11.3568 13.1996M19.6707 7.79963V12.5996M11.3568 22.1996V13.1996M11.3568 22.1996L13.1562 21.1607M11.3568 13.1996L3.55681 8.39963M14.9568 10.1996L7.15681 5.39963M16.1568 18.5996L17.3568 19.7996L20.9568 16.1996" stroke="black" stroke-opacity="0.38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </li>
-                <p> <?php echo $rowCountProducts['num_products']; ?></p>
+                <p> <?php echo $rowCountOrder['num_order']; ?></p>
             </a>
 
-            <a href="productlist.php">
+            <a href="orderlist.php">
                 <li class="statistics-item row">
                     <h2>Doanh Thu</h2>
                     <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 18 18" fill="none">
                         <path d="M0.536954 4.22826C0.110732 4.48399 -0.0274769 5.03682 0.228256 5.46305C0.48399 5.88927 1.03682 6.02748 1.46305 5.77174L0.536954 4.22826ZM6 2L6.54 1.28C6.24726 1.06045 5.85073 1.03999 5.53695 1.22826L6 2ZM10 5L9.46 5.72C9.78835 5.96626 10.2417 5.95918 10.5622 5.70278L10 5ZM15.5622 1.70278C15.9504 1.39227 16.0133 0.82591 15.7028 0.437774C15.3923 0.0496387 14.8259 -0.0132905 14.4378 0.297218L15.5622 1.70278ZM13.1 15C13.1 15.4971 13.5029 15.9 14 15.9C14.4971 15.9 14.9 15.4971 14.9 15H13.1ZM14.9 7C14.9 6.50294 14.4971 6.1 14 6.1C13.5029 6.1 13.1 6.50294 13.1 7H14.9ZM5.1 15C5.1 15.4971 5.50294 15.9 6 15.9C6.49706 15.9 6.9 15.4971 6.9 15H5.1ZM6.9 7C6.9 6.50294 6.49706 6.1 6 6.1C5.50294 6.1 5.1 6.50294 5.1 7H6.9ZM9.1 15C9.1 15.4971 9.50294 15.9 10 15.9C10.4971 15.9 10.9 15.4971 10.9 15H9.1ZM10.9 10C10.9 9.50294 10.4971 9.1 10 9.1C9.50294 9.1 9.1 9.50294 9.1 10H10.9ZM1.1 15C1.1 15.4971 1.50294 15.9 2 15.9C2.49706 15.9 2.9 15.4971 2.9 15H1.1ZM2.9 10C2.9 9.50294 2.49706 9.1 2 9.1C1.50294 9.1 1.1 9.50294 1.1 10H2.9ZM1.46305 5.77174L6.46305 2.77174L5.53695 1.22826L0.536954 4.22826L1.46305 5.77174ZM5.46 2.72L9.46 5.72L10.54 4.28L6.54 1.28L5.46 2.72ZM10.5622 5.70278L15.5622 1.70278L14.4378 0.297218L9.43777 4.29722L10.5622 5.70278ZM14.9 15V7H13.1V15H14.9ZM6.9 15V7H5.1V15H6.9ZM10.9 15V10H9.1V15H10.9ZM2.9 15V10H1.1V15H2.9Z" fill="black" fill-opacity="0.39" />
                     </svg>
                 </li>
-                <p>5.690.000 đ</p>
+                <p><?php echo number_format($totalSum, 0, '.', '.'); ?>đ</p>
+
             </a>
         </ul>
 

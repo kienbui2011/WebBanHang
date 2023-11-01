@@ -9,7 +9,7 @@ session_start();
             <li><a href="clientlist.php">- Quản Lí Khách Hàng</a>
             </li>
 
-            <li><a href="#">- Quản Lí Đơn Hàng</a>
+            <li><a href="orderlist.php">- Quản Lí Đơn Hàng</a>
             </li>
 
             <li><a href="adminlist.php">- Quản Trị Viên</a>

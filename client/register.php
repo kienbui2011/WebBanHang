@@ -19,12 +19,12 @@
             <div class="razzi-header-container container">
                 <div class="header-left-items">
                     <div class="site-branding">
-                        <a href="index.html" class="logo logo-text">
+                        <a href="index.php" class="logo logo-text">
                             <span class="logo-dark">NTKQ-fashionista</span>
 
                         </a>
                         <p class="site-title">
-                            <a href="index.html" rel="home">NTKQ fashion</a>
+                            <a href="index.php" rel="home">NTKQ fashion</a>
                         </p>
                         <p class="site-description">váy đầm công sở</p>
                     </div>
@@ -33,10 +33,10 @@
                     <nav id="primary-menu" class="main-navigation primary-navigation">
                         <ul id="menu-keva" class="nav-menu click-icon">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1685 current_page_item menu-item-11951 active">
-                                <a href="index.html">TRANG CHỦ</a>
+                                <a href="index.php">TRANG CHỦ</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
-                                <a href="../client/cartegory/cartegory_AoSoMi.php">CỬA HÀNG</a>
+                                <a href="../client/cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
                                 <a href="blogs.html">TIN TỨC</a>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="header-right-items header-items  has-logo">
                     <div class="header-account">
-                        <a class="account-icon" href="login.html" data-toggle="modal" data-target="account-modal">
+                        <a class="account-icon" href="login.php" data-toggle="modal" data-target="account-modal">
                             <span class="razzi-svg-icon ">
                                 <svg aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -56,7 +56,7 @@
                         </a>
                     </div>
                     <div class="header-cart">
-                        <a href="login.html" data-toggle="modal" data-target="cart-modal">
+                        <a href="login.php" data-toggle="modal" data-target="cart-modal">
                             <span class="razzi-svg-icon icon-cart">
                                 <svg aria-hidden="true" role="img" focusable="false" width="29" height="29" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M21.9353 20.0337L20.7493 8.51772C20.7003 8.0402 20.2981 7.67725 19.8181 7.67725H4.21338C3.73464 7.67725 3.33264 8.03898 3.28239 8.51523L2.06458 20.0368C1.96408 21.0424 2.29928 22.0529 2.98399 22.8097C3.66874 23.566 4.63999 24.0001 5.64897 24.0001H18.3827C19.387 24.0001 20.3492 23.5747 21.0214 22.8322C21.7031 22.081 22.0361 21.0623 21.9353 20.0337ZM19.6348 21.5748C19.3115 21.9312 18.8668 22.1275 18.3827 22.1275H5.6493C5.16836 22.1275 4.70303 21.9181 4.37252 21.553C4.042 21.1878 3.88005 20.7031 3.92749 20.2284L5.056 9.55014H18.9732L20.0724 20.2216C20.1223 20.7281 19.9666 21.2087 19.6348 21.5748Z" fill="currentColor"></path>
@@ -268,13 +268,17 @@
         }
 
         $name = mysqli_real_escape_string($con, $_POST["client_name"]);
+        $phone = mysqli_real_escape_string($con, $_POST["phone"]);
         $email = mysqli_real_escape_string($con, $_POST["email"]);
         $password = $_POST["pass_word"];
         $password_confirm = $_POST["pass_word_confirm"];
 
-        if (empty($email) || empty($password) || empty($password_confirm)) {
+        if (empty($email) || empty($password) || empty($password_confirm) || empty($phone)) {
             $registrationFailure = true;
             $errorMessage = "Bạn chưa điền đầy đủ thông tin.";
+        } elseif (strlen($phone) !== 10) {
+            $registrationFailure = true;
+            $errorMessage = "Số điện thoại phải chứa đúng 10 số.";
         } elseif ($password !== $password_confirm) {
             $registrationFailure = true;
             $errorMessage = "Mật khẩu không phù hợp.";
@@ -286,10 +290,8 @@
                 $registrationFailure = true;
                 $errorMessage = "Email đã được đăng ký.";
             } else {
-               
-
                 $current_time = date('Y-m-d H:i:s');
-                $insertQuery = "INSERT INTO tbl_client_account (client_name, email, pass_word, time_added) VALUES ('$name', '$email', '$password', '$current_time')";
+                $insertQuery = "INSERT INTO tbl_client_account (client_name, email, phone, pass_word, time_added) VALUES ('$name', '$email', '$phone', '$password', '$current_time')";
 
                 if (mysqli_query($con, $insertQuery)) {
                     $registrationSuccess = true;
@@ -301,7 +303,8 @@
         }
         mysqli_close($con);
     }
-    ?>
+?>
+
 
 
     <boder>
@@ -317,6 +320,10 @@
                     <p class="box-login">
                         <label for="register-email"></label>
                         <input type="email" name="email" required placeholder="Email Address *" style="width: 100%;"><br><br>
+                    </p>
+                    <p class="box-login">
+                        <label for="register-name"></label>
+                        <input type="text" name="phone" required placeholder="Number Phone *" style="width: 100%;"><br><br>
                     </p>
                     <p class="box-login">
                         <label for="register-password"></label>

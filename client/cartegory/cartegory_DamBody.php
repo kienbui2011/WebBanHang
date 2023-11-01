@@ -7,7 +7,7 @@ include "header.php";
     <section class="cartegory">
         <div class="container">
             <div class="category-top ">
-                <p>Trang chủ &nbsp; &nbsp;&nbsp;<span> <sup> &#10230;</sup></span> &nbsp; &nbsp;&nbsp; Hàng mới về </p>
+                <p>Trang chủ &nbsp; &nbsp;&nbsp;<span> <sup> &#10230;</sup></span> &nbsp; &nbsp;&nbsp; Cửa hàng</p>
             </div>
         </div>
         <div class="container2">
@@ -90,8 +90,9 @@ include "header.php";
                                     // Check if the image file exists
 
                                     echo '<h1>' . $row['product_name'] . '</h1>';
-                                    echo '<h3><del>' . $row['product_price'] . '<sup>đ</sup></del></h3>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<h3><del>' . number_format($row['product_price'], 0, ',', '.') . '<sup>đ</sup></del></h3>';
+                                    echo '<p>' . number_format($row['product_price_new'], 0, ',', '.') . '<sup>đ</sup></p>';
+                                    
                                     echo '</a>';
                                 }
                             } else {
@@ -114,7 +115,7 @@ include "header.php";
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 2 LIMIT 4 OFFSET 3";
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 2 LIMIT 4 OFFSET 4";
 
                             $result = mysqli_query($con, $sql);
 
@@ -135,8 +136,9 @@ include "header.php";
                                     // Check if the image file exists
 
                                     echo '<h1>' . $row['product_name'] . '</h1>';
-                                    echo '<h3><del>' . $row['product_price'] . '<sup>đ</sup></del></h3>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<h3><del>' . number_format($row['product_price'], 0, ',', '.') . '<sup>đ</sup></del></h3>';
+                                    echo '<p>' . number_format($row['product_price_new'], 0, ',', '.') . '<sup>đ</sup></p>';
+                                    
                                     echo '</a>';
                                 }
                             } else {
@@ -158,7 +160,7 @@ include "header.php";
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 2 LIMIT 5 OFFSET 7"; // Retrieve 5 products starting from the 8th product (offset of 7)
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 2 LIMIT 4 OFFSET 8"; // Retrieve 5 products starting from the 8th product (offset of 7)
 
                             $result = mysqli_query($con, $sql);
 
@@ -179,8 +181,9 @@ include "header.php";
                                     // Check if the image file exists
 
                                     echo '<h1>' . $row['product_name'] . '</h1>';
-                                    echo '<h3><del>' . $row['product_price'] . '<sup>đ</sup></del></h3>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<h3><del>' . number_format($row['product_price'], 0, ',', '.') . '<sup>đ</sup></del></h3>';
+                                    echo '<p>' . number_format($row['product_price_new'], 0, ',', '.') . '<sup>đ</sup></p>';
+                                    
                                     echo '</a>';
                                 }
                             } else {
@@ -201,7 +204,7 @@ include "header.php";
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 2 LIMIT 5 OFFSET 11"; // Retrieve 5 products starting from the 12th product (offset of 11)
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 2 LIMIT 4 OFFSET 12"; // Retrieve 5 products starting from the 12th product (offset of 11)
 
                             $result = mysqli_query($con, $sql);
 
@@ -221,8 +224,9 @@ include "header.php";
 
                                     // Check if the image file exists
                                     echo '<h1>' . $row['product_name'] . '</h1>';
-                                    echo '<del>' . $row['product_price'] . '<sup>đ</sup></del>';
-                                    echo '<p>'. $row['product_price_new'] . '<sup>đ</sup></p>';
+                                    echo '<h3><del>' . number_format($row['product_price'], 0, ',', '.') . '<sup>đ</sup></del></h3>';
+                                    echo '<p>' . number_format($row['product_price_new'], 0, ',', '.') . '<sup>đ</sup></p>';
+                                    
                                     echo '</a>';
                                 }
                             } else {

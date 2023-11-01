@@ -19,13 +19,13 @@
             <div class="razzi-header-container container">
                 <div class="header-left-items">
                     <div class="site-branding">
-                        <a href="index.html" class="logo logo-text">
+                        <a href="index.php" class="logo logo-text">
                             <span class="logo-dark">NTKQ-fashionista</span>
 
                         </a>
                         <p class="site-title">
-                            <a href="index.html" rel="home">NTKQ fashion</a>
-                        </p>
+                            <a href="index.php" rel="home">NTKQ fashion</a>
+                        </p> 
                         <p class="site-description">váy đầm công sở</p>
                     </div>
                 </div>
@@ -33,10 +33,10 @@
                     <nav id="primary-menu" class="main-navigation primary-navigation">
                         <ul id="menu-keva" class="nav-menu click-icon">
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-1685 current_page_item menu-item-11951 active">
-                                <a href="index.html">TRANG CHỦ</a>
+                                <a href="index.php">TRANG CHỦ</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
-                                <a href="../client/cartegory/cartegory_AoSoMi.php">CỬA HÀNG</a>
+                                <a href="../client/cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
                                 <a href="blogs.html">TIN TỨC</a>
@@ -46,7 +46,7 @@
                 </div>
                 <div class="header-right-items header-items  has-logo">
                     <div class="header-account">
-                        <a class="account-icon" href="login.html" data-toggle="modal" data-target="account-modal">
+                        <a class="account-icon" href="login.php" data-toggle="modal" data-target="account-modal">
                             <span class="razzi-svg-icon ">
                                 <svg aria-hidden="true" role="img" focusable="false" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -271,7 +271,7 @@
         <div class="site-content">
             <div class="login">
                 <h2>Đăng nhập</h2>
-                <form action="login_class.php" method="POST">
+                <form action="login_classs.php" method="POST">
                     <p class="box-login">
                         <label for="username"></label>
                         <input type="email" name="email" required placeholder="Email Address *" style="width: 100%;"><br><br>

@@ -156,6 +156,12 @@ class product
         $result = $this->db->search($sql);
         return $result;
     }
+    // public function search_product() {
+    //     $sql = "SELECT * FROM tbl_product  INNER JOIN tbl_cartegory ON tbl_product.cartegory_id = tbl_cartegory.cartegory_id
+    //     INNER JOIN tbl_brand ON tbl_product.brand_id = tbl_brand.brand_id";
+    //     $result = $this->db->search($sql);
+    //     return $result;
+    // }
     
     // public function search_product($keyword) {
     //     $sql = "SELECT * FROM tbl_product 
@@ -179,9 +185,6 @@ class product
         $result = $this->db->select($query);
         return $result;
     }
-    
-    
-    
     public function update_product($product_id , $product_price, $product_price_new, $quantity, $product_desc, $product_details, $product_img, $product_img_desc1, $product_img_desc2, $product_img_desc3)
     {
         $product_name = $_POST['product_name'];
