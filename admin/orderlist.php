@@ -19,7 +19,7 @@ if (isset($_GET['Search'])) {
     $isSearch = true; // Đã thực hiện tìm kiếm
 } else {
     $tukhoa = '';
-    $sql_danhsachbandau = "SELECT * FROM tbl_order LIMIT 10";
+    $sql_danhsachbandau = "SELECT * FROM tbl_order";
     $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
 }
 ?>

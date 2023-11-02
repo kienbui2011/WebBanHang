@@ -530,7 +530,7 @@ textarea {
 }
 
 .product-content-item {
-	padding: 20px;
+	padding: 10px;
 
 }
 
@@ -565,7 +565,6 @@ del {
 
 .product-content-item img {
 	width: 350px;
-	height: auto;
 	
 }
 

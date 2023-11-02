@@ -26,9 +26,9 @@ class order
 }
 
 
-public function delete_order($id_order)
+public function delete_order($order_user_idr)
 {
-    $query = "DELETE FROM tbl_order WHERE order_id= '$id_order'";
+    $query = "DELETE FROM tbl_order WHERE order_user_id= '$order_user_idr'";
     $result = $this->db->delete($query);
     
     header('Location: orderlist.php');

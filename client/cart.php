@@ -402,7 +402,7 @@
             }
 
             ?>
-
+ 
             <div class="cart-content-right">
                 <table>
                     <tr>
@@ -435,59 +435,7 @@
                         </td>
                     </tr>
                 </table>
-                <script>
-                    function calculateTotal() {
-                        // Lấy giá trị số lượng từ input
-                        var quantity = document.getElementById("quantity").value;
-
-                        // Lấy giá trị tổng tiền hàng từ PHP
-                        var productPrice = <?php echo $row['product_price_new']; ?>;
-
-                        // Lấy giá trị phí giao hàng từ PHP
-                        var deliveryCost = <?php echo $deliveryCost; ?>;
-
-                        // Tính toán tổng tiền dựa trên số lượng, tổng tiền hàng, và phí giao hàng
-                        var totalPrice = (quantity * productPrice) + deliveryCost;
-
-                        if (quantity * productPrice > 2000000) {
-                            totalPrice -= 30000;
-                            const shippingMessageElement = document.getElementById("shipping-message");
-                            shippingMessageElement.textContent = "Miễn phí ship";
-                        } else {
-                            (quantity * productPrice < 2000000)
-                            totalPrice -= 30000;
-                            const shippingMessageElement = document.getElementById("shipping-message");
-                            shippingMessageElement.textContent = "Phí ship 30.000đ";
-                        }
-                        // Cập nhật kết quả
-                        document.getElementById("totalCost").textContent = number_format(totalPrice, 0, ',', '.') + "đ";
-                    }
-
-                    // Hàm number_format để định dạng số
-                    function number_format(number, decimals, decPoint, thousandsSep) {
-                        number = (number + '').replace(/[^0-9+\-Ee.]/g, '');
-                        var n = !isFinite(+number) ? 0 : +number,
-                            prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
-                            sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep,
-                            dec = (typeof decPoint === 'undefined') ? '.' : decPoint,
-                            s = '';
-
-                        var toFixedFix = function(n, prec) {
-                            var k = Math.pow(10, prec);
-                            return '' + Math.round(n * k) / k;
-                        };
-
-                        s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');
-                        if (s[0].length > 3) {
-                            s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
-                        }
-                        if ((s[1] || '').length < prec) {
-                            s[1] = s[1] || '';
-                            s[1] += new Array(prec - s[1].length + 1).join('0');
-                        }
-                        return s.join(dec);
-                    }
-                </script>
+              
                 <div class="cart-content-right-text">
                     <p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 đ </p>
                 </div>

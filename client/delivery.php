@@ -283,54 +283,10 @@
 
 
 
-        <?php
-        ini_set('display_errors', 1);
-        error_reporting(E_ALL);
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
-            if (!$con) {
-                die('Lỗi kết nối: ' . mysqli_connect_error());
-            }
-
-            $full_name = mysqli_real_escape_string($con, $_POST["full_name"]);
-            $phone = mysqli_real_escape_string($con, $_POST["phone"]);
-            $email = mysqli_real_escape_string($con, $_POST["email"]);
-            $add_ress = mysqli_real_escape_string($con, $_POST["add_ress"]);
-            $note = mysqli_real_escape_string($con, $_POST["note"]);
-
-            $current_time = date('Y-m-d H:i:s');
-
-            $client_id = 123; // Replace 123 with the actual client ID.
-            $product_id = 456; // Replace 456 with the actual product ID.
-            
-            // Calculate the total price
-            $totalPriceQuery = "SELECT SUM(price * quantity) AS total FROM tbl_order_details";
-            $totalPriceResult = mysqli_query($con, $totalPriceQuery);
-            $totalPriceRow = mysqli_fetch_assoc($totalPriceResult);
-            $totalPrice = $totalPriceRow['total'];
-
-            // Insert the order into tbl_order
-            $insertOrderQuery = "INSERT INTO tbl_order (client_id, product_id, full_name, phone, email, add_ress, note, total, time_added) 
-            VALUES ('$client_id', '$product_id', '$full_name', '$phone', '$email', '$add_ress', '$note', '$totalPrice', '$current_time')
-            
-            ";
-            mysqli_query($con, $insertOrderQuery);
-
-            // Get the newly inserted order_id
-            $order_id = mysqli_insert_id($con);
-
-            // Any additional processing related to the product ID.
-
-            mysqli_close($con);
-        }
-        ?>
-
-
         <div class="delivery-content row">
             <div class="delivery-content-left">
                 <h2> Vui lòng nhập thông tin giao hàng</h2>
-                <form action="" method="POST">
+                <form action="delivery_class.php" method="POST">
                     <div class="row">
                         <div class="tel">
                             <label for="full_name">Họ và tên:</label>
@@ -349,20 +305,21 @@
                     <textarea name="note" rows="2" cols="50" required></textarea><br><br>
 
                     <a href="cart.php" class="row">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 14 16" fill="none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 14 16" fill="none">
                             <path d="M7.67719 15.5377C7.97418 15.8265 8.44901 15.8198 8.73775 15.5228C9.02649 15.2258 9.0198 14.751 8.72281 14.4623L7.67719 15.5377ZM1 8L0.477191 7.46225C0.331946 7.60346 0.25 7.79742 0.25 8C0.25 8.20258 0.331946 8.39654 0.477191 8.53775L1 8ZM8.72281 1.53775C9.0198 1.24901 9.02649 0.77418 8.73775 0.477191C8.44901 0.180202 7.97418 0.173514 7.67719 0.462254L8.72281 1.53775ZM12.4772 14.3708C12.7742 14.6595 13.249 14.6528 13.5378 14.3558C13.8265 14.0588 13.8198 13.584 13.5228 13.2952L12.4772 14.3708ZM7 8L6.47721 7.46224C6.33195 7.60345 6.25 7.79742 6.25 8C6.25 8.20258 6.33195 8.39655 6.47721 8.53776L7 8ZM13.5228 2.70476C13.8198 2.41603 13.8265 1.9412 13.5378 1.64421C13.249 1.34721 12.7742 1.34051 12.4772 1.62924L13.5228 2.70476ZM8.72281 14.4623L1.52281 7.46225L0.477191 8.53775L7.67719 15.5377L8.72281 14.4623ZM1.52281 8.53775L8.72281 1.53775L7.67719 0.462254L0.477191 7.46225L1.52281 8.53775ZM13.5228 13.2952L7.52279 7.46224L6.47721 8.53776L12.4772 14.3708L13.5228 13.2952ZM7.52279 8.53776L13.5228 2.70476L12.4772 1.62924L6.47721 7.46224L7.52279 8.53776Z" fill="#F83D3D" fill-opacity="0.63" />
-                        </svg>  &ensp; Về giỏ hàng</a>
+                        </svg> &ensp; Về giỏ hàng</a>
 
                     <div class="delivery-content-button">
                         <input type="reset" value="Xoá">
                         <input type="submit" value="Tiếp tục đến phương thức thanh toán">
                     </div>
                 </form>
+
             </div>
-            <div class="delivery-content-right">
-               
-            </div>
+
+
         </div>
+
 
 
         <!-- 

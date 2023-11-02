@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="Layer_1"> <img src="../client/img/IMG_6220.JPG" alt=""> </div>
 
 
-        <form method="POST">
+        <form  method="POST">
             <div class="form-group">
                 <input type="email" name="email" placeholder="Email" required>
             </div>

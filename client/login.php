@@ -25,7 +25,7 @@
                         </a>
                         <p class="site-title">
                             <a href="index.php" rel="home">NTKQ fashion</a>
-                        </p> 
+                        </p>
                         <p class="site-description">váy đầm công sở</p>
                     </div>
                 </div>
