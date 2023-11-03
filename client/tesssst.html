@@ -1,79 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Thanh toán</title>
-    <script src="https://js.stripe.com/v3/"></script>
+    <title>Thanh toán QR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #qr-code {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-    <h1>Thanh toán</h1>
+    <h1>Thanh toán QR</h1>
+    <p>Quét mã QR bên dưới để thanh toán:</p>
+    <div id="qr-code"></div>
 
-    <form id="payment-form">
-        <div>
-            <label for="card-element">
-                Thẻ tín dụng hoặc thẻ ghi nợ
-            </label>
-            <div id="card-element">
-                <!-- Thẻ sẽ được tạo bởi Stripe -->
-            </div>
-        </div>
-
-        <button type="submit">Thanh toán</button>
-    </form>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
     <script>
-        // Tạo đối tượng Stripe với khóa công khai của bạn
-        var stripe = Stripe('YOUR_PUBLISHABLE_KEY');
-
-        // Tạo đối tượng Elements
-        var elements = stripe.elements();
-
-        // Tạo một trình tạo thẻ và điều chỉnh giao diện người dùng
-        var card = elements.create('card');
-        card.mount('#card-element');
-
-        // Xử lý sự kiện gửi biểu mẫu thanh toán
-        var form = document.getElementById('payment-form');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Vô hiệu hóa nút thanh toán để tránh gửi nhiều lần
-            form.querySelector('button').disabled = true;
-
-            // Tạo token cho thẻ tín dụng hoặc thẻ ghi nợ
-            stripe.createToken(card).then(function(result) {
-                if (result.error) {
-                    // Xử lý lỗi nếu có
-                    var errorElement = document.getElementById('card-errors');
-                    errorElement.textContent = result.error.message;
-                } else {
-                    // Gửi token đến máy chủ để xử lý thanh toán
-                    stripeTokenHandler(result.token);
-                }
-            });
+        // Tạo mã QR từ dữ liệu thanh toán (ví dụ: số tài khoản ngân hàng)
+        var paymentData = "Số tài khoản: 1234567890";
+        var qrcode = new QRCode(document.getElementById("qr-code"), {
+            text: paymentData,
+            width: 128,
+            height: 128
         });
-
-        // Xử lý token trả về từ Stripe
-        function stripeTokenHandler(token) {
-            // Gửi token đến máy chủ để xử lý thanh toán
-            // Thay thế URL bằng đường dẫn đến máy chủ của bạn
-            fetch('YOUR_SERVER_ENDPOINT', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({token: token.id}),
-            })
-            .then(function(response) {
-                // Xử lý phản hồi từ máy chủ
-                if (response.ok) {
-                    // Thanh toán thành công, chuyển hướng hoặc hiển thị thông báo thành công
-                } else {
-                    // Xử lý lỗi nếu có
-                    var errorElement = document.getElementById('card-errors');
-                    errorElement.textContent = 'Có lỗi xảy ra trong quá trình thanh toán.';
-                }
-            });
-        }
     </script>
 </body>
-</html> . (isset($brandLinks[$brandCounter]) ? $brandLinks[$brandCounter] : 'default_link.php') . '" src="source_for_brand_' . $brandCounter . '">';
+</html>

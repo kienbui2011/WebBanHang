@@ -34,7 +34,7 @@ include "header.php";
 
                 <div class="cartegory-right">
 
-                    <div class="cartegory-right-top-item row">
+                    <!-- <div class="cartegory-right-top-item row">
                         <h2><i>Hàng hot tháng này !!!</i></h2>
                         <div>
                             <select name="" id="">
@@ -54,7 +54,7 @@ include "header.php";
                             </select>
                         </div>
                     </div>
-
+ -->
 
 
 

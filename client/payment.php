@@ -285,38 +285,29 @@
         <div class="payment-content row">
             <div class="payment-content-left">
 
-                <div class="payment-content-left-method-delivery">
-                    <p style="font-weight: bold;color: black;"> Phương thức giao hàng</p>
-
-                    <div class="payment-content-left-method-delivery-item">
-                        <input type="radio">
-                        <label for="">Giao hàng chuyển phát nhanh</label>
-                    </div>
-                </div>
-
                 <div class="payment-content-left-method-payment">
                     <p style="font-weight: bold;color: #000;">Phương thức thanh toán</p>
                     <p>Mọi giao dịch đều được bảo mật và mã hóa. Thông tin thẻ tín dụng không bao giờ được lưu lại </p>
 
-                    <div class="payment-content-left-method-payment-item">
+                    <!-- <div class="payment-content-left-method-payment-item">
                         <input name="method-payment" type="radio">
                         <label for="">Thanh toán bằng thẻ tín dụng</label>
                     </div>
                     <div class="payment-content-left-method-payment-item-img">
                         <img src="img/imgBanking0.png">
-                    </div>
+                    </div> -->
 
 
                     <div class="payment-content-left-method-payment-item">
-                        <input name="method-payment" type="radio">
-                        <label for=""> Thanh toán bằng thẻ ATM</label>
+                        <input name="method-payment" type="radio" value="atm">
+                        <label for="">Thanh toán bằng thẻ ATM</label>
                     </div>
                     <div class="payment-content-left-method-payment-item-img">
                         <img src="img/imgBanking.png">
                     </div>
 
                     <div class="payment-content-left-method-payment-item">
-                        <input name="method-payment" type="radio">
+                        <input name="method-payment" type="radio" value="ví-điện-tử">
                         <label for=""> Thanh toán ví điện tử </label>
                     </div>
                     <div class="payment-content-left-method-payment-item-img">
@@ -324,33 +315,51 @@
                     </div>
 
                     <div class="payment-content-left-method-payment-item">
-                        <input name="method-payment" type="radio">
+                        <input name="method-payment" type="radio" value="thu-tien-tan-noi">
                         <label for="">Thu tiền tận nơi</label>
                     </div>
                     <div class="payment-content-left-method-payment-item-img">
                         <img src="img/imgBanking3.png">
                     </div>
 
+                    <div class="payment-content-right-botton">
+                        <button>Tiếp tục thanh toán</button> <!-- Moved the button inside this div -->
+                    </div>
+
+                    <script>
+                        // Get all radio buttons with name "method-payment"
+                        const paymentMethodRadioButtons = document.querySelectorAll('input[name="method-payment"]');
+
+                        // Function to redirect based on the selected payment method
+                        function redirectToPaymentPage() {
+                            let selectedMethod = '';
+                            paymentMethodRadioButtons.forEach((radio) => {
+                                if (radio.checked) {
+                                    selectedMethod = radio.value;
+                                }
+                            });
+
+                            if (selectedMethod === 'atm') {
+                                window.location.href = 'payment_atm.php';
+                            } else if (selectedMethod === 'ví-điện-tử') {
+                                window.location.href = 'payment_vnpay_class.php';
+                            } else if (selectedMethod === 'thu-tien-tan-noi') {
+                                window.location.href = 'thanks_you.php';
+                            } else {
+                                // Handle cases where no method is selected or an unknown method is selected
+                                alert('Vui lòng chọn phương thức thanh toán.');
+                            }
+                        }
+
+                        const proceedToPaymentButton = document.querySelector('.payment-content-right-botton button');
+                        proceedToPaymentButton.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            console.log('Button clicked');
+                            redirectToPaymentPage();
+                        });
+                    </script>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
             <div class="payment-content-right">
@@ -427,12 +436,11 @@
                         text-align: center;
                         margin-top: 10px;
                     }
-
                 </style>
 
                 <div class="payment-content-right-total">
                     <tr>
-                       <h5>TỔNG</h5> 
+                        <h5>TỔNG</h5>
                         <td>
                             <p style="color:#1192E5; 
                              font-size: 25px;
@@ -446,9 +454,6 @@
 
 
 
-                <div class=" payment-content-right-botton">
-                    <button>Tiếp tục thanh toán</button>
-                </div>
                 <a href="delivery.php" class="row">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 14 16" fill="none">
                         <path d="M7.67719 15.5377C7.97418 15.8265 8.44901 15.8198 8.73775 15.5228C9.02649 15.2258 9.0198 14.751 8.72281 14.4623L7.67719 15.5377ZM1 8L0.477191 7.46225C0.331946 7.60346 0.25 7.79742 0.25 8C0.25 8.20258 0.331946 8.39654 0.477191 8.53775L1 8ZM8.72281 1.53775C9.0198 1.24901 9.02649 0.77418 8.73775 0.477191C8.44901 0.180202 7.97418 0.173514 7.67719 0.462254L8.72281 1.53775ZM12.4772 14.3708C12.7742 14.6595 13.249 14.6528 13.5378 14.3558C13.8265 14.0588 13.8198 13.584 13.5228 13.2952L12.4772 14.3708ZM7 8L6.47721 7.46224C6.33195 7.60345 6.25 7.79742 6.25 8C6.25 8.20258 6.33195 8.39655 6.47721 8.53776L7 8ZM13.5228 2.70476C13.8198 2.41603 13.8265 1.9412 13.5378 1.64421C13.249 1.34721 12.7742 1.34051 12.4772 1.62924L13.5228 2.70476ZM8.72281 14.4623L1.52281 7.46225L0.477191 8.53775L7.67719 15.5377L8.72281 14.4623ZM1.52281 8.53775L8.72281 1.53775L7.67719 0.462254L0.477191 7.46225L1.52281 8.53775ZM13.5228 13.2952L7.52279 7.46224L6.47721 8.53776L12.4772 14.3708L13.5228 13.2952ZM7.52279 8.53776L13.5228 2.70476L12.4772 1.62924L6.47721 7.46224L7.52279 8.53776Z" fill="#F83D3D" fill-opacity="0.63" />

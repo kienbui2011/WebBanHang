@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $current_time = date('Y-m-d H:i:s');
 
     $client_id = 123; // Replace 123 with the actual client ID.
-    $product_id = 456; // Replace 456 with the actual product ID.
+    $cart_code = 456; // Replace 456 with the actual product ID.
 
     // Calculate the total price
     $totalPriceQuery = "SELECT SUM(price * quantity) AS total FROM tbl_order_details";
@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $totalPrice = $totalPriceRow['total'];
 
     // Insert the order into tbl_order
-    $insertOrderQuery = "INSERT INTO tbl_order (client_id, product_id, full_name, phone, email, add_ress, note, total, time_added) 
-            VALUES ('$client_id', '$product_id', '$full_name', '$phone', '$email', '$add_ress', '$note', '$totalPrice', '$current_time')
+    $insertOrderQuery = "INSERT INTO tbl_order (client_id, cart_code, full_name, phone, email, add_ress, note, total, time_added) 
+            VALUES ('$client_id', '$cart_code', '$full_name', '$phone', '$email', '$add_ress', '$note', '$totalPrice', '$current_time')
             ";
     mysqli_query($con, $insertOrderQuery);
 
