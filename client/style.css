@@ -669,6 +669,7 @@ del {
 	font-size: 14px;
 	margin-left: 60px;
 	color: rgb(169, 161, 161);
+	margin-top: -20px;
 }
 
 .cartegory {
@@ -795,10 +796,19 @@ del {
 	display: block;
 }
 
-
 .cartegory-left ul li ul li a {
 	color: gray;
 	font-size: 14px;
+	transform: 0.5s;
+	padding: 5px 20px;
+	border-radius: 2px;
+}
+
+.cartegory-left ul li ul li a:hover {
+	color: rgb(243, 112, 112);
+	font-size: 14px;
+	margin-left: 3px;
+	background-color: rgb(255, 232, 232);
 }
 
 .cartegory-left-li ul {
@@ -4388,7 +4398,7 @@ object {
 	align-items: center;
 	height: 100%;
 	position: relative;
-	margin-top: -15px;
+	margin-top: -22px;
 }
 
 .site-header .submenu__arrow {
@@ -6101,7 +6111,7 @@ object {
 }
 
 .header-main {
-	height: 90px;
+	height: 75px;
 	border: 1px solid transparent;
 	transition: height 0.35s;
 }

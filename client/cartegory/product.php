@@ -62,7 +62,8 @@ include "header.php";
             <div class="product-content-right">
                 <div class="product-content-right-product-name">
                     <?php echo '<h1>' . $row['product_name'] . '</h1>'; ?>
-                    <p>MSP: 57E2969</p>
+                    <p>MSP: <?php echo $row['product_id']; ?></p>
+
 
                 </div>
 
@@ -130,7 +131,7 @@ include "header.php";
                     <p style="font-weight: bold; margin-top: -5px;">
                         <?php
                         if ($row['quantity'] > 0) {
-                            echo "Còn hàng: " . $row['quantity'];
+                            echo "Còn hàng:  "  . $row['quantity'];
                         } else {
                             echo '<span style="color: red;">Hết hàng</span>';
                         }
@@ -157,12 +158,14 @@ include "header.php";
                         <style>
                             .muahang p {
                                 margin-top: -2px;
+                                transition: transform 1s;
                             }
 
                             .muahang p:hover {
                                 font-size: 18px;
                                 font-weight: bold;
                                 color: rgb(47, 223, 47);
+                                transform: scale(1.1);
 
                             }
                             .giohang p {

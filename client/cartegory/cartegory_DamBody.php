@@ -14,20 +14,447 @@ include "header.php";
             <div class="row">
                 <div class="cartegory-left">
                 <ul>
-                <li class="category-left-li"><a href="cartegory_DamBody.php"><u>KIỂU ĐẦM</u></a>
-                            <ul>
-                                <li><a href="cartegory_DamBody.php">Đầm Body</a></li>
-                                <li><a href="cartegory_VayDamMuaHe.php">Váy đầm </a></li>
-                            </ul>
-                        </li>
-                        <li class="category-left-li"><a href="cartegory_AoSoMi.php"><u>QUẦN ÁO</u></a>
-                            <ul>
-                                <li><a href="cartegory_AoSoMi.php">Áo</a></li>
-                                <li><a href="cartegory_QuanJean.php">Quần </a></li>
-                            </ul> 
-                        </li>
+                <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Web_demo";
 
-                    </ul>
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
+if (!$conn) {
+    die("SQL không kết nối: " . mysqli_connect_error());
+}
+
+$cartegoryLinks = array(
+    1 => "cartegory_DamBody.php",
+);
+
+$brandLinks = array(
+    1 => 'cartegory_DamBody.php',
+    2 => 'cartegory_VayDamMuaHe.php',
+    3 => 'link_for_brand3.php',
+    4 => 'link_for_brand4.php',
+    5 => 'link_for_brand5.php',
+    6 => 'link_for_brand6.php',
+);
+
+echo '<ul>';
+
+$cartegoryCounter = 1; // Start from 1
+
+$cartegorySql = "SELECT cartegory_id, cartegory_name FROM tbl_cartegory";
+$cartegoryResult = mysqli_query($conn, $cartegorySql);
+
+if (!$cartegoryResult) {
+    die("Query execution error: " . mysqli_error($conn));
+}
+
+while ($cartegoryRow = mysqli_fetch_assoc($cartegoryResult)) {
+    echo '<li class="cartegory-left-li">'; // Fix the opening <li> tag
+
+    echo '<a href="' . (isset($cartegoryLinks[$cartegoryCounter]) ? $cartegoryLinks[$cartegoryCounter] : 'default_link.php') . '" src="source_for_cartegory_' . $cartegoryCounter . '">';
+    echo htmlspecialchars($cartegoryRow['cartegory_name']); // Sanitize the output
+    echo '</a>';
+    echo '<ul>';
+
+    $brandCounter = $cartegoryCounter; // Start the brand counter from the same value as cartegoryCounter
+
+    // Execute SQL query to fetch brand data based on cartegory_id
+    $brandSql = "SELECT brand_name FROM tbl_brand WHERE cartegory_id = " . $cartegoryRow['cartegory_id'];
+    $brandResult = mysqli_query($conn, $brandSql);
+
+    if (!$brandResult) {
+        die("Query execution error: " . mysqli_error($conn));
+    }
+
+    while ($brandRow = mysqli_fetch_assoc($brandResult)) {
+        echo '<li>';
+
+        echo '<a href="' . (isset($brandLinks[$brandCounter]) ? $brandLinks[$brandCounter] : 'default_link.php') . '" src="source_for_brand_' . $brandCounter . '">';
+        echo htmlspecialchars($brandRow['brand_name']); // Sanitize the output
+        echo '</a>';
+
+        echo '</li>';
+        $brandCounter++; // Increment the brand counter
+    }
+
+    echo '</ul>';
+    echo '</li>';
+    $cartegoryCounter++;
+
+    // Exit the loop after processing the first category
+    break;
+}
+
+echo '</ul>'; // Close the outer <ul>
+
+mysqli_free_result($cartegoryResult);
+mysqli_close($conn);
+?>
+<!-- -------------------22222222 ------------>
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Web_demo";
+
+$conn = mysqli_connect($host, $username, $password, $dbname);
+
+if (!$conn) {
+    die("SQL không kết nối: " . mysqli_connect_error());
+}
+
+$cartegoryLinks = array(
+    1 => "cartegory_AoSoMi.php",
+  
+);
+
+$brandLinks = array(
+    1 => 'cartegory_AoSoMi.php',
+    2 => 'cartegory_QuanJean.php',
+    3 => 'link_for_brand3.php',
+    4 => 'link_for_brand4.php',
+    5 => 'link_for_brand5.php',
+    6 => 'link_for_brand6.php',
+);
+
+echo '<ul>';
+
+$cartegoryCounter = 1; // Start from 1
+$skipFirstCategory = true; // Flag to skip the first category
+
+$cartegorySql = "SELECT cartegory_id, cartegory_name FROM tbl_cartegory";
+$cartegoryResult = mysqli_query($conn, $cartegorySql);
+
+if (!$cartegoryResult) {
+    die("Query execution error: " . mysqli_error($conn));
+}
+
+while ($cartegoryRow = mysqli_fetch_assoc($cartegoryResult)) {
+    if ($skipFirstCategory) {
+        $skipFirstCategory = false;
+        continue; // Skip the first category
+    }
+
+    echo '<li class="cartegory-left-li">'; // Fix the opening <li> tag
+
+    echo '<a href="' . (isset($cartegoryLinks[$cartegoryCounter]) ? $cartegoryLinks[$cartegoryCounter] : 'default_link.php') . '" src="source_for_cartegory_' . $cartegoryCounter . '">';
+    echo htmlspecialchars($cartegoryRow['cartegory_name']); // Sanitize the output
+    echo '</a>';
+    echo '<ul>';
+
+    $brandCounter = $cartegoryCounter; // Start the brand counter from the same value as cartegoryCounter
+
+    // Execute SQL query to fetch brand data based on cartegory_id
+    $brandSql = "SELECT brand_name FROM tbl_brand WHERE cartegory_id = " . $cartegoryRow['cartegory_id'];
+    $brandResult = mysqli_query($conn, $brandSql);
+
+    if (!$brandResult) {
+        die("Query execution error: " . mysqli_error($conn));
+    }
+
+    while ($brandRow = mysqli_fetch_assoc($brandResult)) {
+        echo '<li>';
+
+        echo '<a href="' . (isset($brandLinks[$brandCounter]) ? $brandLinks[$brandCounter] : 'default_link.php') . '" src="source_for_brand_' . $brandCounter . '">';
+        echo htmlspecialchars($brandRow['brand_name']); // Sanitize the output
+        echo '</a>';
+
+        echo '</li>';
+        $brandCounter++; // Increment the brand counter
+    }
+
+    echo '</ul>';
+    echo '</li>';
+    $cartegoryCounter++;
+
+    // Exit the loop after processing the second category
+    break;
+}
+
+echo '</ul>'; // Close the outer <ul>
+
+mysqli_free_result($cartegoryResult);
+mysqli_close($conn);
+?>
+ <!-- -------------------33333333333 ------------>
+ <?php
+                    ini_set('display_errors', 1);
+                    error_reporting(E_ALL);
+                    $host = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "Web_demo";
+
+                    $conn = mysqli_connect($host, $username, $password, $dbname);
+
+                    if (!$conn) {
+                        die("SQL không kết nối: " . mysqli_connect_error());
+                    }
+
+                    $cartegoryLinks = array(
+                        1 => "cartegory_backup1.php",
+
+                    );
+
+                    $brandLinks = array(
+                        1 => 'cartegory_backup1.php',
+                        2 => 'cartegory_backup2.php',
+                        3 => 'cartegory_backup3.php',
+                        4 => 'link_for_brand4.php',
+                        5 => 'link_for_brand5.php',
+                        6 => 'link_for_brand6.php',
+                    );
+
+                    echo '<ul>';
+
+                    $cartegoryCounter = 1; // Start from 1
+                    $skipCategories = 2; // Skip the first two categories
+
+                    $cartegorySql = "SELECT cartegory_id, cartegory_name FROM tbl_cartegory";
+                    $cartegoryResult = mysqli_query($conn, $cartegorySql);
+
+                    if (!$cartegoryResult) {
+                        die("Query execution error: " . mysqli_error($conn));
+                    }
+
+                    while ($cartegoryRow = mysqli_fetch_assoc($cartegoryResult)) {
+                        if ($skipCategories > 0) {
+                            $skipCategories--;
+                            continue; // Skip the categories until $skipCategories is 0
+                        }
+
+                        echo '<li class="cartegory-left-li">'; // Fix the opening <li> tag
+
+                        echo '<a href="' . (isset($cartegoryLinks[$cartegoryCounter]) ? $cartegoryLinks[$cartegoryCounter] : 'default_link.php') . '" src="source_for_cartegory_' . $cartegoryCounter . '">';
+                        echo htmlspecialchars($cartegoryRow['cartegory_name']); // Sanitize the output
+                        echo '</a>';
+                        echo '<ul>';
+
+                        $brandCounter = $cartegoryCounter; // Start the brand counter from the same value as cartegoryCounter
+
+                        // Execute SQL query to fetch brand data based on cartegory_id
+                        $brandSql = "SELECT brand_name FROM tbl_brand WHERE cartegory_id = " . $cartegoryRow['cartegory_id'];
+                        $brandResult = mysqli_query($conn, $brandSql);
+
+                        if (!$brandResult) {
+                            die("Query execution error: " . mysqli_error($conn));
+                        }
+
+                        while ($brandRow = mysqli_fetch_assoc($brandResult)) {
+                            echo '<li>';
+
+                            echo '<a href="' . (isset($brandLinks[$brandCounter]) ? $brandLinks[$brandCounter] : 'default_link.php') . '" src="source_for_brand_' . $brandCounter . '">';
+                            echo htmlspecialchars($brandRow['brand_name']); // Sanitize the output
+                            echo '</a>';
+
+                            echo '</li>';
+                            $brandCounter++; // Increment the brand counter
+                        }
+
+                        echo '</ul>';
+                        echo '</li>';
+                        $cartegoryCounter++;
+
+                        // Exit the loop after processing the third category
+                        if ($skipCategories == 0) {
+                            break;
+                        }
+                    }
+
+                    echo '</ul>'; // Close the outer <ul>
+
+                    mysqli_free_result($cartegoryResult);
+                    mysqli_close($conn);
+                    ?>
+
+
+                    <!-- ----------------4444444444444------------>
+                    <?php
+                    ini_set('display_errors', 1);
+                    error_reporting(E_ALL);
+                    $host = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "Web_demo";
+
+                    $conn = mysqli_connect($host, $username, $password, $dbname);
+
+                    if (!$conn) {
+                        die("SQL không kết nối: " . mysqli_connect_error());
+                    }
+
+                    $cartegoryLinks = array(
+                        1 => "cartegory_backup2.php",
+
+                    );
+
+                    $brandLinks = array(
+                        1 => 'link_for_brand1.php',
+                        2 => 'link_for_brand2.php',
+                        3 => 'link_for_brand3.php',
+                        4 => 'link_for_brand4.php',
+                        5 => 'link_for_brand5.php',
+                        6 => 'link_for_brand6.php',
+                    );
+
+                    echo '<ul>';
+
+                    $cartegoryCounter = 1; // Start from 1
+                    $skipCategories = 3; // Skip the first three categories
+
+                    $cartegorySql = "SELECT cartegory_id, cartegory_name FROM tbl_cartegory";
+                    $cartegoryResult = mysqli_query($conn, $cartegorySql);
+
+                    if (!$cartegoryResult) {
+                        die("Query execution error: " . mysqli_error($conn));
+                    }
+
+                    while ($cartegoryRow = mysqli_fetch_assoc($cartegoryResult)) {
+                        if ($skipCategories > 0) {
+                            $skipCategories--;
+                            continue; // Skip the categories until $skipCategories is 0
+                        }
+
+                        echo '<li class="cartegory-left-li">'; // Fix the opening <li> tag
+
+                        echo '<a href="' . (isset($cartegoryLinks[$cartegoryCounter]) ? $cartegoryLinks[$cartegoryCounter] : 'default_link.php') . '" src="source_for_cartegory_' . $cartegoryCounter . '">';
+                        echo htmlspecialchars($cartegoryRow['cartegory_name']); // Sanitize the output
+                        echo '</a>';
+                        echo '<ul>';
+
+                        $brandCounter = $cartegoryCounter; // Start the brand counter from the same value as cartegoryCounter
+
+                        // Execute SQL query to fetch brand data based on cartegory_id
+                        $brandSql = "SELECT brand_name FROM tbl_brand WHERE cartegory_id = " . $cartegoryRow['cartegory_id'];
+                        $brandResult = mysqli_query($conn, $brandSql);
+
+                        if (!$brandResult) {
+                            die("Query execution error: " . mysqli_error($conn));
+                        }
+
+                        while ($brandRow = mysqli_fetch_assoc($brandResult)) {
+                            echo '<li>';
+
+                            echo '<a href="' . (isset($brandLinks[$brandCounter]) ? $brandLinks[$brandCounter] : 'default_link.php') . '" src="source_for_brand_' . $brandCounter . '">';
+                            echo htmlspecialchars($brandRow['brand_name']); // Sanitize the output
+                            echo '</a>';
+
+                            echo '</li>';
+                            $brandCounter++; // Increment the brand counter
+                        }
+
+                        echo '</ul>';
+                        echo '</li>';
+                        $cartegoryCounter++;
+
+                        // Exit the loop after processing the fourth category
+                        if ($skipCategories == 0) {
+                            break;
+                        }
+                    }
+
+                    echo '</ul>'; // Close the outer <ul>
+
+                    mysqli_free_result($cartegoryResult);
+                    mysqli_close($conn);
+                    ?>
+
+                    <!-- -------------------5555555555555555   ----------->
+                    <?php
+                    ini_set('display_errors', 1);
+                    error_reporting(E_ALL);
+                    $host = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "Web_demo";
+
+                    $conn = mysqli_connect($host, $username, $password, $dbname);
+
+                    if (!$conn) {
+                        die("SQL không kết nối: " . mysqli_connect_error());
+                    }
+
+                    $cartegoryLinks = array(
+                        1 => "link_for_cartegory_5.php",
+                    );
+
+                    $brandLinks = array(
+                        1 => 'link_for_brand1.php',
+                        2 => 'link_for_brand2.php',
+                        3 => 'link_for_brand3.php',
+                        4 => 'link_for_brand4.php',
+                        5 => 'link_for_brand5.php',
+                        6 => 'link_for_brand6.php',
+                    );
+
+                    echo '<ul>';
+
+                    $cartegoryCounter = 1; // Start from 1
+                    $skipCategories = 4; // Skip the first four categories
+
+                    $cartegorySql = "SELECT cartegory_id, cartegory_name FROM tbl_cartegory";
+                    $cartegoryResult = mysqli_query($conn, $cartegorySql);
+
+                    if (!$cartegoryResult) {
+                        die("Query execution error: " . mysqli_error($conn));
+                    }
+
+                    while ($cartegoryRow = mysqli_fetch_assoc($cartegoryResult)) {
+                        if ($skipCategories > 0) {
+                            $skipCategories--;
+                            continue; // Skip the categories until $skipCategories is 0
+                        }
+
+                        echo '<li class="cartegory-left-li">'; // Fix the opening <li> tag
+
+                        echo '<a href="' . (isset($cartegoryLinks[$cartegoryCounter]) ? $cartegoryLinks[$cartegoryCounter] : 'default_link.php') . '" src="source_for_cartegory_' . $cartegoryCounter . '">';
+                        echo htmlspecialchars($cartegoryRow['cartegory_name']); // Sanitize the output
+                        echo '</a>';
+                        echo '<ul>';
+
+                        $brandCounter = $cartegoryCounter; // Start the brand counter from the same value as cartegoryCounter
+
+                        // Execute SQL query to fetch brand data based on cartegory_id
+                        $brandSql = "SELECT brand_name FROM tbl_brand WHERE cartegory_id = " . $cartegoryRow['cartegory_id'];
+                        $brandResult = mysqli_query($conn, $brandSql);
+
+                        if (!$brandResult) {
+                            die("Query execution error: " . mysqli_error($conn));
+                        }
+
+                        while ($brandRow = mysqli_fetch_assoc($brandResult)) {
+                            echo '<li>';
+
+                            echo '<a href="' . (isset($brandLinks[$brandCounter]) ? $brandLinks[$brandCounter] : 'default_link.php') . '" src="source_for_brand_' . $brandCounter . '">';
+                            echo htmlspecialchars($brandRow['brand_name']); // Sanitize the output
+                            echo '</a>';
+
+                            echo '</li>';
+                            $brandCounter++; // Increment the brand counter
+                        }
+
+                        echo '</ul>';
+                        echo '</li>';
+                        $cartegoryCounter++;
+
+                        // Exit the loop after processing the fifth category
+                        if ($skipCategories == 0) {
+                            break;
+                        }
+                    }
+
+                    echo '</ul>'; // Close the outer <ul>
+
+                    mysqli_free_result($cartegoryResult);
+                    mysqli_close($conn);
+                    ?>
+
 
 
                 </div>
@@ -346,19 +773,44 @@ include "header.php";
                 </div>
             </div> -->
 
-                    <div class="dartegory-right-bottom row">
-                        <div class="cartegory-right-bottom-items">
-                            <p>Hiện thị 2 <span>|</span> 4 sản phẩm</p>
-                        </div>
-                        <div class="cartegory-right-bottom-items1">
-                            <p><span>&#171;&nbsp;</span>1 2 3 4 5<span>&nbsp;&#187; </span>Trang cuối </p>
-                        </div>
+                    
+                <div class="dartegory-right-bottom row">
+                    <div class="cartegory-right-bottom-items">
+                        <?php
+                        // Thực hiện kết nối đến cơ sở dữ liệu
+                        $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
+                        if (!$con) {
+                            die('Lỗi kết nối: ' . mysqli_connect_error());
+                        }
+
+                        // Thực hiện truy vấn SQL to get the total count
+                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_product` WHERE `brand_id` = 2";
+                        $result = mysqli_query($con, $sql);
+
+                        // Kiểm tra và xử lý kết quả
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
+                            $totalProducts = $row['totalProducts'];
+                            echo "<p>Hiển thị $totalProducts sản phẩm</p>";
+                        } else {
+                            echo 'Không có dữ liệu.';
+                        }
+
+                        // Đóng kết nối cơ sở dữ liệu
+                        mysqli_close($con);
+                        ?>
+                    </div>
+
+
+                    <div class="cartegory-right-bottom-items1">
+                        <p><span>&#171;&nbsp;</span>1 2 3 4 2<span>&nbsp;&#187; </span>Trang cuối </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    
+    </div>
+</section>
 
 
     <!-- -----------------------------------------------footer ---------------------------------->

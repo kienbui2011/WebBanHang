@@ -1,6 +1,5 @@
 <?php
 include "header.php";
-
 ?>
 <!----------------------------------- cartegory ----------------------->
 
@@ -183,7 +182,6 @@ include "header.php";
                     mysqli_free_result($cartegoryResult);
                     mysqli_close($conn);
                     ?>
-
                     <!-- -------------------33333333333 ------------>
                     <?php
                     ini_set('display_errors', 1);
@@ -459,9 +457,6 @@ include "header.php";
 
 
 
-                </ul>
-
-
             </div>
 
             <div class="cartegory-right">
@@ -479,14 +474,15 @@ include "header.php";
                                 <option value="">đen</option>
                                 <option value="">trắng</option>
                             </select>
-                            <select name="" id="">
+                            <select name="product_price_new" id="product_price_new">
                                 <option value="">Sắp xếp</option>
-                                <option value="">Giá cao đến thấp </option>
-                                <option value="">Giá thấp đến cao</option>
+                                <option value="high_to_low">Giá cao đến thấp</option>
+                                <option value="low_to_high">Giá thấp đến cao</option>
                             </select>
-                        </div>
-                    </div> -->
 
+                        </div>
+                    </div>
+ -->
 
 
 
@@ -501,7 +497,7 @@ include "header.php";
                         }
 
                         // Thực hiện truy vấn SQL
-                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 3 LIMIT 4";
+                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 6 LIMIT 4";
 
                         $result = mysqli_query($con, $sql);
 
@@ -547,7 +543,7 @@ include "header.php";
                         }
 
                         // Thực hiện truy vấn SQL
-                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 3 LIMIT 4 OFFSET 4";
+                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 6 LIMIT 4 OFFSET 4";
 
                         $result = mysqli_query($con, $sql);
 
@@ -592,7 +588,7 @@ include "header.php";
                         }
 
                         // Thực hiện truy vấn SQL
-                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 3 LIMIT 4 OFFSET 8"; // Retrieve 5 products starting from the 8th product (offset of 7)
+                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 6 LIMIT 4 OFFSET 8"; // Retrieve 5 products starting from the 8th product (offset of 7)
 
                         $result = mysqli_query($con, $sql);
 
@@ -636,7 +632,7 @@ include "header.php";
                         }
 
                         // Thực hiện truy vấn SQL
-                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 3 LIMIT 4 OFFSET 12"; // Retrieve 5 products starting from the 12th product (offset of 11)
+                        $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 6 LIMIT 4 OFFSET 12"; // Retrieve 5 products starting from the 12th product (offset of 11)
 
                         $result = mysqli_query($con, $sql);
 
@@ -673,32 +669,69 @@ include "header.php";
                 </div>
                 <!-- 
 
-       
+                <div class="cartegory-right-content-item">
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                       
+                    </a>
+                </div>
+
+                <div class="cartegory-right-content-item">
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                        <p>200.000<sup>đ</sup></p>
+                    </a>
+                </div>
+
+                <div class="cartegory-right-content-item">
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                        <p>200.000<sup>đ</sup></p>
+                    </a>
+                </div>
+            </div>
+
             <div class="cartegory-right-content row ">
+
                 <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                        <p>200.000<sup>đ</sup></p>
+                    </a>
+                </div>
+
+                <div class="cartegory-right-content-item">
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                        <p>200.000<sup>đ</sup></p>
+                    </a>
                 </div>
                 <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                        <p>200.000<sup>đ</sup></p>
+                    </a>
                 </div>
+
                 <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
+                    <a href="product.php">
+                        <img src="img/img1.jpg" alt="">
+                        <h1>Đầm ôm hoạ tiết đỏ</h1>
+                        <p>200.000<sup>đ</sup></p>
+                    </a>
                 </div>
-                <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
-                </div>
-            </div> -->
+            </div>
+
+                        -->
 
 
-                <div class="dartegory-right-bottom row">
+                        <div class="dartegory-right-bottom row">
                     <div class="cartegory-right-bottom-items">
                         <?php
                         // Thực hiện kết nối đến cơ sở dữ liệu
@@ -708,7 +741,7 @@ include "header.php";
                         }
 
                         // Thực hiện truy vấn SQL to get the total count
-                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_product` WHERE `brand_id` = 3";
+                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_product` WHERE `brand_id` = 6";
                         $result = mysqli_query($con, $sql);
 
                         // Kiểm tra và xử lý kết quả
@@ -732,11 +765,9 @@ include "header.php";
                 </div>
             </div>
         </div>
-
+    
     </div>
 </section>
-
-
 
 
 <!-- -----------------------------------------------footer ---------------------------------->

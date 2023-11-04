@@ -456,6 +456,7 @@ mysqli_close($conn);
                     ?>
 
 
+
                 </div>
 
                 <div class="cartegory-right">
@@ -496,7 +497,7 @@ mysqli_close($conn);
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 5 LIMIT 4";
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 9 LIMIT 4";
 
                             $result = mysqli_query($con, $sql);
 
@@ -542,7 +543,7 @@ mysqli_close($conn);
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 5 LIMIT 4 OFFSET 4";
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 9 LIMIT 4 OFFSET 4";
 
                             $result = mysqli_query($con, $sql);
 
@@ -587,7 +588,7 @@ mysqli_close($conn);
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 5 LIMIT 4 OFFSET 8"; // Retrieve 5 products starting from the 8th product (offset of 7)
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 9 LIMIT 4 OFFSET 8"; // Retrieve 5 products starting from the 8th product (offset of 7)
 
                             $result = mysqli_query($con, $sql);
 
@@ -631,7 +632,7 @@ mysqli_close($conn);
                             }
 
                             // Thực hiện truy vấn SQL
-                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 5 LIMIT 4 OFFSET 12"; // Retrieve 5 products starting from the 12th product (offset of 11)
+                            $sql = "SELECT * FROM `tbl_product` WHERE `brand_id` = 9 LIMIT 4 OFFSET 12"; // Retrieve 5 products starting from the 12th product (offset of 11)
 
                             $result = mysqli_query($con, $sql);
 
@@ -729,8 +730,7 @@ mysqli_close($conn);
 
                         -->
 
-                 
-                <div class="dartegory-right-bottom row">
+                        <div class="dartegory-right-bottom row">
                     <div class="cartegory-right-bottom-items">
                         <?php
                         // Thực hiện kết nối đến cơ sở dữ liệu
@@ -740,7 +740,7 @@ mysqli_close($conn);
                         }
 
                         // Thực hiện truy vấn SQL to get the total count
-                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_product` WHERE `brand_id` = 5";
+                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_product` WHERE `brand_id` = 9";
                         $result = mysqli_query($con, $sql);
 
                         // Kiểm tra và xử lý kết quả
