@@ -671,32 +671,7 @@ include "header.php";
                     </div>
 
                 </div>
-                <!-- 
-
-       
-            <div class="cartegory-right-content row ">
-                <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
-                </div>
-                <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
-                </div>
-                <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
-                </div>
-                <div class="cartegory-right-content-item">
-                    <img src="img/img1.jpg" alt="">
-                    <h1>Đầm ôm hoạ tiết đỏ</h1>
-                    <p>200.000<sup>đ</sup></p>
-                </div>
-            </div> -->
-
+    
 
                 <div class="dartegory-right-bottom row">
                     <div class="cartegory-right-bottom-items">

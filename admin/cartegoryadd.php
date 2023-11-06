@@ -15,8 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $insert_cartegory = $cartegory->insert_cartegory($cartegory_name);
 }
 ?>
-
-
 <div class="admin-content-right">
     <div class="admin-content-right-cartegory_add">
         <h1>Thêm danh mục</h1>

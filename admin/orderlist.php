@@ -10,7 +10,6 @@ error_reporting(E_ALL);
 $order = new order;
 $show_order = $order->show_order();
 
-
 $isSearch = false; // Biến để kiểm tra đã thực hiện tìm kiếm hay chưa
 if (isset($_GET['Search'])) {
     $tukhoa = $_GET['timkiem']; // từ khóa nhập vào ô input
@@ -62,6 +61,7 @@ if (isset($_GET['Search'])) {
     .additional {
         display: flex;
     }
+
     .additional button {
         color: white;
         height: 30px;
@@ -105,7 +105,7 @@ if (isset($_GET['Search'])) {
                 <th><b>Ngày tạo</b></th>
                 <th><b>Tuỳ Biến</b></th>
             </tr>
-           
+
             <?php
             if ($isSearch) {
                 $i = 0;
@@ -125,7 +125,7 @@ if (isset($_GET['Search'])) {
 
                         <th><?php echo $result['time_added']; ?></th>
                         <th>
-                           
+                            <a href="oder_productlist.php?order_user_id=<?php echo $result['order_user_id']; ?>">Chi Tiết</a>&nbsp; |&nbsp;
                             <a href="orderdelete.php?order_user_id=<?php echo $result['order_user_id']; ?>">Xoá</a>
                         </th>
                     </tr>
@@ -148,6 +148,7 @@ if (isset($_GET['Search'])) {
 
                         <th><?php echo $result['time_added']; ?></th>
                         <th>
+                            <a href="oder_productlist.php?order_user_id=<?php echo $result['order_user_id']; ?>">Chi Tiết</a>&nbsp; |&nbsp;
                             <a href="orderdelete.php?order_user_id=<?php echo $result['order_user_id']; ?>">Xoá</a>
                         </th>
                     </tr>

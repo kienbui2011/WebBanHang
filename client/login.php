@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NTKQ &#8211; fashion</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./img/logo-NTKQ.png">
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                                 <a href="../client/cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
-                                <a href="blogs.html">TIN TỨC</a>
+                                <a href="blogs.php">TIN TỨC</a>
                             </li>
                         </ul>
                     </nav>
@@ -96,8 +97,8 @@
                                 <li class="category-left-li"><a href="./cartegory/cartegory_AoSoMi.php"><u>QUẦN
                                             ÁO</u></a>
                                     <ul>
-                                        <li><a href="./cartegory/cartegory_AoSoMi.php">Áo Sơ Mi</a></li>
-                                        <li><a href="./cartegory/cartegory_QuanJean.php">Quần Jean</a></li>
+                                        <li><a href="./cartegory/cartegory_AoSoMi.php">Áo Xinh</a></li>
+                                        <li><a href="./cartegory/cartegory_QuanJean.php">Quần Xinh</a></li>
                                     </ul>
                                 </li>
 

@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
 
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="icon" type="image/png" href="./img/logo-NTKQ.png">
     <title> NTKQ &#8211; fashion</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -44,7 +45,7 @@
                                 <a href="../client/cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11953">
-                                <a href="blogs.html">TIN TỨC</a>
+                                <a href="blogs.php">TIN TỨC</a>
                             </li>
                         </ul>
                     </nav>
@@ -102,8 +103,8 @@
                                 <li class="category-left-li"><a href="./cartegory/cartegory_AoSoMi.php"><u>QUẦN
                                             ÁO</u></a>
                                     <ul>
-                                        <li><a href="./cartegory/cartegory_AoSoMi.php">Áo Sơ Mi</a></li>
-                                        <li><a href="./cartegory/cartegory_QuanJean.php">Quần Jean</a></li>
+                                        <li><a href="./cartegory/cartegory_AoSoMi.php">Áo Xinh</a></li>
+                                        <li><a href="./cartegory/cartegory_QuanJean.php">Quần Xinh</a></li>
                                     </ul>
                                 </li>
 
@@ -427,16 +428,15 @@
 
                 <b> Mô tả tổng quan: </b><br>
                 NTKQ-fashionista là một cửa hàng thời trang độc đáo và phong cách, nơi bạn có thể tìm thấy những bộ
-                trang phục và phụ kiện thời trang hàng đầu từ khắp nơi trên thế giới. Với phong cách đa dạng và sự tập
-                trung vào việc cung cấp cho khách hàng những sản phẩm chất lượng và thời trang, NTKQ-fashionista đã trở
+                trang phục đầm và phụ kiện thời trang hàng đầu từ khắp nơi trên thế giới. Với phong cách đa dạng và sự tập
+                trung vào việc cung cấp cho khách hàng những sản phẩm chất lượng về đầm thời trang, NTKQ-fashionista đã trở
                 thành điểm đến hàng đầu cho những người yêu thời trang.<br>
 
                 <b> Sản phẩm chính:</b><br>
                 Cửa hàng chú trọng vào việc cung cấp một loạt các sản phẩm thời trang nữ:<br>
 
                 <i>Bao gồm:</i> Đầm, váy, áo sơ mi, quần áo hàng ngày và trang phục dự tiệc với các mẫu thiết kế thời
-                thượng và
-                đa dạng.<br>
+                thượng và đa dạng.<br>
                 <b> Giá trị đặc biệt:</b><br>
                 <i>Chất lượng ưu việt:</i> <br>
                 NTKQ-fashionista cam kết chỉ bán sản phẩm chất lượng, được làm từ các chất liệu tốt nhất để đảm bảo sự

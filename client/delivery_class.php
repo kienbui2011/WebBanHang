@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $current_time = date('Y-m-d H:i:s');
 
     $client_id = 123; // Replace 123 with the actual client ID.
-    $cart_code = 456; // Replace 456 with the actual product ID.
-
+    $cart_code = rand(0,9999); 
+    
     // Calculate the total price
     $totalPriceQuery = "SELECT SUM(price * quantity) AS total FROM tbl_order_details";
     $totalPriceResult = mysqli_query($con, $totalPriceQuery);

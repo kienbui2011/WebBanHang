@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NTKQ &#8211; fashion</title>
+    <link rel="icon" type="image/png" href="./img/logo-NTKQ.png">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -39,7 +40,7 @@
                                 <a href="../client/cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
-                                <a href="blogs.html">TIN TỨC</a>
+                                <a href="blogs.php">TIN TỨC</a>
                             </li>
 
 
@@ -67,6 +68,22 @@
                             </span>
                             <span class="counter cart-counter hidden"></span>
                         </a>
+                        <?php
+                        // Thực hiện kết nối đến cơ sở dữ liệu
+                        $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
+                        if (!$con) {
+                            die('Lỗi kết nối: ' . mysqli_connect_error());
+                        }
+                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_order_details` ";
+                        $result = mysqli_query($con, $sql);
+
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
+                            $totalProducts = $row['totalProducts'];
+                            echo "<p>$totalProducts</p>";
+                        }
+                        mysqli_close($con);
+                        ?>
                     </div>
                 </div>
             </div>
@@ -381,11 +398,11 @@
             // Select all rows from the tbl_order_details table
             $sql = "SELECT * FROM tbl_order_details";
 
-         
+
             $result = mysqli_query($con, $sql);
-            $totalPrice1 = 0; 
+            $totalPrice1 = 0;
             $totalPrice2 = 0;
-           
+
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     $totalPrice1 += $row['price'] * $row['quantity'];
@@ -394,7 +411,7 @@
             }
             $totalPrice2 += 30000;
             if ($totalPrice2 > 2000000) {
-               
+
                 $totalPrice2 -= 30000;
                 $shippingMessage = "Miễn phí ship";
             } else {
@@ -402,7 +419,7 @@
             }
 
             ?>
- 
+
             <div class="cart-content-right">
                 <table>
                     <tr>
@@ -421,7 +438,7 @@
                             $deliveryCost = 30000; // Giá giao hàng cố định là 30.000đ
                             echo "<p id='deliveryCost' >" . number_format($deliveryCost, 0, ',', '.') . "đ</p>";
                             ?>
-                           <p style="color: green; font-weight: bold;"><?php echo $shippingMessage; ?></p>
+                            <p style="color: green; font-weight: bold;"><?php echo $shippingMessage; ?></p>
                         </td>
 
                     </tr>
@@ -430,12 +447,12 @@
                         <td>
                             <p style="color: black; font-weight: bold;">
                                 <?php echo number_format($totalPrice2, 0, ',', '.') . 'đ'; ?></p>
-                           
+
 
                         </td>
                     </tr>
                 </table>
-              
+
                 <div class="cart-content-right-text">
                     <p>Bạn sẽ được miễn phí ship khi đơn hàng của bạn có tổng giá trị trên 2.000.000 đ </p>
                 </div>

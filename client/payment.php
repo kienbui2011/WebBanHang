@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> NTKQ &#8211; fashion</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="./img/logo-NTKQ.png">
 </head>
 
 <body>
@@ -39,7 +40,7 @@
                                 <a href="../client/cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
-                                <a href="blogs.html">TIN TỨC</a>
+                                <a href="blogs.php">TIN TỨC</a>
                             </li>
                         </ul>
                     </nav>
@@ -321,11 +322,21 @@
                     <div class="payment-content-left-method-payment-item-img">
                         <img src="img/imgBanking3.png">
                     </div>
+                    <!-- <form action="payment_vnpay.php" method="POST">
+                        <div class="payment-content-right-botton">
+                            <button name ="redirect">Tiếp tục thanh toán</button> 
+                        </div>
+                    </form> -->
 
-                    <div class="payment-content-right-botton">
-                        <button>Tiếp tục thanh toán</button> <!-- Moved the button inside this div -->
-                    </div>
-
+                    <form method="post" action="payment_vnpay.php">
+                        <input type="hidden" name="vnp_TmnCode" value="CZ8R9XAZ">
+                        <input type="hidden" name="vnp_Amount">
+                        <input type="hidden" name="vnp_Command" value="pay">
+                        <input type="hidden" name="redirect"> <!-- Add this hidden field to indicate the form submission -->
+                        <div class="payment-content-right-input">
+                            <input type="submit" value="Tiếp tục thanh toán">
+                        </div>
+                    </form>
                     <script>
                         // Get all radio buttons with name "method-payment"
                         const paymentMethodRadioButtons = document.querySelectorAll('input[name="method-payment"]');
@@ -342,7 +353,7 @@
                             if (selectedMethod === 'atm') {
                                 window.location.href = 'payment_atm.php';
                             } else if (selectedMethod === 'ví-điện-tử') {
-                                window.location.href = 'payment_vnpay_class.php';
+                                window.location.href = 'payment_vnpay.php';
                             } else if (selectedMethod === 'thu-tien-tan-noi') {
                                 window.location.href = 'thanks_you.php';
                             } else {
@@ -350,8 +361,7 @@
                                 alert('Vui lòng chọn phương thức thanh toán.');
                             }
                         }
-
-                        const proceedToPaymentButton = document.querySelector('.payment-content-right-botton button');
+                        const proceedToPaymentButton = document.querySelector('.payment-content-right-inpu input');
                         proceedToPaymentButton.addEventListener('click', function(e) {
                             e.preventDefault();
                             console.log('Button clicked');
@@ -395,8 +405,6 @@
                     mysqli_close($con);
                     ?>
                 </table>
-
-
 
 
 

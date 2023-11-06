@@ -62,7 +62,7 @@ include "header.php";
             <div class="product-content-right">
                 <div class="product-content-right-product-name">
                     <?php echo '<h1>' . $row['product_name'] . '</h1>'; ?>
-                    <p>MSP: <?php echo $row['product_id']; ?></p>
+                    <p>MSP: NTKQ<?php echo $row['product_id']; ?></p>
 
 
                 </div>
@@ -180,9 +180,9 @@ include "header.php";
                               
                             }
                         </style>
-                        <button class="muahang" id="addToCartButton" type="submit" name="add_to_cart">
+                        <!-- <button class="muahang" id="addToCartButton" type="submit" name="add_to_cart">
                             <p>MUA HÀNG</p>
-                        </button>
+                        </button> -->
                         <button class="giohang" id="addToCartButton" type="submit" name="add_to_cart">
                             <p>THÊM GIỎ HÀNG</p>
                         </button>

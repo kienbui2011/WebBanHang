@@ -2,16 +2,34 @@
 <html>
 
 <head>
-    <title> NTKQ &#8211; fashion</title>
+<title> NTKQ &#8211; fashion</title>
+<link rel="icon" type="image/png" href="./img/logo-NTKQ.png">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .anhmanhinh {
+            margin-top: 0;
+            padding-bottom: 0;
+            object-fit: cover; /* Maintain aspect ratio and cover the entire viewport */
+        }
+        
+           .site-content {
+            margin-top: -210px;
+            
+            overflow: hidden; /* To prevent scrollbars */
+
+           }
+        
+    </style>
 </head>
 
+
 <body>
-
+    <header>
+        <a href="index.php">
+        <img class="anhmanhinh" src="img/Ảnh màn hình.png" alt="">
+        </a>
+    </header>
     <!----------------------------------- login ------------------------------------>
-
-
-
     <boder>
         <?php
         ini_set('display_errors', 1);
@@ -47,7 +65,7 @@
             if ($resultAdmin && mysqli_num_rows($resultAdmin) == 1) {
 
                 $_SESSION['user_role'] = 'admin';
-                header('Location: cartegoryadd.php');
+                header('Location: ../admin/cartegoryadd.php');
                 exit;
             } elseif ($resultUser && mysqli_num_rows($resultUser) == 1) {
 

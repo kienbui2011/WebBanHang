@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../img/logo-NTKQ.png">
     <title> NTKQ &#8211; fashion</title>
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -39,7 +40,7 @@
                                 <a href="../cartegory/cartegory_DamBody.php">CỬA HÀNG</a>
                             </li>
                             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-11952">
-                                <a href="../blogs.html">TIN TỨC</a>
+                                <a href="../blogs.php">TIN TỨC</a>
                             </li>
                         </ul>
                     </nav>
@@ -65,6 +66,22 @@
                             </span>
                             <span class="counter cart-counter hidden"></span>
                         </a>
+                        <?php
+                        // Thực hiện kết nối đến cơ sở dữ liệu
+                        $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
+                        if (!$con) {
+                            die('Lỗi kết nối: ' . mysqli_connect_error());
+                        }
+                        $sql = "SELECT COUNT(*) as totalProducts FROM `tbl_order_details` ";
+                        $result = mysqli_query($con, $sql);
+
+                        if ($result) {
+                            $row = mysqli_fetch_assoc($result);
+                            $totalProducts = $row['totalProducts'];
+                            echo "<p>$totalProducts</p>";
+                        }
+                        mysqli_close($con);
+                        ?>
                     </div>
                 </div>
             </div>
