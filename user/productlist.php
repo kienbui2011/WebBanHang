@@ -28,7 +28,7 @@ if (isset($_POST['search'])) {
 
     .admin-content-right-cartegory-list form input:last-child {
         height: 30px;
-        width: 100px;
+        width: 120px;
         margin-top: 20px;
         border: 1px solid gray;
         background-color: #FFDFDF;
@@ -71,17 +71,17 @@ if (isset($_POST['search'])) {
         width: 100px;
         background-color: coral;
         border: 1px solid rgb(253, 76, 12);
-        margin-left: 55%;
+        margin-left: 50%;
         margin-top: 20px;
     }
 
     .search-form button:hover {
         background-color: rgb(253, 76, 12);
     }
+
     .search-form button a {
         color: white;
     }
-   
 </style>
 
 
@@ -92,13 +92,11 @@ if (isset($_POST['search'])) {
         <div class="search-form">
             <form method="POST" action="">
                 <input type="text" name="search">
-                <input type="submit" name="Search" value="Tìm kiếm" />
+                <input type="submit" name="Search" value="Tìm kiếm / Thoát" />
             </form>
             <button><a href="productadd.php">Thêm</a></button>
         </div>
-        <?php if ($isSearch) : ?>
-            <button><a href="productlist.php">Thoát</a></button>
-        <?php endif; ?>
+
 
 
         <table>
@@ -141,8 +139,8 @@ if (isset($_POST['search'])) {
                                 echo 'Image file does not exist.';
                             } ?></th>
 
-                        <th><?php echo $result['product_price']; ?></th>
-                        <th><?php echo $result['product_price_new']; ?></th>
+                        <th><?php echo number_format($result['product_price'], 0, '.', '.'); ?>đ</th>
+                        <th><?php echo number_format($result['product_price_new'], 0, '.', '.'); ?>đ</th>
                         <th><?php echo $result['quantity']; ?></th>
                         <th><a href="productedit.php?product_id=<?php echo $result['product_id']; ?>">Sửa</a>&nbsp; |&nbsp;
                             <a href="productdelete.php?product_id=<?php echo $result['product_id']; ?>">Xoá</a>

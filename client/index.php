@@ -19,7 +19,7 @@
 
     <header id="site-header" class="site-header  site-header__border">
         <div class="razzi-promotion">
-            <p id="tenTV">Nhung - Trang - Kiên - Quyên</p>
+            <a href="../admin/statistics.php"><p id="tenTV">Nhung - Trang - Kiên - Quyên</p></a>
         </div>
 
         <div class="header-main header-contents hidden-xs hidden-sm has-center menu-center">

@@ -19,13 +19,13 @@ $vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";
 $apiUrl = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
 
 // Kết nối đatabase
-
 $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
 if (!$con) {
     die('Lỗi kết nối: ' . mysqli_connect_error());
 }
+
 $sql = "SELECT * FROM tbl_order_details ";
-$sql_order_details = "SELECT cart_code FROM tbl_order ORDER BY cart_code DESC LIMIT 1";
+$sql_order_details = "SELECT cart_code FROM tbl_order WHERE order_user_id = (SELECT MAX(order_user_id) FROM tbl_order)";
 $result = mysqli_query($con, $sql);
 
 $totalPrice1 = 0; 
@@ -43,61 +43,47 @@ if ($totalPrice2 > 2000000) {
    
 } else {
 }
+
 $result_order = mysqli_query($con, $sql_order_details);
 if ($result_order && mysqli_num_rows($result_order) > 0) {
     $row_order = mysqli_fetch_assoc($result_order);
     $code_order = $row_order['cart_code'];
 } else {
-    $code_order = "No Order Found"; // Handle the case where no order codes were found
+    $code_order = "No Order Found";
+}
+
+// ---------------------INSERT INTO-------------------------
+
+$sql_insert = "INSERT INTO tbl_order_details_pro (cart_code, order_id, product_id, si_ze, time_added, price, order_quantity) 
+              SELECT '$code_order', order_id, product_id, si_ze, time_added, price, quantity
+              FROM tbl_order_details";
+
+$sql_delete = "DELETE FROM tbl_order_details";
+
+// Execute the INSERT statement
+if (mysqli_query($con, $sql_insert)) {
+    echo "Data inserted into tbl_order_details_pro successfully";
+
+    // Execute the DELETE statement to remove the data from tbl_order_details
+    if (mysqli_query($con, $sql_delete)) {
+        echo "Data deleted from tbl_order_details successfully";
+    } else {
+        echo "Error deleting data from tbl_order_details: " . mysqli_error($con);
+    }
+} else {
+    echo "Error inserting data: " . mysqli_error($con);
 }
 // Close the database connection
 mysqli_close($con);
 
 
 
-
-// $con = mysqli_connect('localhost', 'root', '', 'Web_demo');
-
-// if (!$con) {
-//     die('Lỗi kết nối: ' . mysqli_connect_error());
-// }
-
-// // Define the SQL query to insert data into tbl_order_details_pro from tbl_order_details
-// $sql_insert = "INSERT INTO tbl_order_details_pro (order_id, product_id, si_ze, time_added, price, quantity) 
-//               SELECT order_id, product_id, si_ze, time_added, price, quantity
-//               FROM tbl_order_details";
-
-// // Execute the insert query
-// if (mysqli_query($con, $sql_insert)) {
-//     echo "Data transferred successfully.";
-// } else {
-//     echo "Error: " . mysqli_error($con);
-// }
-// // Close the database connection
-// mysqli_close($con);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-$vnp_TxnRef = $code_order; // $vnp_TxnRef is now set to 'cart_code'
-$vnp_OrderInfo = 'Thanh toán hoá đơn'; // Order information
+$vnp_TxnRef = $code_order; 
+$vnp_OrderInfo = 'Thanh toán hoá đơn'; 
 $vnp_OrderType = 'billpayment';
-$vnp_Amount = $totalPrice2  * 100; // Total amount in VND
+$vnp_Amount = $totalPrice2  * 100; 
 $vnp_Locale = 'vn';
-$vnp_BankCode = 'NCB'; // Bank code if available, otherwise, remove this line
+$vnp_BankCode = 'NCB'; 
 $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
 
 $inputData = array(
@@ -111,7 +97,7 @@ $inputData = array(
     "vnp_Locale" => $vnp_Locale,
     "vnp_OrderInfo" => $vnp_OrderInfo,
     "vnp_OrderType" => $vnp_OrderType,
-    "vnp_ReturnUrl" => $vnp_Returnurl, // Define your return URL
+    "vnp_ReturnUrl" => $vnp_Returnurl, 
     "vnp_TxnRef" => $vnp_TxnRef,
   
 );
@@ -142,19 +128,15 @@ if (isset($vnp_HashSecret)) {
 }
 
 $returnData = array(
-    'code' => '00', // You can use a VNPAY-specific success code if available
-    'message' => 'Thanh toán thành công', // Your success message
+    'code' => '00', 
+    'message' => 'Thanh toán thành công', 
     'data' => $vnp_Url,
 );
-
-
 if (isset($_POST['redirect'])) {
     header('Location: ' . $vnp_Url);
     die();
 } else {
     echo json_encode($returnData);
 }
-
-
 
 ?>
