@@ -111,7 +111,7 @@ include "header.php";
                         <div class="size-option" onclick="selectSize('XL')">XL</div>
                         <div class="size-option" onclick="selectSize('XXL')">XXL</div>
                     </div>
-                    <p style="color:rgb(240, 95, 95);">Vui lòng chọn size hoặc gửi số đo ở trang thông tin.</p>
+                    <p style="color:green;">Chọn size hoặc gửi số đo ở trang thông tin.</p>
                 </div>
 
 

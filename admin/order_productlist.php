@@ -79,7 +79,7 @@ if (isset($_GET['cart_code'])) {
                 <th><b>Size</b></th>
                 <th><b>Số Lượng</b></th>
                 <th><b>Giá</b></th>
-                <th><b>Cart_code</b></th>
+                <th><b>Cart code</b></th>
             </tr>
             <?php
             if ($orderDetails) {

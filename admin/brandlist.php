@@ -131,6 +131,11 @@ if (isset($_GET['Search'])) {
                 }
             } else {
                 $i = 0;
+                $sql_danhsachbandau = "SELECT * FROM tbl_brand 
+                                       INNER JOIN tbl_cartegory ON tbl_brand.cartegory_id = tbl_cartegory.cartegory_id
+                                       ORDER BY brand_id DESC"; // Sắp xếp theo ngày tạo mới nhất và giới hạn kết quả lấy ra 10 bản ghi
+                $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
+            
                 while ($result = mysqli_fetch_assoc($query_danhsachbandau)) {
                     $i++;
                     $row_class = ($i % 2 == 0) ? 'even' : 'odd';
@@ -141,7 +146,8 @@ if (isset($_GET['Search'])) {
                         <th><?php echo $result['cartegory_name']; ?></th>
                         <th><?php echo $result['brand_name']; ?></th>
 
-                        <th><a href="brandedit.php?brand_id=<?php echo $result['brand_id']; ?>">Sửa</a>&nbsp; |&nbsp;
+                        <th><a href="brandedit.php?brand_id=<?php echo $result['brand_id']; ?>&cartegory_id=<?php echo $result['cartegory_id']; ?>">Sửa</a>
+                            &nbsp; |&nbsp;
                             <a href="branddelete.php?brand_id=<?php echo $result['brand_id']; ?>">Xoá</a>
                         </th>
                     </tr>

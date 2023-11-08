@@ -18,7 +18,6 @@ if ($get_cartegory) {
 }
 ?>
 
-<!-- xoá -->
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {

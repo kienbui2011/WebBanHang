@@ -9,11 +9,10 @@ include "class/brand_class.php";
 $brand = new brand;
 
 $brand_id = $_GET['brand_id'];
-$get_brand = $brand ->get_brand( $brand_id);
-if ($get_brand ) {
-    $resultA = $get_brand ->fetch_assoc();
+$get_brand = $brand->get_brand($brand_id);
+if ($get_brand) {
+    $resultA = $get_brand->fetch_assoc();
 }
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $cartegory_id = $_POST['cartegory_id'];
     $brand_name = $_POST['brand_name'];
@@ -51,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             <input required name="brand_name" type="text" placeholder="Nhập tên loại sản phẩm"
             value=" <?php echo $resultA ['brand_name']?>"> 
+            
             <button type="submit">Sửa</button>
         </form>
     </div>

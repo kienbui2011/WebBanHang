@@ -17,7 +17,7 @@ if (isset($_GET['Search'])) {
     $isSearch = true; // Đã thực hiện tìm kiếm
 } else {
     $tukhoa = '';
-    $sql_danhsachbandau = "SELECT * FROM tbl_client_account LIMIT 10";
+    $sql_danhsachbandau = "SELECT * FROM tbl_client_account ";
     $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
 }
 ?>
@@ -124,6 +124,11 @@ if (isset($_GET['Search'])) {
                 }
             } else {
                 $i = 0;
+                $sql_danhsachbandau = "SELECT * FROM tbl_client_account
+                                      
+                                       ORDER BY client_id DESC "; // Sắp xếp theo ngày tạo mới nhất và giới hạn kết quả lấy ra 10 bản ghi
+                $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
+            
                 while ($result = mysqli_fetch_assoc($query_danhsachbandau)) {
                     $i++;
                     $row_class = ($i % 2 == 0) ? 'even' : 'odd';

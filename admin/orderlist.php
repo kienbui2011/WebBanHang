@@ -109,6 +109,9 @@ if (isset($_GET['Search'])) {
             <?php
             if ($isSearch) {
                 $i = 0;
+                $sql_timkiem = "SELECT * FROM tbl_order WHERE full_name LIKE '%" . $tukhoa . "%' ORDER BY order_user_id DESC";
+                $query_timkiem = mysqli_query($conn, $sql_timkiem);
+            
                 while ($result = mysqli_fetch_assoc($query_timkiem)) {
                     $i++;
                     // Determine the CSS class for row color based on even or odd
@@ -141,8 +144,12 @@ if (isset($_GET['Search'])) {
                 }
             } else {
                 $i = 0;
+                $sql_danhsachbandau = "SELECT * FROM tbl_order ORDER BY order_user_id DESC";
+                $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
+            
                 while ($result = mysqli_fetch_assoc($query_danhsachbandau)) {
                     $i++;
+                    // Determine the CSS class for row color based on even or odd
                     $row_class = ($i % 2 == 0) ? 'even' : 'odd';
                 ?>
                     <tr class="<?php echo $row_class; ?>">

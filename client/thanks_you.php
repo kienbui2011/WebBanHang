@@ -301,8 +301,12 @@
         </div>
     </header>
     <!----------------------------------- thank you ------------------------------------>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
-    <br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br>
+    <a href="index.php">
+    <img src="./img/887.jpg" alt="">
+    </a>
+    
+   <br><br><br><br>
     <!-- -----------------------------------footer ---------------------------------->
     <div>
         <section class="razzi-icon">

@@ -124,10 +124,15 @@ if (isset($_GET['Search'])) {
                             <a href="userdelete.php?id_user_acccount=<?php echo $result['id_user_acccount']; ?>">Xoá</a>
                         </th>
                     </tr>
-                <?php
+                    <?php
                 }
             } else {
                 $i = 0;
+                $sql_danhsachbandau = "SELECT * FROM tbl_user_acccount
+                                      
+                                       ORDER BY id_user_acccount DESC "; // Sắp xếp theo ngày tạo mới nhất và giới hạn kết quả lấy ra 10 bản ghi
+                $query_danhsachbandau = mysqli_query($conn, $sql_danhsachbandau);
+            
                 while ($result = mysqli_fetch_assoc($query_danhsachbandau)) {
                     $i++;
                     $row_class = ($i % 2 == 0) ? 'even' : 'odd';
